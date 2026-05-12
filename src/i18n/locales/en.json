@@ -3,11 +3,6 @@
     "switchTo": "Switch language",
     "current": "Current language"
   },
-  "theme": {
-    "ariaLight": "Light theme — click to switch",
-    "ariaDark": "Dark theme — click to switch",
-    "ariaSystem": "System theme — click to switch"
-  },
   "nav": {
     "home": "Home",
     "about": "About",
@@ -45,6 +40,25 @@
       "phone": "Phone",
       "email": "Email",
       "whatsapp": "WhatsApp"
+    },
+    "mega": {
+      "viewFullPage": "Open full page",
+      "homeIntro": "Jump to hero sections without leaving the homepage.",
+      "aboutIntro": "Heritage, values and how we work with owners.",
+      "servicesIntro": "Brokerage through machinery — one disciplined desk.",
+      "yachtsIntro": "Curated brokerage and charter-ready profiles.",
+      "referencesIntro": "Programs delivered on the water — refit, machinery and management.",
+      "galleryIntro": "Yachts, destinations and craft — browse by mood.",
+      "blogIntro": "Notes on markets, refit economics and Aegean cruising.",
+      "contactIntro": "Direct lines to the same specialists you meet on the dock.",
+      "sectionLinks": "In this section",
+      "featuredYachts": "Featured listings",
+      "moreYachts": "More listings",
+      "selectedWork": "Selected work",
+      "moreProjects": "More projects",
+      "latestArticles": "Latest articles",
+      "moreArticles": "More articles",
+      "categories": "Categories"
     }
   },
   "footer": {

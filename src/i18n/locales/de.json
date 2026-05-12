@@ -3,11 +3,6 @@
     "switchTo": "Sprache wechseln",
     "current": "Aktuelle Sprache"
   },
-  "theme": {
-    "ariaLight": "Helles Design — zum Wechseln klicken",
-    "ariaDark": "Dunkles Design — zum Wechseln klicken",
-    "ariaSystem": "System — zum Wechseln klicken"
-  },
   "nav": {
     "home": "Start",
     "about": "Über uns",
@@ -45,6 +40,25 @@
       "phone": "Telefon",
       "email": "E-Mail",
       "whatsapp": "WhatsApp"
+    },
+    "mega": {
+      "viewFullPage": "Ganze Seite öffnen",
+      "homeIntro": "Schnell zu den Hauptabschnitten der Startseite springen.",
+      "aboutIntro": "Herkunft, Werte und unsere Zusammenarbeit mit Eignern.",
+      "servicesIntro": "Vom Brokerage bis zur Maschinenmodernisierung — ein Team.",
+      "yachtsIntro": "Kuratierte Profile — Verkauf und charterbereit.",
+      "referencesIntro": "Programme auf dem Wasser — Refit, Maschinen und Management.",
+      "galleryIntro": "Yachten, Reviere und Handwerk — nach Stimmung filtern.",
+      "blogIntro": "Notizen zu Märkten, Refit und Ägäis-Fahrtgebieten.",
+      "contactIntro": "Direkt zu denselben Spezialisten wie am Steg.",
+      "sectionLinks": "In diesem Bereich",
+      "featuredYachts": "Ausgewählte Angebote",
+      "moreYachts": "Weitere Angebote",
+      "selectedWork": "Ausgewählte Arbeiten",
+      "moreProjects": "Weitere Projekte",
+      "latestArticles": "Neueste Artikel",
+      "moreArticles": "Weitere Artikel",
+      "categories": "Kategorien"
     }
   },
   "footer": {

@@ -5,7 +5,7 @@ import { SUPPORTED_LANGUAGES, type LanguageCode } from '@/i18n'
 interface LanguageSwitcherProps {
   /** Color treatment for placement on dark vs light surfaces */
   tone?: 'on-dark' | 'on-light'
-  /** Koyu header’da tema düğmesiyle tek çerçeve; daha az “kutu” hissi */
+  /** Koyu header’da tek çerçeve; daha az “kutu” hissi */
   embedded?: boolean
   /** @deprecated Ignored — tek açılır liste kullanılıyor. */
   layout?: 'inline' | 'block'
@@ -27,14 +27,14 @@ export function LanguageSwitcher({
       ? embedded
         ? 'border-0 bg-transparent text-white/80 shadow-none hover:bg-white/[0.05] hover:text-white focus-visible:ring-white/20'
         : 'border border-white/12 bg-white/[0.04] text-white/85 hover:border-white/18 hover:bg-white/[0.08] focus-visible:border-white/25 focus-visible:ring-white/20'
-      : 'border border-stone/50 bg-pearl text-charcoal shadow-[inset_0_1px_0_rgb(255_255_255/0.85)] hover:border-stone/70 focus-visible:border-primary/40 focus-visible:ring-primary/20 dark:border-white/12 dark:bg-[#141824] dark:text-[#e8eaf0] dark:shadow-none dark:hover:border-white/18 dark:focus-visible:ring-white/20'
+      : 'border border-stone/50 bg-pearl text-charcoal shadow-[inset_0_1px_0_rgb(255_255_255/0.85)] hover:border-stone/70 focus-visible:border-primary/40 focus-visible:ring-primary/20'
 
   const iconMuted =
     tone === 'on-dark'
       ? embedded
         ? 'text-white/45'
         : 'text-white/55'
-      : 'text-slate dark:text-[#a8b3d4]'
+      : 'text-slate'
 
   const selectRadius =
     tone === 'on-dark' && embedded ? 'rounded-none rounded-r-md' : 'rounded-lg'

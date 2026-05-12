@@ -14,7 +14,7 @@ export function NotFound() {
         path="/404"
       />
 
-      <section className="flex min-h-[70vh] flex-col items-center justify-center bg-mist px-4 py-24 text-center dark:bg-charcoal/30">
+      <section className="flex min-h-[70vh] flex-col items-center justify-center bg-mist px-4 py-24 text-center">
         <p className="mb-6 font-display text-sm font-semibold uppercase tracking-[0.35em] text-primary/80">
           {COMPANY.name}
         </p>

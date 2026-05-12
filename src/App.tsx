@@ -1,7 +1,6 @@
 import { useEffect } from 'react'
 import { RouterProvider } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
-import { ThemeSync } from '@/components/common/ThemeSync'
 import { router } from '@/router'
 
 export default function App() {
@@ -18,10 +17,5 @@ export default function App() {
     }
   }, [i18n])
 
-  return (
-    <>
-      <ThemeSync />
-      <RouterProvider router={router} />
-    </>
-  )
+  return <RouterProvider router={router} />
 }

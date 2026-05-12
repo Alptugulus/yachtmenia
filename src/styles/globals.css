@@ -1,8 +1,10 @@
 @import 'tailwindcss';
 
-@custom-variant dark (&:where(.dark, .dark *));
+html {
+  overflow-x: clip;
+}
 
-/* Light / dark: semantic palette (lacivert “brand” sabit — ayrı token) */
+/* Semantic palette (lacivert “brand” sabit — ayrı token) */
 :root {
   --ym-mist: #eef1f7;
   --ym-pearl: #ffffff;
@@ -18,29 +20,6 @@
   --ym-soft: 0 24px 60px -12px rgb(0 0 50 / 0.2);
   --ym-card: 0 10px 36px -14px rgb(0 0 50 / 0.12), 0 1px 0 rgb(255 255 255 / 0.65) inset;
   --ym-card-hover: 0 22px 52px -16px rgb(0 0 50 / 0.18), 0 1px 0 rgb(255 255 255 / 0.7) inset;
-}
-
-html.dark {
-  color-scheme: dark;
-  /* Sayfa zemini: en koyu; kartlardan biraz ayrışır */
-  --ym-mist: #05060c;
-  /* Kart / yükseltili yüzey: biraz daha açık = metin daha rahat */
-  --ym-pearl: #141824;
-  /* Gövde metni: yüksek kontrast */
-  --ym-charcoal: #f4f6fd;
-  /* İkincil / açıklama: opak, /opacity ile bozulmaz */
-  --ym-slate: #c9d0e3;
-  --ym-stone: rgb(255 255 255 / 0.18);
-  --ym-gold: #1a1e2e;
-  --ym-gold-hover: #222736;
-  /* Başlık ve vurgu metni: neredeyse beyaz */
-  --ym-primary: #f7f8ff;
-  --ym-primary-muted: #0f111a;
-  --ym-ocean: #000032;
-  --ym-ocean-light: #000032;
-  --ym-soft: 0 24px 60px -12px rgb(0 0 0 / 0.55);
-  --ym-card: 0 12px 40px -12px rgb(0 0 0 / 0.45), inset 0 1px 0 rgb(255 255 255 / 0.08);
-  --ym-card-hover: 0 24px 56px -16px rgb(0 0 0 / 0.55), inset 0 1px 0 rgb(255 255 255 / 0.1);
 }
 
 @theme {
@@ -147,10 +126,6 @@ html.dark {
 
   ::selection {
     @apply bg-primary/15 text-primary;
-  }
-
-  html.dark ::selection {
-    @apply bg-brand/35 text-pearl;
   }
 
   @media (prefers-reduced-motion: reduce) {

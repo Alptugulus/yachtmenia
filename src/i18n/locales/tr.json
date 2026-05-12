@@ -3,11 +3,6 @@
     "switchTo": "Dili değiştir",
     "current": "Geçerli dil"
   },
-  "theme": {
-    "ariaLight": "Açık tema — değiştirmek için tıklayın",
-    "ariaDark": "Koyu tema — değiştirmek için tıklayın",
-    "ariaSystem": "Sistem teması — değiştirmek için tıklayın"
-  },
   "nav": {
     "home": "Ana sayfa",
     "about": "Hakkımızda",
@@ -45,6 +40,25 @@
       "phone": "Telefon",
       "email": "E-posta",
       "whatsapp": "WhatsApp"
+    },
+    "mega": {
+      "viewFullPage": "Tam sayfayı aç",
+      "homeIntro": "Ana sayfada ilgili bölümlere hızlıca gidin.",
+      "aboutIntro": "Miras, değerler ve yat sahipleriyle çalışma biçimimiz.",
+      "servicesIntro": "Aracılıktan makine modernizasyonuna — tek disiplinli ekip.",
+      "yachtsIntro": "Seçilmiş brokerage ve chartera hazır profiller.",
+      "referencesIntro": "Suda teslim edilen projeler — refit, makine ve yönetim.",
+      "galleryIntro": "Yatlar, destinasyonlar ve işçilik — kategoriye göre gezin.",
+      "blogIntro": "Pazar, refit ve Ege seyrüseferi üzerine notlar.",
+      "contactIntro": "Rıhtımda gördüğünüz uzmanlara doğrudan hatlar.",
+      "sectionLinks": "Bu bölümde",
+      "featuredYachts": "Öne çıkan ilanlar",
+      "moreYachts": "Diğer ilanlar",
+      "selectedWork": "Seçilmiş işler",
+      "moreProjects": "Diğer projeler",
+      "latestArticles": "Son yazılar",
+      "moreArticles": "Diğer yazılar",
+      "categories": "Kategoriler"
     }
   },
   "footer": {

@@ -5,6 +5,8 @@ import App from './App'
 import '@/i18n'
 import '@/styles/globals.css'
 
+document.documentElement.classList.remove('dark')
+
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <HelmetProvider>

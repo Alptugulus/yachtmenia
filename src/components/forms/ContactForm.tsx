@@ -205,14 +205,14 @@ export function ContactForm({ subjectPreset }: { subjectPreset?: string }) {
           initial={reduce ? false : { opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: reduce ? 0 : 0.35, ease: [0.22, 1, 0.36, 1] }}
-          className="rounded-2xl border border-brand/20 bg-brand/[0.08] p-6 shadow-[inset_0_1px_0_rgb(255_255_255/0.5)] dark:border-white/10 dark:bg-white/[0.06] dark:shadow-[inset_0_1px_0_rgb(255_255_255/0.08)]"
+          className="rounded-2xl border border-brand/20 bg-brand/[0.08] p-6 shadow-[inset_0_1px_0_rgb(255_255_255/0.5)]"
           role="status"
           aria-live="polite"
         >
           <div className="flex gap-3">
-            <CheckCircle2 className="h-6 w-6 shrink-0 text-brand dark:text-[#a8b8f0]" strokeWidth={2} aria-hidden />
+            <CheckCircle2 className="h-6 w-6 shrink-0 text-brand" strokeWidth={2} aria-hidden />
             <div>
-              <p className="font-semibold text-brand dark:text-[#dce4ff]">{t('form.successTitle')}</p>
+              <p className="font-semibold text-brand">{t('form.successTitle')}</p>
               <p className="mt-1 text-sm leading-relaxed text-slate">{t('form.successHint')}</p>
             </div>
           </div>
