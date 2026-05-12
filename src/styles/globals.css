@@ -1,0 +1,200 @@
+@import 'tailwindcss';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Light / dark: semantic palette (lacivert “brand” sabit — ayrı token) */
+:root {
+  --ym-mist: #eef1f7;
+  --ym-pearl: #ffffff;
+  --ym-charcoal: #000032;
+  --ym-slate: rgb(0 0 50 / 0.62);
+  --ym-stone: rgb(0 0 50 / 0.12);
+  --ym-gold: #ffffff;
+  --ym-gold-hover: #e6e9f0;
+  --ym-primary: #000032;
+  --ym-primary-muted: #000028;
+  --ym-ocean: #000032;
+  --ym-ocean-light: #000032;
+  --ym-soft: 0 24px 60px -12px rgb(0 0 50 / 0.2);
+  --ym-card: 0 10px 36px -14px rgb(0 0 50 / 0.12), 0 1px 0 rgb(255 255 255 / 0.65) inset;
+  --ym-card-hover: 0 22px 52px -16px rgb(0 0 50 / 0.18), 0 1px 0 rgb(255 255 255 / 0.7) inset;
+}
+
+html.dark {
+  color-scheme: dark;
+  /* Sayfa zemini: en koyu; kartlardan biraz ayrışır */
+  --ym-mist: #05060c;
+  /* Kart / yükseltili yüzey: biraz daha açık = metin daha rahat */
+  --ym-pearl: #141824;
+  /* Gövde metni: yüksek kontrast */
+  --ym-charcoal: #f4f6fd;
+  /* İkincil / açıklama: opak, /opacity ile bozulmaz */
+  --ym-slate: #c9d0e3;
+  --ym-stone: rgb(255 255 255 / 0.18);
+  --ym-gold: #1a1e2e;
+  --ym-gold-hover: #222736;
+  /* Başlık ve vurgu metni: neredeyse beyaz */
+  --ym-primary: #f7f8ff;
+  --ym-primary-muted: #0f111a;
+  --ym-ocean: #000032;
+  --ym-ocean-light: #000032;
+  --ym-soft: 0 24px 60px -12px rgb(0 0 0 / 0.55);
+  --ym-card: 0 12px 40px -12px rgb(0 0 0 / 0.45), inset 0 1px 0 rgb(255 255 255 / 0.08);
+  --ym-card-hover: 0 24px 56px -16px rgb(0 0 0 / 0.55), inset 0 1px 0 rgb(255 255 255 / 0.1);
+}
+
+@theme {
+  /* Sabit marka laciverti (hero / footer / bloklar) */
+  --color-brand: #000032;
+  --color-brand-muted: #000028;
+
+  --color-primary: var(--ym-primary);
+  --color-primary-muted: var(--ym-primary-muted);
+  --color-ocean: var(--ym-ocean);
+  --color-ocean-light: var(--ym-ocean-light);
+  --color-gold: var(--ym-gold);
+  --color-gold-hover: var(--ym-gold-hover);
+  --color-pearl: var(--ym-pearl);
+  --color-mist: var(--ym-mist);
+  --color-stone: var(--ym-stone);
+  --color-slate: var(--ym-slate);
+  --color-charcoal: var(--ym-charcoal);
+
+  --font-display: 'Cormorant Garamond', ui-serif, Georgia, serif;
+  --font-sans: 'DM Sans', ui-sans-serif, system-ui, sans-serif;
+
+  --shadow-soft: var(--ym-soft);
+  --shadow-card: var(--ym-card);
+  --shadow-card-hover: var(--ym-card-hover);
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+
+  --animate-shine: shine 1.2s ease-out forwards;
+  --animate-hero-settle: hero-settle 1.15s var(--ease-out-soft) forwards;
+  --animate-page-in: page-header-in 0.55s var(--ease-out-soft) both;
+  --animate-fade-up: fade-up 0.6s var(--ease-out-soft) both;
+  --animate-loading-indeterminate: loading-indeterminate 1s var(--ease-out-soft) infinite;
+}
+
+@keyframes shine {
+  0% {
+    transform: translateX(-120%);
+    opacity: 0;
+  }
+  30% {
+    opacity: 0.35;
+  }
+  100% {
+    transform: translateX(120%);
+    opacity: 0;
+  }
+}
+
+/* Hero: single settle (transform-only, no infinite loops — battery-friendly) */
+@keyframes hero-settle {
+  from {
+    transform: scale(1.07);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes page-header-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Route / lazy chunk: transform-only indeterminate bar */
+@keyframes loading-indeterminate {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(380%);
+  }
+}
+
+@layer base {
+  /* Programmatic scroll-to-top (React Router) must not fight CSS smooth scrolling */
+  html {
+    scroll-behavior: auto;
+    /* Avoid scroll anchoring fighting window.scrollTo(0) after SPA route changes */
+    overflow-anchor: none;
+  }
+
+  body {
+    @apply bg-mist font-sans text-charcoal antialiased;
+  }
+
+  ::selection {
+    @apply bg-primary/15 text-primary;
+  }
+
+  html.dark ::selection {
+    @apply bg-brand/35 text-pearl;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .animate-hero-settle,
+    .animate-page-in,
+    .animate-fade-up {
+      animation: none !important;
+    }
+
+    .animate-shine {
+      animation: none !important;
+    }
+
+    .animate-loading-indeterminate {
+      animation: none !important;
+      transform: translateX(32%) !important;
+    }
+  }
+}
+
+/* Editorial footer / nav links: underline grows on hover (opacity + transform) */
+@layer utilities {
+  .link-subtle {
+    background-image: linear-gradient(currentColor, currentColor);
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 1px;
+    transition:
+      color 0.2s ease,
+      background-size 0.35s var(--ease-out-expo);
+  }
+
+  .link-subtle:hover {
+    background-size: 100% 1px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .link-subtle {
+      transition: color 0.15s ease;
+    }
+
+    .link-subtle:hover {
+      background-size: 0% 1px;
+    }
+  }
+
+}

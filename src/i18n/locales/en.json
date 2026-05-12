@@ -1,0 +1,364 @@
+{
+  "language": {
+    "switchTo": "Switch language",
+    "current": "Current language"
+  },
+  "theme": {
+    "ariaLight": "Light theme — click to switch",
+    "ariaDark": "Dark theme — click to switch",
+    "ariaSystem": "System theme — click to switch"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "yachts": "Yachts",
+    "references": "References",
+    "gallery": "Gallery",
+    "blog": "Blog",
+    "contact": "Contact",
+    "ariaToggleMenu": "Toggle menu",
+    "homeAria": "Yachtmenia Yachting home",
+    "consultCta": "Consult",
+    "mobileStartConversation": "Start a conversation",
+    "servicesOverview": "All services",
+    "submenuSeeAll": "Overview",
+    "ariaToggleNavSubmenu": "Open or close submenu",
+    "homeSub": {
+      "services": "Services section",
+      "featured": "Featured yachts",
+      "references": "References section",
+      "blog": "Blog section"
+    },
+    "aboutSub": {
+      "pillars": "Values & approach"
+    },
+    "galleryCategories": {
+      "lifestyle": "Lifestyle",
+      "yachts": "Yachts",
+      "destinations": "Destinations",
+      "interiors": "Interiors",
+      "detail": "Detail",
+      "atmosphere": "Atmosphere"
+    },
+    "contactSub": {
+      "phone": "Phone",
+      "email": "Email",
+      "whatsapp": "WhatsApp"
+    }
+  },
+  "footer": {
+    "since": "Since {{year}}",
+    "intro": "Premium brokerage, refit and management from Didim D-MARINE — engineered for owners who value clarity and craft.",
+    "explore": "Explore",
+    "services": "Services",
+    "contact": "Contact",
+    "rights": "© {{year}} {{name}}. All rights reserved.",
+    "credit": "This website was produced by ULUS MEDYA.",
+    "privacy": "Privacy request",
+    "compliance": "Compliance"
+  },
+  "serviceNav": {
+    "brokerage": "Yacht Brokerage",
+    "refit": "Yacht Refit",
+    "management": "Yacht Management",
+    "maintenance": "Maintenance & Repair",
+    "consultancy": "Consultancy",
+    "machinery-renovation": "Machinery Renovation"
+  },
+  "common": {
+    "back": "Back",
+    "viewMore": "View more",
+    "explore": "Explore",
+    "loading": "Loading...",
+    "minRead": "{{count}} min read",
+    "minReadShort": "{{count}} min",
+    "currentlyIn": "Currently represented in {{location}}"
+  },
+  "whatsapp": {
+    "ariaLabel": "Chat on WhatsApp",
+    "fabMessage": "Hello Yachtmenia — I would like to discuss a yacht project.",
+    "team": "WhatsApp the team",
+    "broker": "WhatsApp broker desk",
+    "label": "WhatsApp"
+  },
+  "seo": {
+    "siteSuffix": "Luxury Yacht Services Turkey",
+    "defaultDescription": "{{name}} — brokerage, refit, yacht management and marine consultancy at Didim D-MARINE since {{year}}.",
+    "titles": {
+      "about": "About",
+      "services": "Services",
+      "yachts": "Yachts",
+      "references": "References",
+      "gallery": "Gallery",
+      "blog": "Blog",
+      "contact": "Contact",
+      "notFound": "Page not found"
+    },
+    "descriptions": {
+      "about": "Learn about {{name}} — established {{year}}, based at {{location}}.",
+      "services": "{{name}} — brokerage, refit, yacht management, maintenance, consultancy and machinery renovation from Didim D-MARINE.",
+      "yachts": "Explore curated brokerage and charter listings represented by {{name}} across the Eastern Mediterranean.",
+      "references": "Selected refit, machinery and management programs delivered by {{name}}.",
+      "gallery": "Visual narrative of yachts, destinations and craftsmanship — {{name}}.",
+      "blog": "Insights on brokerage, refit economics and Aegean cruising — authored by {{name}}.",
+      "contact": "Contact {{name}} at {{location}}. Phone {{phone}}, email {{email}}.",
+      "notFound": "The page you are looking for does not exist."
+    }
+  },
+  "home": {
+    "hero": {
+      "overline": "Didim · Aegean",
+      "title": "Precision brokerage, refit and management for discerning owners.",
+      "lead": "{{name}} delivers cinematic execution with corporate discipline — from acquisition and refit to machinery modernization and long-term management at {{location}}.",
+      "ctaYachts": "View featured yachts",
+      "ctaContact": "Book a consultation",
+      "trustDiligence": "Technical diligence first",
+      "trustSince": "Since {{year}}",
+      "concierge": {
+        "overline": "Concierge desk",
+        "title": "Direct line to specialists"
+      }
+    },
+    "stats": {
+      "founded": "Founded",
+      "base": "Base",
+      "disciplines": "Disciplines",
+      "response": "Response",
+      "responseValue": "< 24h"
+    },
+    "services": {
+      "overline": "Capabilities",
+      "title": "Full-spectrum yacht intelligence",
+      "subtitle": "Brokerage through machinery — orchestrated from Didim D-MARINE with transparent milestones.",
+      "cta": "All services"
+    },
+    "featured": {
+      "overline": "Inventory",
+      "title": "Featured yachts",
+      "subtitle": "Curated selections with verified histories — inquiry-led, never noisy.",
+      "cta": "Browse yachts"
+    },
+    "references": {
+      "overline": "Proof",
+      "title": "References that carry weight",
+      "subtitle": "Selected programs demonstrating refit depth, machinery rigor and management continuity.",
+      "cta": "Explore references"
+    },
+    "blog": {
+      "overline": "Journal",
+      "title": "Insights for owners & captains",
+      "subtitle": "Long-form perspective — seasonal maintenance, refit economics and Aegean market signals.",
+      "cta": "Visit blog"
+    },
+    "cta": {
+      "overline": "Next step",
+      "title": "Tell us your goals for your yacht.",
+      "subtitle": "We usually reply within one business day — sooner when sea trials or yard slots are in play.",
+      "primary": "Contact Didim desk",
+      "secondary": "Download capability overview"
+    }
+  },
+  "about": {
+    "header": {
+      "title": "Authority forged in the Aegean",
+      "subtitle": "Engineering-first culture with hospitality-grade service — since 2006."
+    },
+    "lead": "{{name}} operates at the intersection of technical rigor and discreet client care.",
+    "p1": "From brokerage diligence to refit orchestration, our teams align naval architects, project managers and operational specialists around one mandate: protect asset value and cruising readiness.",
+    "p2": "Headquartered at {{location}}, we leverage Aegean logistics while coordinating Mediterranean-wide expertise — always documented, always accountable.",
+    "pillars": {
+      "governance": {
+        "title": "Governance",
+        "body": "Transparent reporting packs for owners and captains."
+      },
+      "craft": {
+        "title": "Craft",
+        "body": "Yard-native workmanship with OEM-grade standards."
+      },
+      "continuity": {
+        "title": "Continuity",
+        "body": "Programs designed for resale and long-range cruising."
+      }
+    }
+  },
+  "servicesPage": {
+    "header": {
+      "title": "Integrated yacht disciplines",
+      "subtitle": "Choose a lane — we assemble the right specialists around your objectives."
+    },
+    "section": {
+      "title": "Capability matrix",
+      "subtitle": "Each engagement begins with listening — then engineering, scheduling and crystal-clear reporting."
+    },
+    "ctaPrimary": "Plan a technical call",
+    "ctaSecondary": "View delivered programs"
+  },
+  "serviceDetail": {
+    "deliveryFocus": "Delivery focus",
+    "discussOverline": "Discuss this service",
+    "discussTitle": "Tailored scope review",
+    "discussBody": "Share timelines, documentation and destination goals — we'll respond with a structured next step."
+  },
+  "yachtsPage": {
+    "header": {
+      "title": "Crafted listings",
+      "subtitle": "Verified histories, transparent specifications — inquiry-led presentations."
+    },
+    "section": {
+      "title": "Inventory snapshot",
+      "subtitle": "Filtering and comparison layers can connect to your CMS/API — this build ships with curated mock data."
+    }
+  },
+  "yachtDetail": {
+    "back": "Back to yachts",
+    "priceOnRequest": "Price on request",
+    "specs": {
+      "length": "Length",
+      "beam": "Beam",
+      "cabins": "Cabins",
+      "year": "Year"
+    },
+    "requestDetails": "Request details",
+    "specsDisclaimer": "Specifications illustrate representative configuration — verify via survey and sea trial before commitment.",
+    "overview": "Overview",
+    "equipment": "Equipment highlights",
+    "showImage": "Show image {{index}}",
+    "inquiryOverline": "Inquiry",
+    "inquiryTitle": "Schedule a confidential discussion",
+    "inquiryBody": "Mention {{name}} — our brokerage desk will coordinate documentation and viewing logistics."
+  },
+  "yachtCard": {
+    "status": {
+      "for-sale": "For sale",
+      "under-offer": "Under offer",
+      "sold": "Sold",
+      "charter": "Charter",
+      "available": "Available"
+    },
+    "featured": "Featured"
+  },
+  "serviceCard": {
+    "explore": "Explore"
+  },
+  "referenceCard": {
+    "view": "View references"
+  },
+  "referencesPage": {
+    "header": {
+      "title": "Delivered programs",
+      "subtitle": "Evidence-led storytelling — budgets, disciplines and outcomes."
+    },
+    "section": {
+      "title": "Recent momentum",
+      "subtitle": "Expand each engagement through consultancy calls — deeper cases migrate beautifully to CMS-driven layouts."
+    }
+  },
+  "galleryPage": {
+    "header": {
+      "title": "Curated imagery",
+      "subtitle": "Cinematic compositions — Aegean light, disciplined craft."
+    },
+    "section": {
+      "title": "Moments & materials",
+      "subtitle": "Tap an image for a focused view — ready for CMS-driven collections."
+    },
+    "close": "Close"
+  },
+  "blogPage": {
+    "header": {
+      "title": "Journal",
+      "subtitle": "Editorial perspective without noise — written for owners and technical leadership."
+    },
+    "section": {
+      "title": "Latest articles",
+      "subtitle": "Wire these entries to Markdown, Sanity or Contentful — structures already align."
+    }
+  },
+  "blogPost": {
+    "back": "← Back to journal"
+  },
+  "contact": {
+    "header": {
+      "title": "Concierge desk",
+      "subtitle": "Direct access to brokerage, refit and management specialists."
+    },
+    "visit": {
+      "overline": "Visit",
+      "body": "Scheduled visits welcome — coordinate technical walkthroughs with advance notice."
+    },
+    "direct": {
+      "overline": "Direct"
+    },
+    "form": {
+      "title": "Send a message",
+      "subtitle": "We usually reply within one business day — add yacht details if they help us respond.",
+      "responseExpectation": "We aim to respond within one business day. For urgent matters, call us or use WhatsApp — you'll reach the same team."
+    }
+  },
+  "form": {
+    "fullName": "Full name",
+    "fullNamePlaceholder": "Alex Marin",
+    "email": "Email",
+    "emailPlaceholder": "you@company.com",
+    "phone": "Phone",
+    "phoneOptional": "(optional)",
+    "phonePlaceholder": "+90 ...",
+    "subject": "Subject",
+    "subjects": {
+      "general": "General inquiry",
+      "brokerage": "Brokerage",
+      "refit": "Refit",
+      "management": "Management",
+      "maintenance": "Maintenance & repair",
+      "consultancy": "Consultancy",
+      "machinery-renovation": "Machinery renovation"
+    },
+    "budgetLabel": "Indicative budget (EUR)",
+    "timelineLabel": "Timeline",
+    "budget": {
+      "unspecified": "Prefer not to say",
+      "under250k": "Under €250,000",
+      "250k-500k": "€250,000 – €500,000",
+      "500k-1m": "€500,000 – €1M",
+      "1m-3m": "€1M – €3M",
+      "3mplus": "€3M+"
+    },
+    "timeline": {
+      "unspecified": "Prefer not to say",
+      "within3mo": "Within 3 months",
+      "3-12mo": "3–12 months",
+      "12mo-plus": "12+ months",
+      "research": "Exploring / no fixed date"
+    },
+    "message": "Message",
+    "messagePlaceholder": "Tell us about your vessel, timeline and goals.",
+    "consent": "I agree to be contacted regarding this inquiry.",
+    "submit": "Send inquiry",
+    "submitting": "Sending...",
+    "submitted": "Message received",
+    "successTitle": "We've received your inquiry",
+    "successHint": "Our team will review your details and respond as soon as possible.",
+    "errorHint": "Something went wrong. Please call us directly.",
+    "errorNotConfigured": "The contact form is not set up on this environment yet. Please email or call us."
+  },
+  "notFound": {
+    "code": "404",
+    "title": "Off course",
+    "body": "The page you requested isn't available — let's navigate back to calmer waters.",
+    "ctaHome": "Return home",
+    "ctaContact": "Contact desk",
+    "ctaYachts": "Browse yachts",
+    "needHelp": "Need assistance? Call"
+  },
+  "breadcrumb": {
+    "home": "Home"
+  },
+  "data": {
+    "services": {},
+    "yachts": {},
+    "references": {},
+    "blog": {},
+    "gallery": {}
+  }
+}

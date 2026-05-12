@@ -1,0 +1,562 @@
+{
+  "language": {
+    "switchTo": "Dili değiştir",
+    "current": "Geçerli dil"
+  },
+  "theme": {
+    "ariaLight": "Açık tema — değiştirmek için tıklayın",
+    "ariaDark": "Koyu tema — değiştirmek için tıklayın",
+    "ariaSystem": "Sistem teması — değiştirmek için tıklayın"
+  },
+  "nav": {
+    "home": "Ana sayfa",
+    "about": "Hakkımızda",
+    "services": "Hizmetler",
+    "yachts": "Yatlar",
+    "references": "Referanslar",
+    "gallery": "Galeri",
+    "blog": "Blog",
+    "contact": "İletişim",
+    "ariaToggleMenu": "Menüyü aç/kapat",
+    "homeAria": "Yachtmenia Yachting ana sayfa",
+    "consultCta": "Görüşün",
+    "mobileStartConversation": "Görüşmeye başlayın",
+    "servicesOverview": "Tüm hizmetler",
+    "submenuSeeAll": "Genel bakış",
+    "ariaToggleNavSubmenu": "Alt menüyü aç veya kapat",
+    "homeSub": {
+      "services": "Hizmetler bölümü",
+      "featured": "Öne çıkan yatlar",
+      "references": "Referanslar bölümü",
+      "blog": "Blog bölümü"
+    },
+    "aboutSub": {
+      "pillars": "Değerler ve yaklaşım"
+    },
+    "galleryCategories": {
+      "lifestyle": "Yaşam tarzı",
+      "yachts": "Yatlar",
+      "destinations": "Destinasyonlar",
+      "interiors": "İç mekânlar",
+      "detail": "Detay",
+      "atmosphere": "Atmosfer"
+    },
+    "contactSub": {
+      "phone": "Telefon",
+      "email": "E-posta",
+      "whatsapp": "WhatsApp"
+    }
+  },
+  "footer": {
+    "since": "{{year}}’den beri",
+    "intro": "Didim D-MARINE merkezli premium yat aracılığı, refit ve yönetim — şeffaf iletişim ve titiz işçilik arayan yat sahipleri için.",
+    "explore": "Keşfet",
+    "services": "Hizmetler",
+    "contact": "İletişim",
+    "rights": "© {{year}} {{name}}. Tüm hakları saklıdır.",
+    "credit": "Bu web sitesi ULUS MEDYA tarafından hazırlanmıştır.",
+    "privacy": "Gizlilik talebi",
+    "compliance": "Uyumluluk"
+  },
+  "serviceNav": {
+    "brokerage": "Yat aracılığı",
+    "refit": "Yat Refiti",
+    "management": "Yat Yönetimi",
+    "maintenance": "Bakım ve Onarım",
+    "consultancy": "Danışmanlık",
+    "machinery-renovation": "Makine dairesi yenileme"
+  },
+  "common": {
+    "back": "Geri",
+    "viewMore": "Daha fazla",
+    "explore": "Keşfet",
+    "loading": "Yükleniyor…",
+    "minRead": "{{count}} dk okuma",
+    "minReadShort": "{{count}} dk",
+    "currentlyIn": "Konum: {{location}}"
+  },
+  "whatsapp": {
+    "ariaLabel": "WhatsApp’tan yazın",
+    "fabMessage": "Merhaba Yachtmenia — bir yat projesi hakkında görüşmek istiyorum.",
+    "team": "Ekibe WhatsApp",
+    "broker": "Broker masasına WhatsApp",
+    "label": "WhatsApp"
+  },
+  "seo": {
+    "siteSuffix": "Lüks Yat Hizmetleri Türkiye",
+    "defaultDescription": "{{name}} — {{year}}’den beri Didim D-MARINE’de brokerlik, refit, yat yönetimi ve denizcilik danışmanlığı.",
+    "titles": {
+      "about": "Hakkımızda",
+      "services": "Hizmetler",
+      "yachts": "Yatlar",
+      "references": "Referanslar",
+      "gallery": "Galeri",
+      "blog": "Blog",
+      "contact": "İletişim",
+      "notFound": "Sayfa bulunamadı"
+    },
+    "descriptions": {
+      "about": "{{name}}: {{year}} yılında kuruldu; merkez {{location}}.",
+      "services": "{{name}} — Didim D-MARINE’den brokerlik, refit, yat yönetimi, bakım, danışmanlık ve makine dairesi yenileme.",
+      "yachts": "Doğu Akdeniz’de {{name}} tarafından temsil edilen seçilmiş brokerlik ve charter ilanlarını keşfedin.",
+      "references": "{{name}} tarafından yürütülen seçilmiş refit, makine ve yönetim programları.",
+      "gallery": "Yatlar, destinasyonlar ve işçiliğin görsel anlatımı — {{name}}.",
+      "blog": "Brokerlik, refit ekonomisi ve Ege seyri üzerine içgörüler — {{name}} imzalı.",
+      "contact": "{{name}} iletişim: {{location}}. Tel: {{phone}}, e-posta: {{email}}.",
+      "notFound": "Aradığınız sayfa mevcut değil."
+    }
+  },
+  "home": {
+    "hero": {
+      "overline": "Didim · Ege",
+      "title": "Seçkin yat sahipleri için titiz aracılık, refit ve yönetim.",
+      "lead": "{{name}}, satın alma ve refitten makine modernizasyonuna ve {{location}} merkezli uzun vadeli yönetime kadar tüm süreçlerde kurumsal disiplin ve sahada üst düzey uygulama sunar.",
+      "ctaYachts": "Öne çıkan yatları görüntüle",
+      "ctaContact": "Danışmanlık randevusu al",
+      "trustDiligence": "Önce teknik özen",
+      "trustSince": "{{year}}’den beri",
+      "concierge": {
+        "overline": "Öncelikli iletişim",
+        "title": "Uzmanlara doğrudan hat"
+      }
+    },
+    "stats": {
+      "founded": "Kuruluş",
+      "base": "Üs",
+      "disciplines": "Disiplinler",
+      "response": "Yanıt",
+      "responseValue": "< 24 saat"
+    },
+    "services": {
+      "overline": "Yetkinlikler",
+      "title": "Tam spektrum yat uzmanlığı",
+      "subtitle": "Aracılıktan makine sistemlerine — Didim D-MARINE’den, şeffaf kilometre taşlarıyla yürütülen süreçler.",
+      "cta": "Tüm hizmetler"
+    },
+    "featured": {
+      "overline": "Envanter",
+      "title": "Öne çıkan yatlar",
+      "subtitle": "Doğrulanmış geçmişe sahip seçilmiş ilanlar — talep üzerine sunum, gereksiz bilgi kirliliği yok.",
+      "cta": "Yatlara göz at"
+    },
+    "references": {
+      "overline": "Kanıt",
+      "title": "Ağırlığı olan referanslar",
+      "subtitle": "Refit derinliği, makine titizliği ve yönetim sürekliliğini gösteren seçilmiş programlar.",
+      "cta": "Referansları keşfet"
+    },
+    "blog": {
+      "overline": "Blog",
+      "title": "Yat sahipleri ve kaptanlar için içgörüler",
+      "subtitle": "Uzun metin perspektif — mevsimsel bakım, refit ekonomisi ve Ege piyasa sinyalleri.",
+      "cta": "Blog sayfasına git"
+    },
+    "cta": {
+      "overline": "Sonraki adım",
+      "title": "Yatınız ve hedefleriniz hakkında bize yazın.",
+      "subtitle": "Çoğu talebe bir iş günü içinde dönüş yapıyoruz; deniz denemesi veya tersane takvimi varsa daha da hızlı.",
+      "primary": "Didim iletişim hattı",
+      "secondary": "Yetenek özetini indir"
+    }
+  },
+  "about": {
+    "header": {
+      "title": "Ege’de şekillenen otorite",
+      "subtitle": "Mühendislik odaklı kültür ve otel standardında hizmet anlayışı — 2006’dan beri."
+    },
+    "lead": "{{name}}, teknik titizlik ile ölçülü müşteri yaklaşımını bir araya getirir.",
+    "p1": "Yat aracılığı incelemesinden refit koordinasyonuna kadar ekibimiz; deniz mimarları, proje yöneticileri ve operasyon uzmanlarını tek amaçta toplar: varlık değerinizi ve seyre hazır oluşunuzu korumak.",
+    "p2": "Merkezimiz {{location}}; Ege lojistiğinden yararlanırken Akdeniz genelinde uzmanlığı koordine ederiz — her adımda belgeli ve hesap verebilir.",
+    "pillars": {
+      "governance": {
+        "title": "Yönetişim",
+        "body": "Malikler ve kaptanlar için şeffaf raporlama paketleri."
+      },
+      "craft": {
+        "title": "İşçilik",
+        "body": "Tersane içi uygulama, OEM seviyesinde standartlar."
+      },
+      "continuity": {
+        "title": "Süreklilik",
+        "body": "İkinci el ve uzun menzil seyri için tasarlanmış programlar."
+      }
+    }
+  },
+  "servicesPage": {
+    "header": {
+      "title": "Entegre yat disiplinleri",
+      "subtitle": "Bir alan seçin — hedeflerinizin etrafında doğru uzmanları bir araya getiriyoruz."
+    },
+    "section": {
+      "title": "Yetkinlikler tablosu",
+      "subtitle": "Her proje dinlemeyle başlar; ardından mühendislik, planlama ve anlaşılır raporlama gelir."
+    },
+    "ctaPrimary": "Teknik görüşme planla",
+    "ctaSecondary": "Tamamlanan programlara bak"
+  },
+  "serviceDetail": {
+    "deliveryFocus": "Teslimat öncelikleri",
+    "discussOverline": "Bu hizmet hakkında",
+    "discussTitle": "Özel kapsam incelemesi",
+    "discussBody": "Takviminizi, belgelerinizi ve rotanızı paylaşın; size yapılandırılmış bir sonraki adımı iletelim."
+  },
+  "yachtsPage": {
+    "header": {
+      "title": "Seçilmiş ilanlar",
+      "subtitle": "Doğrulanmış geçmişler, şeffaf özellikler — talebe dayalı sunumlar."
+    },
+    "section": {
+      "title": "Envanter özeti",
+      "subtitle": "Filtre ve karşılaştırma katmanları ileride CMS veya API’ye bağlanabilir; bu sürüm seçilmiş örnek veri içerir."
+    }
+  },
+  "yachtDetail": {
+    "back": "Yatlara dön",
+    "priceOnRequest": "Fiyat için iletişime geçin",
+    "specs": {
+      "length": "Uzunluk",
+      "beam": "Genişlik",
+      "cabins": "Kabin",
+      "year": "Yıl"
+    },
+    "requestDetails": "Detay talep et",
+    "specsDisclaimer": "Özellikler temsili bir konfigürasyonu gösterir — taahhüt öncesi survey ve deneme seferiyle doğrulayın.",
+    "overview": "Genel bakış",
+    "equipment": "Donanım öne çıkanları",
+    "showImage": "Görsel {{index}}",
+    "inquiryOverline": "Talep",
+    "inquiryTitle": "Gizli görüşme planlayın",
+    "inquiryBody": "{{name}} adını belirtin; aracılık ekibimiz evrak ve görüntüleme organizasyonunu üstlenir."
+  },
+  "yachtCard": {
+    "status": {
+      "for-sale": "Satılık",
+      "under-offer": "Ön anlaşma altında",
+      "sold": "Satıldı",
+      "charter": "Charter",
+      "available": "Müsait"
+    },
+    "featured": "Öne çıkan"
+  },
+  "serviceCard": {
+    "explore": "Keşfet"
+  },
+  "referenceCard": {
+    "view": "Referanslara bak"
+  },
+  "referencesPage": {
+    "header": {
+      "title": "Tamamlanan programlar",
+      "subtitle": "Kanıta dayalı anlatım — bütçeler, disiplinler ve sonuçlar."
+    },
+    "section": {
+      "title": "Son dönem ivmesi",
+      "subtitle": "Projeleri danışmanlık görüşmeleriyle derinleştirebilirsiniz; daha kapsamlı vakalar CMS ile yönetilen sayfalara taşınabilir."
+    }
+  },
+  "galleryPage": {
+    "header": {
+      "title": "Seçilmiş görseller",
+      "subtitle": "Sinematik kompozisyonlar — Ege ışığı, disiplinli işçilik."
+    },
+    "section": {
+      "title": "Anlar ve malzemeler",
+      "subtitle": "Odaklı görünüm için görsele dokunun — CMS koleksiyonlarına hazır."
+    },
+    "close": "Kapat"
+  },
+  "blogPage": {
+    "header": {
+      "title": "Blog",
+      "subtitle": "Gürültüsüz editoryal bakış — malikler ve teknik liderlik için yazıldı."
+    },
+    "section": {
+      "title": "Son yazılar",
+      "subtitle": "Bu kayıtlar Markdown, Sanity veya Contentful’a bağlanabilir — yapılar zaten uyumlu."
+    }
+  },
+  "blogPost": {
+    "back": "← Bloga dön"
+  },
+  "contact": {
+    "header": {
+      "title": "İletişim masası",
+      "subtitle": "Yat aracılığı, refit ve yönetim uzmanlarına doğrudan erişim."
+    },
+    "visit": {
+      "overline": "Ziyaret",
+      "body": "Randevulu ziyaretlere açığız — teknik gezileri önceden koordine edin."
+    },
+    "direct": {
+      "overline": "Doğrudan"
+    },
+    "form": {
+      "title": "Mesaj gönderin",
+      "subtitle": "Çoğu mesaja bir iş günü içinde dönüş yapıyoruz; yanıtımızı netleştirmek için yat bilgisi ekleyebilirsiniz.",
+      "responseExpectation": "Hedefimiz bir iş günü içinde yanıt vermektir. Acil durumlarda aynı ekibe telefon veya WhatsApp üzerinden ulaşabilirsiniz."
+    }
+  },
+  "form": {
+    "fullName": "Ad soyad",
+    "fullNamePlaceholder": "Ali Yılmaz",
+    "email": "E-posta",
+    "emailPlaceholder": "siz@firma.com",
+    "phone": "Telefon",
+    "phoneOptional": "(isteğe bağlı)",
+    "phonePlaceholder": "+90 …",
+    "subject": "Konu",
+    "subjects": {
+      "general": "Genel talep",
+      "brokerage": "Yat aracılığı",
+      "refit": "Refit",
+      "management": "Yönetim",
+      "maintenance": "Bakım ve onarım",
+      "consultancy": "Danışmanlık",
+      "machinery-renovation": "Makine dairesi yenileme"
+    },
+    "budgetLabel": "Yaklaşık bütçe (EUR)",
+    "timelineLabel": "Zaman çizelgesi",
+    "budget": {
+      "unspecified": "Belirtmek istemiyorum",
+      "under250k": "250.000 € altı",
+      "250k-500k": "250.000 – 500.000 €",
+      "500k-1m": "500.000 € – 1M €",
+      "1m-3m": "1M – 3M €",
+      "3mplus": "3M € üzeri"
+    },
+    "timeline": {
+      "unspecified": "Belirtmek istemiyorum",
+      "within3mo": "3 ay içinde",
+      "3-12mo": "3–12 ay",
+      "12mo-plus": "12 aydan uzun",
+      "research": "Araştırma / net tarih yok"
+    },
+    "message": "Mesaj",
+    "messagePlaceholder": "Yatınız, takviminiz ve hedefleriniz hakkında kısaca yazın.",
+    "consent": "Bu talep kapsamında iletişime geçilmesini kabul ediyorum.",
+    "submit": "Talebi gönder",
+    "submitting": "Gönderiliyor…",
+    "submitted": "Mesaj alındı",
+    "successTitle": "Talebinizi aldık",
+    "successHint": "Ekibimiz bilgilerinizi inceleyip en kısa sürede size dönecek.",
+    "errorHint": "Bir sorun oluştu. Lütfen doğrudan arayın.",
+    "errorNotConfigured": "İletişim formu bu ortamda henüz yapılandırılmadı. Lütfen e-posta veya telefon kullanın."
+  },
+  "notFound": {
+    "code": "404",
+    "title": "Rota dışındasınız",
+    "body": "Aradığınız sayfa bulunamadı. Ana sayfaya dönerek devam edebilirsiniz.",
+    "ctaHome": "Ana sayfaya dön",
+    "ctaContact": "İletişim masası",
+    "ctaYachts": "Yatları incele",
+    "needHelp": "Yardım için arayın:"
+  },
+  "breadcrumb": {
+    "home": "Ana sayfa"
+  },
+  "data": {
+    "services": {
+      "brokerage": {
+        "title": "Yat aracılığı",
+        "shortTitle": "Aracılık",
+        "tagline": "Seçkin segmentlerde kontrollü edinim ve ölçülü satış süreçleri.",
+        "excerpt": "Alıcı ve satıcılar için piyasa analizi, teknik inceleme ve müzakere desteği — titizlik isteyenler için.",
+        "highlights": [
+          "Nitelikli yat tedariki",
+          "Survey ve deniz denemesi koordinasyonu",
+          "Mülkiyet ve evrak danışmanlığı",
+          "Ege ve Akdeniz ağı"
+        ],
+        "body": [
+          "Aracılık masamız deneyimli piyasa bakışını, mühendislik yakınlığında titiz bir inceleme anlayışıyla birleştirir; kararlar broşüre değil, sahaya dayanır.",
+          "İlk görüşmeden kapanışa kadar tersane takvimlerini, sınıf kurallarını ve operasyonel önceliklerinizi birlikte yönetiriz.",
+          "Tekne yükseltme, filo sadeleştirmesi veya ilk yat sahipliği — tek muhatap olarak yanınızdayız."
+        ]
+      },
+      "refit": {
+        "title": "Yat Refiti",
+        "shortTitle": "Refit",
+        "tagline": "Ömür ve yeniden satış değeri için planlanmış dönüşüm programları.",
+        "excerpt": "İç, dış ve sistem yükseltmeleri — disiplinli proje yönetimi ve şeffaf raporlama ile.",
+        "highlights": [
+          "Konseptten teslimata planlama",
+          "İç mimari koordinasyonu",
+          "Boyama ve kompozit",
+          "Elektrik ve AV/IT entegrasyonu"
+        ],
+        "body": [
+          "Refit, hırsın mühendislikle buluştuğu noktadır. Bilinçli kapsam, akıllı fazlama ve net iletişim — özellikle sürprizler çıktığında.",
+          "Didim D-MARINE’deki varlığımız lojistiği sıkı tutar, kararları hızlandırır — sıkı QA kontrolleriyle desteklenir.",
+          "Gösterişli iç mekânlar veya görünmeyen güvenilirlik iyileştirmeleri — refit planınız seyir programınıza uymalı. İkisini de birlikte kurguluyoruz."
+        ]
+      },
+      "management": {
+        "title": "Yat Yönetimi",
+        "shortTitle": "Yönetim",
+        "tagline": "Direksiyonda ölçülülük ile operasyonel mükemmellik.",
+        "excerpt": "Kara tarafında sakinlik isteyen malikler için mürettebat, uyumluluk, bütçe ve bakım orkestrasyonu.",
+        "highlights": [
+          "Yıllık işletme planları",
+          "Sınıf ve bayrak devleti iletişimi",
+          "Tedarikçi yönetişimi",
+          "Dijital raporlama paketleri"
+        ],
+        "body": [
+          "Yönetim süreklilik demektir: öngörülebilir bakım ritimleri, şeffaf harcamalar ve seyir takviminize uyumlu köprü ekibi.",
+          "Survey’leri, tersane dönemlerini ve bayrak yükümlülüklerini sessizce koordine ediyoruz — özet raporlar, net öneriler.",
+          "Sezon açılışından acil durum protokollerine kadar gemi göreve hazır kalır."
+        ]
+      },
+      "maintenance": {
+        "title": "Bakım ve Onarım",
+        "shortTitle": "Bakım",
+        "tagline": "Hassas bakım — mekanik, elektrik ve gövde bütünlüğü.",
+        "excerpt": "OEM standartlarında planlı servis ve izlenebilir parça tedariki ile hızlı müdahale.",
+        "highlights": [
+          "Tahrik ve jeneratörler",
+          "Hidrolik ve dümen",
+          "Su altı işleri",
+          "Boya ve macun dokunuşları"
+        ],
+        "body": [
+          "Bakım, tork momentleri, yağ analizleri ve mevsimsel kontrol listeleriyle ifade edilen risk azaltmadır — belgelenir ve tekrarlanır.",
+          "OEM planlarını gerçek kullanım örüntüleriyle birleştiririz; hiçbir şey varsayılan olarak ele alınmaz.",
+          "Acil protokoller hızlı triyaj ve net malik iletişimi sağlar."
+        ]
+      },
+      "consultancy": {
+        "title": "Danışmanlık",
+        "shortTitle": "Danışmanlık",
+        "tagline": "Yatırım ve refit sermayesi için stratejik denizcilik danışmanlığı.",
+        "excerpt": "Teknik durum tespiti, şartname incelemeleri ve müzakerelerde malik temsili.",
+        "highlights": [
+          "Satış öncesi survey orkestrasyonu",
+          "Şartname denetimleri",
+          "Refit için CAPEX modellemesi",
+          "Yeni inşa danışmanlığı"
+        ],
+        "body": [
+          "Danışmanlık hattımız; riskin ve belirsizliğin maliyetinin yüksek olduğu aşamalarda devreye girer.",
+          "Çizim ve projeleri, yat sahibinin güvenle savunabileceği teknik ve mali kararlara dönüştürürüz.",
+          "Kapsamı dar teknik incelemelerden, aylar süren çok taraflı temsile kadar geniş bir yelpazede çalışırız."
+        ]
+      },
+      "machinery-renovation": {
+        "title": "Makine dairesi yenileme",
+        "shortTitle": "Makine",
+        "tagline": "Güvenilirlik için tasarlanmış tahrik ve borda şebeke sistemleri.",
+        "excerpt": "Makine dairesi modernizasyonu, yeniden güçlendirme ve deniz şartlarına uygun yardımcı sistem yükseltmeleri.",
+        "highlights": [
+          "Yeniden güçlendirme programları",
+          "Yakıt sistemi retrofit",
+          "Stabilizasyon yükseltmeleri",
+          "Gürültü ve titreşim azaltma"
+        ],
+        "body": [
+          "Makine dairesi yenilemesi toleranslarda, soğutma yollarında ve yük profillerinde teknik güvenilirliği kanıtlar.",
+          "Yapısal marjları ve sınıf beklentilerine saygı duyan yükseltmeler tasarlıyoruz — tasarruf maskesi altında kısayol yok.",
+          "Her proje gerçekçi deniz şartlarında performansı doğrulayan devreye alma günlükleri alır."
+        ]
+      }
+    },
+    "yachts": {
+      "y1": {
+        "name": "Aegean Serenity",
+        "location": "Didim · Ege",
+        "summary": "Geniş Akdeniz seyir geçmişine sahip kusursuz 86’lık yat.",
+        "description": "Geniş karşılama alanlarıyla rafine flybridge düzeni, yakın zamanda bakım görmüş tahrik ve yükseltilmiş navigasyon elektroniği. Uzun sezonlar için mürettebat mahalleriyle Ege adaları arasında ideal.",
+        "equipment": ["Stabilizatörler", "Hidrolik platform", "Williams tender garajı", "AIS ve uydu iletişim"]
+      },
+      "y2": {
+        "name": "Mistral Blue",
+        "location": "Bodrum · Charter’a hazır",
+        "summary": "Hacimli iç mekân — charter odaklı konfigürasyon.",
+        "description": "Charter mükemmelliği için tasarlandı; mutfaktan sky lounge’a optimize mürettebat akışı. Güncel AV yükseltmesi ve soft goods yenilemesi.",
+        "equipment": ["Flybridge jakuzi", "Sıfır hız stabilizatörleri", "Yüksek kapasiteli su üretici"]
+      },
+      "y3": {
+        "name": "Northwind 62",
+        "location": "Marmaris",
+        "summary": "Düşük saatli çift MAN — hassas manevra ve modern iç.",
+        "description": "Panoramik salonlu anahtar teslim aile gezgini, hidrolik banyo platformu ve sıcak iklimler için sakin iç renk paleti.",
+        "equipment": ["Seakeeper", "Joystick manevra", "Flybridge yaz mutfağı"]
+      },
+      "y4": {
+        "name": "Obsidian Run",
+        "location": "Atina · AB KDV ödendi",
+        "summary": "Belirgin İtalyan çizgileri, mürettebat odaklı operasyon düzeni.",
+        "description": "Walk-around master suit, formal yemek alanı ve hidrolik passerelle beach club konsepti. Güncel boya detayı.",
+        "equipment": ["Uzun menzil tankları", "Gece görüş kamerası sistemi"]
+      }
+    },
+    "references": {
+      "r1": {
+        "title": "56m iç mekân yenileme ve AV yükseltmesi",
+        "category": "Refit",
+        "location": "Didim D-MARINE",
+        "excerpt": "Kapsamlı soft goods programı, aydınlatma tasarımı ve sinema AV — sekiz haftalık kritik yolda teslim."
+      },
+      "r2": {
+        "title": "72m makine dairesi modernizasyonu",
+        "category": "Makine",
+        "location": "Ege",
+        "excerpt": "Aşamalı yeniden güçlendirme planı, yük bankası doğrulaması ve motor değişimi öncesi titreşim tabanı."
+      },
+      "r3": {
+        "title": "Çoklu yat yönetim yığını",
+        "category": "Yönetim",
+        "location": "Türkiye · Yunanistan",
+        "excerpt": "Üç bayraklı yatta birleşik bakım takvimleri, dijital raporlama ve tedarikçi yönetişimi."
+      },
+      "r4": {
+        "title": "Gövde macunu ve boya yeniden doğuşu",
+        "category": "Refit",
+        "location": "Didim D-MARINE",
+        "excerpt": "Metalik şerit işçiliğiyle tam topside yeniden boyama — suya indirmeden önce mikro finish QC."
+      }
+    },
+    "blog": {
+      "b1": {
+        "title": "Ege’de yat satın alma: Deneyimli maliklerin dikkat ettikleri",
+        "excerpt": "KDV yollarından survey sırasına — sermaye bağlamadan önce kısa bir kontrol listesi.",
+        "category": "Piyasa içgörüsü",
+        "content": [
+          "Ege hazırlığı ödüllendirir. Edinimi teknik program olarak gören malikler — tatil dürtüsü olarak değil — fırsat geldiğinde daha hızlı hareket eder.",
+          "Gerçekçi bir seyir hipoteziyle başlayın: ana liman ritmi, misafir yükü, mürettebat ihtiyacı ve refit hazırlığı. Bu girdiler LOA, draft sınırları ve makine tercihlerini yönlendirir.",
+          "Survey’leri bilinçli yürütün: kozmetikten önce gövde bütünlüğü ve şaft hizası. Kozmetik aldatır; yapı ve tahrik ekonomisi aldatmaz.",
+          "KDV ve ithalat anlatıları uzman danışmanlık ister; genel forum tavsiyesi hızla eskir. Hukuki netliği tersaneleri gerçekçi okuyan bir broker masasıyla birleştirin."
+        ]
+      },
+      "b2": {
+        "title": "Sürprizsiz refit bütçeleme",
+        "excerpt": "Yedek bantlar, sınıf durdurmaları ve tedarikçi uyumu zaman çizelgesini ve yeniden satışı nasıl korur.",
+        "category": "Refit",
+        "content": [
+          "Refitler uzar — çünkü tersaneler sürpriz sever değil; keşif çalışması nadiren incelenen sistemlerde gizli yorgunluk ortaya çıkarır.",
+          "Bütçeleri kilometre taşlarına bağlayın: keşif, mühendislik donması, uzun vadeli parça tedariki, uygulama, devreye alma. Her kilometre taşına açık bir yedek tutun.",
+          "Sınıf kuralları ve bayrak devletleri çizimler inşa edilen gerçeklikten saptığında durdurma koyar. Dar toleranslı içlerde erken lazer tarama kendini amorti eder.",
+          "Kararları hemen malik onaylı değişiklik olarak belgeleyin — gelecekteki yeniden satış anlatıları izlenebilirlikten kazanır."
+        ]
+      },
+      "b3": {
+        "title": "Sıcak iklim seyri için mevsimsel bakım ritimleri",
+        "excerpt": "Doğu Akdeniz yazına göre ayarlanmış soğutma, su altı boyası ve mürettebat iş akışları.",
+        "category": "Bakım",
+        "content": [
+          "Sıcak iklim korozyon döngülerini ve organizma oluşumunu hızlandırır. Bakım takvimleri ılıman standartlardan sıcak gerçekliğe kaymalıdır.",
+          "Soğutma devreleri trend analizi hak eder — sıcaklık farkları alarm eşiklerinden önce arızayı işaret edebilir.",
+          "Su altı boyası çalışma sıklığıyla etkileşir; parlak stratejiler takvim boş haftalarla doluysa başarısız olur.",
+          "Mürettebat iş akışları kara tarafı teknik gözetimle senkron dijital kontrol listelerinden yararlanır — anomali olduğunda sessiz eskalasyon."
+        ]
+      }
+    },
+    "gallery": {
+      "g1": { "title": "Altın saatte limandan çıkış", "category": "Yaşam tarzı" },
+      "g2": { "title": "Berrak kıç suyu", "category": "Yatlar" },
+      "g3": { "title": "Marina geometrisi", "category": "Destinasyonlar" },
+      "g4": { "title": "Salon ışığı", "category": "İç mekân" },
+      "g5": { "title": "Köprü üstü kullanım", "category": "Detay" },
+      "g6": { "title": "Gece demiri", "category": "Atmosfer" }
+    }
+  }
+}

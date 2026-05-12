@@ -1,0 +1,562 @@
+{
+  "language": {
+    "switchTo": "Sprache wechseln",
+    "current": "Aktuelle Sprache"
+  },
+  "theme": {
+    "ariaLight": "Helles Design — zum Wechseln klicken",
+    "ariaDark": "Dunkles Design — zum Wechseln klicken",
+    "ariaSystem": "System — zum Wechseln klicken"
+  },
+  "nav": {
+    "home": "Start",
+    "about": "Über uns",
+    "services": "Leistungen",
+    "yachts": "Yachten",
+    "references": "Referenzen",
+    "gallery": "Galerie",
+    "blog": "Blog",
+    "contact": "Kontakt",
+    "ariaToggleMenu": "Menü umschalten",
+    "homeAria": "Yachtmenia Yachting Startseite",
+    "consultCta": "Beratung",
+    "mobileStartConversation": "Gespräch beginnen",
+    "servicesOverview": "Alle Leistungen",
+    "submenuSeeAll": "Übersicht",
+    "ariaToggleNavSubmenu": "Untermenü öffnen oder schließen",
+    "homeSub": {
+      "services": "Leistungen",
+      "featured": "Ausgewählte Yachten",
+      "references": "Referenzen",
+      "blog": "Blog"
+    },
+    "aboutSub": {
+      "pillars": "Werte & Ansatz"
+    },
+    "galleryCategories": {
+      "lifestyle": "Lifestyle",
+      "yachts": "Yachten",
+      "destinations": "Reviere",
+      "interiors": "Interieur",
+      "detail": "Detail",
+      "atmosphere": "Atmosphäre"
+    },
+    "contactSub": {
+      "phone": "Telefon",
+      "email": "E-Mail",
+      "whatsapp": "WhatsApp"
+    }
+  },
+  "footer": {
+    "since": "Seit {{year}}",
+    "intro": "Premium-Brokerage, Refit und Yachtmanagement aus Didim D-MARINE — entwickelt für Eigner, die Klarheit und Handwerkskunst schätzen.",
+    "explore": "Entdecken",
+    "services": "Leistungen",
+    "contact": "Kontakt",
+    "rights": "© {{year}} {{name}}. Alle Rechte vorbehalten.",
+    "credit": "Diese Website wurde von ULUS MEDYA umgesetzt.",
+    "privacy": "Datenschutzanfrage",
+    "compliance": "Compliance"
+  },
+  "serviceNav": {
+    "brokerage": "Yacht-Brokerage",
+    "refit": "Yacht-Refit",
+    "management": "Yachtmanagement",
+    "maintenance": "Wartung & Reparatur",
+    "consultancy": "Beratung",
+    "machinery-renovation": "Maschinenraum-Erneuerung"
+  },
+  "common": {
+    "back": "Zurück",
+    "viewMore": "Mehr ansehen",
+    "explore": "Entdecken",
+    "loading": "Wird geladen…",
+    "minRead": "{{count}} Min. Lesezeit",
+    "minReadShort": "{{count}} Min.",
+    "currentlyIn": "Aktuell vertreten in {{location}}"
+  },
+  "whatsapp": {
+    "ariaLabel": "Auf WhatsApp chatten",
+    "fabMessage": "Hallo Yachtmenia — ich möchte ein Yachtprojekt besprechen.",
+    "team": "Team auf WhatsApp",
+    "broker": "Brokerage-Desk auf WhatsApp",
+    "label": "WhatsApp"
+  },
+  "seo": {
+    "siteSuffix": "Premium-Yachtdienstleistungen Türkei",
+    "defaultDescription": "{{name}} — Brokerage, Refit, Yachtmanagement und maritime Beratung in Didim D-MARINE seit {{year}}.",
+    "titles": {
+      "about": "Über uns",
+      "services": "Leistungen",
+      "yachts": "Yachten",
+      "references": "Referenzen",
+      "gallery": "Galerie",
+      "blog": "Blog",
+      "contact": "Kontakt",
+      "notFound": "Seite nicht gefunden"
+    },
+    "descriptions": {
+      "about": "Erfahren Sie mehr über {{name}} — gegründet {{year}}, ansässig in {{location}}.",
+      "services": "{{name}} — Brokerage, Refit, Yachtmanagement, Wartung, Beratung und Maschinenraum-Erneuerung aus Didim D-MARINE.",
+      "yachts": "Entdecken Sie kuratierte Brokerage- und Charter-Angebote, die {{name}} im östlichen Mittelmeer betreut.",
+      "references": "Ausgewählte Refit-, Maschinen- und Managementprogramme von {{name}}.",
+      "gallery": "Visuelle Erzählung von Yachten, Destinationen und Handwerkskunst — {{name}}.",
+      "blog": "Einblicke in Brokerage, Refit-Ökonomie und Ägäis-Cruising — verfasst von {{name}}.",
+      "contact": "Kontaktieren Sie {{name}} in {{location}}. Telefon {{phone}}, E-Mail {{email}}.",
+      "notFound": "Die gesuchte Seite ist nicht verfügbar."
+    }
+  },
+  "home": {
+    "hero": {
+      "overline": "Didim · Ägäis",
+      "title": "Präzises Brokerage, Refit und Management für anspruchsvolle Eigner.",
+      "lead": "{{name}} liefert filmreife Umsetzung mit unternehmerischer Disziplin — von Akquise und Refit bis hin zu Maschinenraum-Modernisierung und langfristigem Management in {{location}}.",
+      "ctaYachts": "Empfohlene Yachten ansehen",
+      "ctaContact": "Beratung vereinbaren",
+      "trustDiligence": "Technische Sorgfalt zuerst",
+      "trustSince": "Seit {{year}}",
+      "concierge": {
+        "overline": "Concierge-Desk",
+        "title": "Direkter Draht zu Spezialisten"
+      }
+    },
+    "stats": {
+      "founded": "Gegründet",
+      "base": "Basis",
+      "disciplines": "Disziplinen",
+      "response": "Antwort",
+      "responseValue": "< 24 Std."
+    },
+    "services": {
+      "overline": "Kompetenzen",
+      "title": "Yacht-Expertise im gesamten Spektrum",
+      "subtitle": "Vom Brokerage bis zur Maschine — orchestriert aus Didim D-MARINE mit transparenten Meilensteinen.",
+      "cta": "Alle Leistungen"
+    },
+    "featured": {
+      "overline": "Bestand",
+      "title": "Empfohlene Yachten",
+      "subtitle": "Kuratierte Auswahl mit verifizierter Historie — anfragebasiert, nie aufdringlich.",
+      "cta": "Yachten durchsehen"
+    },
+    "references": {
+      "overline": "Belege",
+      "title": "Referenzen mit Gewicht",
+      "subtitle": "Ausgewählte Programme, die Refit-Tiefe, Maschinen-Sorgfalt und Management-Kontinuität belegen.",
+      "cta": "Referenzen entdecken"
+    },
+    "blog": {
+      "overline": "Journal",
+      "title": "Erkenntnisse für Eigner & Kapitäne",
+      "subtitle": "Ausführliche Perspektive — saisonale Wartung, Refit-Ökonomie und Ägäis-Markt­signale.",
+      "cta": "Zum Blog"
+    },
+    "cta": {
+      "overline": "Nächster Schritt",
+      "title": "Erzählen Sie uns von Ihren Vorhaben.",
+      "subtitle": "Wir antworten innerhalb eines Werktages — schneller bei See­erprobungen oder Werftfenstern.",
+      "primary": "Didim-Desk kontaktieren",
+      "secondary": "Leistungsübersicht herunterladen"
+    }
+  },
+  "about": {
+    "header": {
+      "title": "Autorität, geschmiedet in der Ägäis",
+      "subtitle": "Engineering-orientierte Kultur mit Service auf Hospitality-Niveau — seit 2006."
+    },
+    "lead": "{{name}} agiert an der Schnittstelle von technischer Strenge und diskreter Kundenbetreuung.",
+    "p1": "Von Brokerage-Diligence bis zur Refit-Orchestrierung richten unsere Teams Schiffsarchitekten, Projektmanager und Betriebsspezialisten auf ein Mandat aus: Substanzwert und Cruising-Bereitschaft sichern.",
+    "p2": "Mit Sitz in {{location}} nutzen wir die Ägäis-Logistik und koordinieren gleichzeitig mediterrane Expertise — stets dokumentiert, stets verantwortlich.",
+    "pillars": {
+      "governance": {
+        "title": "Governance",
+        "body": "Transparente Reporting-Pakete für Eigner und Kapitäne."
+      },
+      "craft": {
+        "title": "Handwerk",
+        "body": "Werft-natives Handwerk nach OEM-Standards."
+      },
+      "continuity": {
+        "title": "Kontinuität",
+        "body": "Programme, ausgelegt auf Wiederverkauf und Langstrecken-Cruising."
+      }
+    }
+  },
+  "servicesPage": {
+    "header": {
+      "title": "Integrierte Yachtdisziplinen",
+      "subtitle": "Wählen Sie Ihren Bereich — wir formieren die richtigen Spezialisten um Ihre Ziele."
+    },
+    "section": {
+      "title": "Kompetenzmatrix",
+      "subtitle": "Jeder Auftrag beginnt mit Zuhören — dann Engineering, Terminplanung und kristallklares Reporting."
+    },
+    "ctaPrimary": "Technisches Gespräch planen",
+    "ctaSecondary": "Umgesetzte Programme ansehen"
+  },
+  "serviceDetail": {
+    "deliveryFocus": "Umsetzungsfokus",
+    "discussOverline": "Diese Leistung besprechen",
+    "discussTitle": "Maßgeschneiderte Scope-Prüfung",
+    "discussBody": "Teilen Sie Termine, Unterlagen und Zielhäfen — wir antworten mit einem strukturierten nächsten Schritt."
+  },
+  "yachtsPage": {
+    "header": {
+      "title": "Kuratierte Angebote",
+      "subtitle": "Verifizierte Historien, transparente Spezifikationen — anfragebasierte Präsentationen."
+    },
+    "section": {
+      "title": "Bestands­überblick",
+      "subtitle": "Filter- und Vergleichs­ebenen lassen sich an Ihr CMS/Ihre API anbinden — diese Version liefert kuratierte Beispieldaten."
+    }
+  },
+  "yachtDetail": {
+    "back": "Zurück zu den Yachten",
+    "priceOnRequest": "Preis auf Anfrage",
+    "specs": {
+      "length": "Länge",
+      "beam": "Breite",
+      "cabins": "Kabinen",
+      "year": "Baujahr"
+    },
+    "requestDetails": "Details anfragen",
+    "specsDisclaimer": "Spezifikationen veranschaulichen eine repräsentative Konfiguration — vor verbindlicher Zusage durch Survey und Seeerprobung verifizieren.",
+    "overview": "Überblick",
+    "equipment": "Ausstattungs-Highlights",
+    "showImage": "Bild {{index}} anzeigen",
+    "inquiryOverline": "Anfrage",
+    "inquiryTitle": "Vertrauliches Gespräch vereinbaren",
+    "inquiryBody": "Erwähnen Sie {{name}} — unser Brokerage-Desk koordiniert Unterlagen und Besichtigungen."
+  },
+  "yachtCard": {
+    "status": {
+      "for-sale": "Zum Verkauf",
+      "under-offer": "Unter Vorbehalt",
+      "sold": "Verkauft",
+      "charter": "Charter",
+      "available": "Verfügbar"
+    },
+    "featured": "Empfohlen"
+  },
+  "serviceCard": {
+    "explore": "Entdecken"
+  },
+  "referenceCard": {
+    "view": "Referenzen ansehen"
+  },
+  "referencesPage": {
+    "header": {
+      "title": "Realisierte Programme",
+      "subtitle": "Belegorientiertes Storytelling — Budgets, Disziplinen und Ergebnisse."
+    },
+    "section": {
+      "title": "Aktuelle Dynamik",
+      "subtitle": "Erweitern Sie jeden Auftrag im Beratungs­gespräch — tiefere Cases lassen sich nahtlos in CMS-getriebene Layouts überführen."
+    }
+  },
+  "galleryPage": {
+    "header": {
+      "title": "Kuratierte Bilder",
+      "subtitle": "Filmreife Kompositionen — Ägäis-Licht, diszipliniertes Handwerk."
+    },
+    "section": {
+      "title": "Momente & Materialien",
+      "subtitle": "Bild antippen für die Detail­ansicht — bereit für CMS-getriebene Sammlungen."
+    },
+    "close": "Schließen"
+  },
+  "blogPage": {
+    "header": {
+      "title": "Journal",
+      "subtitle": "Redaktionelle Perspektive ohne Lärm — geschrieben für Eigner und technische Leitungsebene."
+    },
+    "section": {
+      "title": "Aktuelle Beiträge",
+      "subtitle": "Diese Einträge lassen sich an Markdown, Sanity oder Contentful anbinden — die Strukturen passen bereits."
+    }
+  },
+  "blogPost": {
+    "back": "← Zurück zum Journal"
+  },
+  "contact": {
+    "header": {
+      "title": "Concierge-Desk",
+      "subtitle": "Direkter Zugang zu Brokerage-, Refit- und Management-Spezialisten."
+    },
+    "visit": {
+      "overline": "Besuch",
+      "body": "Termin­besuche willkommen — technische Rundgänge bitte mit Vorlauf abstimmen."
+    },
+    "direct": {
+      "overline": "Direkt"
+    },
+    "form": {
+      "title": "Nachricht senden",
+      "subtitle": "In der Regel antworten wir innerhalb eines Werktages — Yachtdaten helfen uns, gezielt zu antworten.",
+      "responseExpectation": "Wir bemühen uns um eine Antwort innerhalb eines Werktages. Bei Dringlichkeit erreichen Sie dasselbe Team telefonisch oder per WhatsApp."
+    }
+  },
+  "form": {
+    "fullName": "Vollständiger Name",
+    "fullNamePlaceholder": "Alex Marin",
+    "email": "E-Mail",
+    "emailPlaceholder": "sie@firma.com",
+    "phone": "Telefon",
+    "phoneOptional": "(optional)",
+    "phonePlaceholder": "+49 …",
+    "subject": "Betreff",
+    "subjects": {
+      "general": "Allgemeine Anfrage",
+      "brokerage": "Brokerage",
+      "refit": "Refit",
+      "management": "Management",
+      "maintenance": "Wartung & Reparatur",
+      "consultancy": "Beratung",
+      "machinery-renovation": "Maschinenraum-Erneuerung"
+    },
+    "budgetLabel": "Ungefähres Budget (EUR)",
+    "timelineLabel": "Zeitrahmen",
+    "budget": {
+      "unspecified": "Keine Angabe",
+      "under250k": "Unter 250.000 €",
+      "250k-500k": "250.000 – 500.000 €",
+      "500k-1m": "500.000 € – 1 Mio. €",
+      "1m-3m": "1 – 3 Mio. €",
+      "3mplus": "Über 3 Mio. €"
+    },
+    "timeline": {
+      "unspecified": "Keine Angabe",
+      "within3mo": "Innerhalb von 3 Monaten",
+      "3-12mo": "3–12 Monate",
+      "12mo-plus": "Länger als 12 Monate",
+      "research": "Recherche / kein festes Datum"
+    },
+    "message": "Nachricht",
+    "messagePlaceholder": "Erzählen Sie uns von Ihrer Yacht, dem Zeitplan und Ihren Zielen.",
+    "consent": "Ich bin damit einverstanden, zu dieser Anfrage kontaktiert zu werden.",
+    "submit": "Anfrage senden",
+    "submitting": "Wird gesendet…",
+    "submitted": "Nachricht erhalten",
+    "successTitle": "Ihre Anfrage ist eingegangen",
+    "successHint": "Unser Team prüft Ihre Angaben und meldet sich schnellstmöglich.",
+    "errorHint": "Etwas ist schiefgelaufen. Bitte rufen Sie uns direkt an.",
+    "errorNotConfigured": "Das Kontaktformular ist in dieser Umgebung noch nicht eingerichtet. Bitte schreiben Sie uns eine E-Mail oder rufen Sie an."
+  },
+  "notFound": {
+    "code": "404",
+    "title": "Vom Kurs abgekommen",
+    "body": "Die angeforderte Seite ist nicht verfügbar — kehren wir in ruhigere Gewässer zurück.",
+    "ctaHome": "Zur Startseite",
+    "ctaContact": "Kontakt-Desk",
+    "ctaYachts": "Yachten ansehen",
+    "needHelp": "Hilfe nötig? Rufen Sie an unter"
+  },
+  "breadcrumb": {
+    "home": "Start"
+  },
+  "data": {
+    "services": {
+      "brokerage": {
+        "title": "Yacht-Brokerage",
+        "shortTitle": "Brokerage",
+        "tagline": "Anspruchsvolle Akquise und diskrete Verkäufe in Premium-Segmenten.",
+        "excerpt": "Marktintelligenz, technische Prüfung und Verhandlungs­unterstützung für Käufer und Verkäufer mit Anspruch auf Präzision.",
+        "highlights": [
+          "Qualifizierte Yacht­beschaffung",
+          "Koordination von Survey & Seeerprobung",
+          "Beratung zu Eigentum und Dokumentation",
+          "Reichweite Ägäis & Mittelmeer"
+        ],
+        "body": [
+          "Unser Brokerage-Desk verbindet erfahrenen Marktblick mit ingenieurs­nahem Diligence-Verständnis — Entscheidungen ruhen auf Realität, nicht auf Hochglanz­broschüren.",
+          "Vom ersten Gespräch bis zum Closing stimmen wir Termine mit Werftplänen, Klassifikations­anforderungen und Ihren Betriebs­prioritäten ab.",
+          "Ob Sie aufrüsten, konsolidieren oder erstmals in den Yachtbesitz eintreten — wir bleiben Ihr alleiniger verantwortlicher Partner."
+        ]
+      },
+      "refit": {
+        "title": "Yacht-Refit",
+        "shortTitle": "Refit",
+        "tagline": "Transformations­programme, geplant für Langlebigkeit und Wiederverkaufs­wert.",
+        "excerpt": "Innen-, Außen- und Systemupgrades mit disziplinierter Projekt­steuerung und transparentem Reporting.",
+        "highlights": [
+          "Planung von Konzept bis Übergabe",
+          "Koordination der Innenarchitektur",
+          "Lackierung & Composites",
+          "Elektrik & AV/IT-Integration"
+        ],
+        "body": [
+          "Refit ist der Punkt, an dem Ambition auf Engineering trifft. Wir scopen bewusst, phasieren intelligent und kommunizieren klar — besonders wenn Überraschungen auftauchen.",
+          "Unsere Präsenz in Didim D-MARINE hält die Logistik straff und Entscheidungen schnell, abgesichert durch strenge QA-Punkte.",
+          "Schaufenster-Interieurs oder geräuschlose Zuverlässigkeits­upgrades — Ihr Refit-Narrativ sollte Ihrem Cruising-Plan entsprechen. Wir formen beides."
+        ]
+      },
+      "management": {
+        "title": "Yachtmanagement",
+        "shortTitle": "Management",
+        "tagline": "Operative Exzellenz mit Diskretion am Steuer.",
+        "excerpt": "Crewing, Compliance, Budgets und Wartungs­orchestrierung für Eigner, die an Land Ruhe wollen.",
+        "highlights": [
+          "Jährliche Betriebspläne",
+          "Klassifikation & Flaggenstaat-Verbindung",
+          "Lieferanten-Governance",
+          "Digitale Reporting-Pakete"
+        ],
+        "body": [
+          "Management bedeutet Kontinuität: planbare Wartungs­rhythmen, transparente Ausgaben und ein Brücken­team im Takt Ihres Cruising-Kalenders.",
+          "Wir koordinieren Surveys, Werftperioden und Flaggenstaat-Pflichten ohne Lärm — knappe Zusammenfassungen, klare Empfehlungen.",
+          "Von saisonaler Inbetriebnahme bis zu Notfall-Protokollen bleibt das Schiff einsatzbereit."
+        ]
+      },
+      "maintenance": {
+        "title": "Wartung & Reparatur",
+        "shortTitle": "Wartung",
+        "tagline": "Präzise Pflege — mechanische, elektrische und Rumpf­integrität.",
+        "excerpt": "Geplanter Service und reaktionsschnelle Reparaturen mit OEM-Standards und nachverfolgbarer Teile­beschaffung.",
+        "highlights": [
+          "Antrieb & Generatoren",
+          "Hydraulik & Steuerung",
+          "Unterwasser­arbeiten",
+          "Lack- & Spachtel­touchpoints"
+        ],
+        "body": [
+          "Wartung ist Risiko­minderung, ausgedrückt in Anzugs­momenten, Ölanalysen und saisonalen Checklisten — dokumentiert und wiederholbar.",
+          "Wir verbinden OEM-Pläne mit realen Nutzungs­mustern, damit nichts pauschal behandelt wird.",
+          "Notfall­protokolle sichern schnelle Triage mit klarer Eigner­kommunikation."
+        ]
+      },
+      "consultancy": {
+        "title": "Beratung",
+        "shortTitle": "Beratung",
+        "tagline": "Strategischer Marine-Rat für Investitionen und Refit-Investitionen.",
+        "excerpt": "Technische Due Diligence, Spezifikations­prüfungen und Eigner­vertretung in Verhandlungen.",
+        "highlights": [
+          "Orchestrierung von Vorkauf-Surveys",
+          "Spezifikations-Audits",
+          "CAPEX-Modellierung Refit",
+          "Neubau-Beratung"
+        ],
+        "body": [
+          "Unsere Beratungs­ebene existiert für Momente, in denen viel auf dem Spiel steht und Unklarheit teuer wird.",
+          "Wir übersetzen Zeichnungen und Pläne in Entscheidungen, hinter denen Eigner stehen können — technisch und finanziell.",
+          "Engagements reichen von fokussierten Reviews bis zu mehrmonatiger Eigner­vertretung über Werften und Broker hinweg."
+        ]
+      },
+      "machinery-renovation": {
+        "title": "Maschinenraum-Erneuerung",
+        "shortTitle": "Maschinen",
+        "tagline": "Antrieb und Bordnetzsysteme, ausgelegt auf Zuverlässigkeit.",
+        "excerpt": "Modernisierung des Maschinenraums, Repower-Programme und Auxiliary-Upgrades in marinetauglicher Verarbeitung.",
+        "highlights": [
+          "Repower-Programme",
+          "Kraftstoffsystem-Retrofit",
+          "Stabilisierungs-Upgrades",
+          "Geräusch- & Vibrationsminderung"
+        ],
+        "body": [
+          "Maschinenraum-Erneuerung beweist technische Glaubwürdigkeit in Toleranzen, Kühlpfaden und Lastprofilen.",
+          "Wir entwickeln Upgrades, die strukturelle Margen und Klassen­erwartungen respektieren — keine Abkürzungen als Einsparungen verkleidet.",
+          "Jedes Projekt erhält Inbetriebnahme­protokolle, die die Leistung unter realistischen Seezuständen validieren."
+        ]
+      }
+    },
+    "yachts": {
+      "y1": {
+        "name": "Aegean Serenity",
+        "location": "Didim · Ägäis",
+        "summary": "Tadellose 86 Yacht mit umfangreicher Mittelmeer-Cruising-Historie.",
+        "description": "Ein veredeltes Flybridge-Layout mit großzügigen Empfangsbereichen, kürzlich gewartetem Antrieb und aufgerüsteter Navigations­elektronik. Ideal für Ägäis-Inselhopping mit Crew-Quartieren für lange Saisons.",
+        "equipment": ["Stabilisatoren", "Hydraulische Plattform", "Williams-Tender-Garage", "AIS & Satelliten-Kommunikation"]
+      },
+      "y2": {
+        "name": "Mistral Blue",
+        "location": "Bodrum · Charterbereit",
+        "summary": "Volumenstarker Innenraum — Charter-orientierte Konfiguration.",
+        "description": "Auf Charter-Exzellenz ausgelegt, mit optimiertem Crew-Workflow von der Pantry bis zur Sky-Lounge. Aktuelles AV-Upgrade und Soft-Goods-Refresh.",
+        "equipment": ["Whirlpool auf Flybridge", "Zero-Speed-Stabilisatoren", "Hochleistungs-Wassermacher"]
+      },
+      "y3": {
+        "name": "Northwind 62",
+        "location": "Marmaris",
+        "summary": "Niedrige Stunden Twin-MAN — präzises Handling und modernes Interieur.",
+        "description": "Schlüsselfertiger Familien-Cruiser mit Panorama-Salon, hydraulischer Badeplattform und dezenter Innenfarbpalette für warme Klimate.",
+        "equipment": ["Seakeeper", "Joystick-Manövrierung", "Sommerpantry auf Flybridge"]
+      },
+      "y4": {
+        "name": "Obsidian Run",
+        "location": "Athen · EU-MwSt. bezahlt",
+        "summary": "Markante italienische Linien mit crew-orientiertem Betriebs­layout.",
+        "description": "Walk-around King-Master, formelles Esszimmer und Beach-Club-Konzept mit hydraulischer Passerelle. Aktuelle Lack-Detaillierung.",
+        "equipment": ["Tanks für erweiterte Reichweite", "Nachtsicht-Kamerasystem"]
+      }
+    },
+    "references": {
+      "r1": {
+        "title": "56m Interieur-Refresh & AV-Upgrade",
+        "category": "Refit",
+        "location": "Didim D-MARINE",
+        "excerpt": "Komplettes Soft-Goods-Programm, Lichtdesign und Kino-AV — abgeliefert in einem achtwöchigen kritischen Pfad."
+      },
+      "r2": {
+        "title": "72m Maschinenraum-Modernisierung",
+        "category": "Maschinen",
+        "location": "Ägäis",
+        "excerpt": "Etappenweise Repower-Planung mit Lastbank-Validierung und Vibrations-Baseline vor dem Motorwechsel."
+      },
+      "r3": {
+        "title": "Multi-Yacht-Management-Stack",
+        "category": "Management",
+        "location": "Türkei · Griechenland",
+        "excerpt": "Vereinheitlichte Wartungs­kalender, digitales Reporting und Lieferanten-Governance über drei beflaggte Yachten."
+      },
+      "r4": {
+        "title": "Rumpf-Spachtelung & Lack-Renaissance",
+        "category": "Refit",
+        "location": "Didim D-MARINE",
+        "excerpt": "Komplette Topside-Neulackierung mit metallischer Streifen­führung — Mikro-Finish-QC vor dem Stapellauf."
+      }
+    },
+    "blog": {
+      "b1": {
+        "title": "Yachtkauf in der Ägäis: Worauf erfahrene Eigner achten",
+        "excerpt": "Von Mehrwertsteuer-Pfaden bis zur Survey-Reihenfolge — eine knappe Checkliste vor der Kapitalbindung.",
+        "category": "Markt­einblick",
+        "content": [
+          "Die Ägäis belohnt Vorbereitung. Eigner, die Akquise als technisches Programm begreifen — nicht als Urlaubs-Impuls — sind schneller, wenn Gelegenheiten auftauchen.",
+          "Beginnen Sie mit einer realistischen Cruising-Hypothese: Heimathafen-Rhythmus, Gäste­last, Crew-Bedarf und Refit-Bereitschaft. Diese Eingaben steuern LOA, Tiefgangs­grenzen und Maschinen­präferenzen.",
+          "Führen Sie Surveys bewusst aus: Rumpfintegrität und Wellenausrichtung vor Kosmetik. Kosmetik täuscht; Struktur und Antriebs­ökonomie nicht.",
+          "Mehrwertsteuer- und Import-Narrative verlangen spezialisierte Beratung; generischer Forenrat altert schlecht. Verbinden Sie juristische Klarheit mit einem Brokerage-Desk, der Werften realistisch liest."
+        ]
+      },
+      "b2": {
+        "title": "Refit-Budgetierung ohne Überraschungen",
+        "excerpt": "Wie Reservebänder, Klassen-Holds und Lieferanten-Abstimmung Termin und Wiederverkauf schützen.",
+        "category": "Refit",
+        "content": [
+          "Refits dehnen sich aus — nicht weil Werften Überraschungen lieben, sondern weil Discovery-Arbeit latente Ermüdung in Systemen aufdeckt, die Eigner selten prüfen.",
+          "Verankern Sie Budgets an Meilensteinen: Discovery, Engineering-Freeze, Beschaffung von Long-Lead-Items, Ausführung, Inbetriebnahme. Jeder Meilenstein erhält einen expliziten Reservebetrag.",
+          "Klassifikations­gesellschaften und Flaggenstaaten setzen Holds, wenn Zeichnungen von der gebauten Realität abweichen. Frühes Laser-Scanning amortisiert sich, wenn Interieurs auf engste Toleranzen angewiesen sind.",
+          "Dokumentieren Sie Entscheidungen sofort als Eigner-genehmigte Variationen — künftige Wiederverkaufs­narrative profitieren von Nachverfolgbarkeit."
+        ]
+      },
+      "b3": {
+        "title": "Saisonale Wartungs­rhythmen für Warm­klima-Cruising",
+        "excerpt": "Kühlsysteme, Unterwasser­anstriche und Crew-Workflows, abgestimmt auf östliche Mittelmeer-Sommer.",
+        "category": "Wartung",
+        "content": [
+          "Warmes Klima beschleunigt Korrosions­zyklen und Bewuchs­raten. Wartungs­kalender müssen sich von gemäßigten Standards auf Hitze-Realitäten verschieben.",
+          "Kühlkreisläufe verdienen Trending — Temperatur-Deltas sagen Ausfälle früher voraus als Alarmschwellen.",
+          "Unterwasser­anstriche interagieren mit Betriebsfrequenz; Hochglanz-Strategien scheitern, wenn Stillstands­wochen den Kalender dominieren.",
+          "Crew-Workflows profitieren von digitalen Checklisten, die mit der landseitigen technischen Aufsicht synchronisiert sind — geräuschfreie Eskalationen, wenn Anomalien auftreten."
+        ]
+      }
+    },
+    "gallery": {
+      "g1": { "title": "Goldene-Stunde-Auslaufen", "category": "Lifestyle" },
+      "g2": { "title": "Klares Kielwasser", "category": "Yachten" },
+      "g3": { "title": "Marina-Geometrie", "category": "Destinationen" },
+      "g4": { "title": "Salon-Licht", "category": "Interieurs" },
+      "g5": { "title": "Brücken-Bedienung", "category": "Detail" },
+      "g6": { "title": "Nacht-Anker", "category": "Atmosphäre" }
+    }
+  }
+}
