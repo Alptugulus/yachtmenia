@@ -16,23 +16,34 @@ const Services = lazy(() => import('@/pages/Services').then((m) => ({ default: m
 const YachtDetail = lazy(() => import('@/pages/YachtDetail').then((m) => ({ default: m.YachtDetail })))
 const Yachts = lazy(() => import('@/pages/Yachts').then((m) => ({ default: m.Yachts })))
 
-export const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <MainLayout />,
-    children: [
-      { index: true, element: <Home /> },
-      { path: 'about', element: <About /> },
-      { path: 'services', element: <Services /> },
-      { path: 'services/:slug', element: <ServiceDetail /> },
-      { path: 'yachts', element: <Yachts /> },
-      { path: 'yachts/:slug', element: <YachtDetail /> },
-      { path: 'references', element: <References /> },
-      { path: 'gallery', element: <Gallery /> },
-      { path: 'blog', element: <Blog /> },
-      { path: 'blog/:slug', element: <BlogPost /> },
-      { path: 'contact', element: <Contact /> },
-      { path: '*', element: <NotFound /> },
-    ],
-  },
-])
+/** GitHub Pages proje sitesi (`base: '/repo/'`) için; kök yayında Vite varsayılanı `/` → basename yok. */
+function appBasename(): string | undefined {
+  const base = import.meta.env.BASE_URL
+  if (!base || base === '/') return undefined
+  return base.endsWith('/') ? base.slice(0, -1) : base
+}
+
+const b = appBasename()
+export const router = createBrowserRouter(
+  [
+    {
+      path: '/',
+      element: <MainLayout />,
+      children: [
+        { index: true, element: <Home /> },
+        { path: 'about', element: <About /> },
+        { path: 'services', element: <Services /> },
+        { path: 'services/:slug', element: <ServiceDetail /> },
+        { path: 'yachts', element: <Yachts /> },
+        { path: 'yachts/:slug', element: <YachtDetail /> },
+        { path: 'references', element: <References /> },
+        { path: 'gallery', element: <Gallery /> },
+        { path: 'blog', element: <Blog /> },
+        { path: 'blog/:slug', element: <BlogPost /> },
+        { path: 'contact', element: <Contact /> },
+        { path: '*', element: <NotFound /> },
+      ],
+    },
+  ],
+  b ? { basename: b } : {},
+)

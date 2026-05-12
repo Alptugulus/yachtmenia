@@ -1,14 +1,33 @@
+import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import tailwindcss from '@tailwindcss/vite'
 import react from '@vitejs/plugin-react'
-import { defineConfig } from 'vite'
+import { defineConfig, type Plugin } from 'vite'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
+/** Tüm client-side yollar için: build çıktısına 404.html kopyası (GitHub Pages). Netlify: public/_redirects; Apache: public/.htaccess; Vercel: vercel.json */
+function spaFallback404Html(): Plugin {
+  let outDirAbs = ''
+  return {
+    name: 'spa-fallback-404-html',
+    configResolved(config) {
+      outDirAbs = path.resolve(config.root, config.build.outDir)
+    },
+    closeBundle() {
+      const indexHtml = path.join(outDirAbs, 'index.html')
+      const notFoundHtml = path.join(outDirAbs, '404.html')
+      if (fs.existsSync(indexHtml)) {
+        fs.copyFileSync(indexHtml, notFoundHtml)
+      }
+    },
+  }
+}
+
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react(), tailwindcss()],
+  plugins: [react(), tailwindcss(), spaFallback404Html()],
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
