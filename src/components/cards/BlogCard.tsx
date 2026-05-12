@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import { Clock } from 'lucide-react'
 import { motion, useReducedMotion } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
+import { ResponsiveImage } from '@/components/common/ResponsiveImage'
 import { intlLocaleForLanguage } from '@/i18n/intlLocale'
 import type { BlogPost } from '@/types'
 
@@ -19,11 +20,14 @@ export function BlogCard({ post, index = 0 }: { post: BlogPost; index?: number }
     >
       <Link to={`/blog/${post.slug}`} className="block">
         <div className="relative aspect-[3/2] overflow-hidden">
-          <img
+          <ResponsiveImage
             src={post.coverImage}
             alt=""
+            pictureClassName="block h-full w-full"
             className="h-full w-full origin-center object-cover transition-transform duration-500 ease-out will-change-transform group-hover:scale-[1.03] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
             loading="lazy"
+            decoding="async"
+            sizes="(max-width: 768px) 100vw, 33vw"
           />
           <div className="absolute left-3 top-3 rounded-full bg-white/90 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-brand">
             {post.category}

@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react'
 import { Link } from 'react-router-dom'
 import { ChevronRight } from 'lucide-react'
+import { ResponsiveImage } from '@/components/common/ResponsiveImage'
 
 interface Crumb {
   label: string
@@ -20,12 +21,14 @@ export function PageHeader({ title, subtitle, crumbs, backgroundImage, badge }: 
     <section className="relative isolate overflow-hidden pt-28 after:pointer-events-none after:absolute after:inset-x-0 after:bottom-0 after:z-10 after:h-px after:bg-gradient-to-r after:from-transparent after:via-white/25 after:to-transparent">
       {backgroundImage ? (
         <>
-          <img
+          <ResponsiveImage
             src={backgroundImage}
             alt=""
-            className="absolute inset-0 h-full w-full object-cover"
+            pictureClassName="absolute inset-0 block h-full w-full"
+            className="h-full w-full object-cover"
             loading="eager"
             decoding="async"
+            sizes="100vw"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-brand via-brand/85 to-brand/60" />
           <div className="absolute inset-0 bg-gradient-to-t from-brand/95 via-brand/40 to-transparent" />

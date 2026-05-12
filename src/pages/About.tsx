@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next'
 import { Seo } from '@/components/common/Seo'
+import { ResponsiveImage } from '@/components/common/ResponsiveImage'
 import { FadeIn } from '@/components/common/FadeIn'
 import { PageHeader } from '@/components/layout/PageHeader'
 import { COMPANY } from '@/utils/constants'
@@ -57,11 +58,14 @@ export function About() {
         </div>
       </section>
 
-      <img
+      <ResponsiveImage
         src="/media/photo-1569256326873-7d3c885518d9.jpg"
         alt="Motor yacht exterior detail — craftsmanship and paint finish"
+        pictureClassName="block h-[420px] w-full"
         className="h-[420px] w-full object-cover"
         loading="lazy"
+        decoding="async"
+        sizes="100vw"
       />
     </>
   )

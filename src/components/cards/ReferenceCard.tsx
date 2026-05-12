@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import { ArrowUpRight } from 'lucide-react'
 import { motion, useReducedMotion } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
+import { ResponsiveImage } from '@/components/common/ResponsiveImage'
 import type { ReferenceProject } from '@/types'
 
 export function ReferenceCard({ project, index = 0 }: { project: ReferenceProject; index?: number }) {
@@ -18,11 +19,14 @@ export function ReferenceCard({ project, index = 0 }: { project: ReferenceProjec
     >
       <Link to="/references" className="block">
         <div className="relative aspect-[4/3] overflow-hidden">
-          <img
+          <ResponsiveImage
             src={project.image}
             alt=""
+            pictureClassName="block h-full w-full"
             className="h-full w-full origin-center object-cover transition-transform duration-500 ease-out will-change-transform group-hover:scale-[1.03] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
             loading="lazy"
+            decoding="async"
+            sizes="(max-width: 1024px) 100vw, 50vw"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-brand via-brand/40 to-transparent" />
           <div className="absolute left-4 top-4 rounded-full bg-white/90 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-brand">

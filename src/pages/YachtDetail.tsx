@@ -3,6 +3,7 @@ import { Link, Navigate, useParams } from 'react-router-dom'
 import { Anchor, ChevronLeft, MapPin, Ruler } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { Seo } from '@/components/common/Seo'
+import { ResponsiveImage } from '@/components/common/ResponsiveImage'
 import { Button } from '@/components/common/Button'
 import { FadeIn } from '@/components/common/FadeIn'
 import { ContactForm } from '@/components/forms/ContactForm'
@@ -71,11 +72,14 @@ export function YachtDetail() {
         <div className="grid gap-10 lg:grid-cols-[1.35fr_0.65fr]">
           <div className="space-y-4">
             <div className="overflow-hidden rounded-2xl border border-stone/50 bg-pearl shadow-card ring-1 ring-primary/[0.04]">
-              <img
+              <ResponsiveImage
                 src={mainImage}
                 alt={`${yacht.name} — yacht photography`}
+                pictureClassName="block aspect-[16/10] w-full"
                 className="aspect-[16/10] w-full object-cover"
                 loading="eager"
+                decoding="async"
+                sizes="(max-width: 1024px) 100vw, 65vw"
               />
             </div>
             <div className="flex gap-3 overflow-x-auto pb-2">
@@ -89,7 +93,15 @@ export function YachtDetail() {
                   }`}
                   aria-label={t('yachtDetail.showImage', { index: idx + 1 })}
                 >
-                  <img src={src} alt="" className="h-full w-full object-cover" loading="lazy" />
+                  <ResponsiveImage
+                    src={src}
+                    alt=""
+                    pictureClassName="block h-full w-full"
+                    className="h-full w-full object-cover"
+                    loading="lazy"
+                    decoding="async"
+                    sizes="112px"
+                  />
                 </button>
               ))}
             </div>

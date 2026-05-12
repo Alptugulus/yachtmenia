@@ -24,6 +24,7 @@ import {
 import { useTranslation } from 'react-i18next'
 import { BrandLogo } from '@/components/common/BrandLogo'
 import { LanguageSwitcher } from '@/components/common/LanguageSwitcher'
+import { ResponsiveImage } from '@/components/common/ResponsiveImage'
 import { blogPosts, references, yachts } from '@/data'
 import type { NavSubItem } from '@/utils/constants'
 import { COMPANY, MAIN_NAV, SERVICE_NAV } from '@/utils/constants'
@@ -262,7 +263,15 @@ function MegaMenuBody({
                   className={`group overflow-hidden rounded-2xl ${cardBase} p-0`}
                 >
                   <div className="relative aspect-[16/10] overflow-hidden">
-                    <img src={y.heroImage} alt="" className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.04]" />
+                    <ResponsiveImage
+                      src={y.heroImage}
+                      alt=""
+                      pictureClassName="block h-full w-full"
+                      className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.04]"
+                      loading="lazy"
+                      decoding="async"
+                      sizes="(max-width: 1280px) 33vw, 320px"
+                    />
                     <div className="absolute inset-0 bg-gradient-to-t from-brand/90 via-brand/30 to-transparent" />
                     <div className="absolute inset-x-0 bottom-0 p-4">
                       <p className={`font-display text-lg text-white drop-shadow-sm`}>{y.name}</p>
@@ -317,7 +326,15 @@ function MegaMenuBody({
                   className={`group overflow-hidden rounded-2xl ${cardBase} p-0`}
                 >
                   <div className="relative aspect-[5/4] overflow-hidden">
-                    <img src={r.image} alt="" className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.04]" />
+                    <ResponsiveImage
+                      src={r.image}
+                      alt=""
+                      pictureClassName="block h-full w-full"
+                      className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.04]"
+                      loading="lazy"
+                      decoding="async"
+                      sizes="(max-width: 1280px) 33vw, 320px"
+                    />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
                     <div className="absolute inset-x-0 bottom-0 p-4">
                       <p className="text-[0.65rem] font-bold uppercase tracking-widest text-gold/95">{r.category}</p>
@@ -390,7 +407,15 @@ function MegaMenuBody({
                   className={`group flex flex-col overflow-hidden rounded-2xl ${cardBase} p-0`}
                 >
                   <div className="relative aspect-[16/10] overflow-hidden">
-                    <img src={p.coverImage} alt="" className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.04]" />
+                    <ResponsiveImage
+                      src={p.coverImage}
+                      alt=""
+                      pictureClassName="block h-full w-full"
+                      className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.04]"
+                      loading="lazy"
+                      decoding="async"
+                      sizes="(max-width: 1280px) 33vw, 320px"
+                    />
                   </div>
                   <div className="flex flex-1 flex-col p-4">
                     <p className={`text-[0.65rem] font-bold uppercase tracking-widest ${textMuted}`}>{p.category}</p>

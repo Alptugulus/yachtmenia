@@ -2,13 +2,13 @@
 import { lazy } from 'react'
 import { createBrowserRouter } from 'react-router-dom'
 import { MainLayout } from '@/components/layout/MainLayout'
+import { Home } from '@/pages/Home'
 
 const About = lazy(() => import('@/pages/About').then((m) => ({ default: m.About })))
 const Blog = lazy(() => import('@/pages/Blog').then((m) => ({ default: m.Blog })))
 const BlogPost = lazy(() => import('@/pages/BlogPost').then((m) => ({ default: m.BlogPost })))
 const Contact = lazy(() => import('@/pages/Contact').then((m) => ({ default: m.Contact })))
 const Gallery = lazy(() => import('@/pages/Gallery').then((m) => ({ default: m.Gallery })))
-const Home = lazy(() => import('@/pages/Home').then((m) => ({ default: m.Home })))
 const NotFound = lazy(() => import('@/pages/NotFound').then((m) => ({ default: m.NotFound })))
 const References = lazy(() => import('@/pages/References').then((m) => ({ default: m.References })))
 const ServiceDetail = lazy(() => import('@/pages/ServiceDetail').then((m) => ({ default: m.ServiceDetail })))

@@ -3,6 +3,7 @@ import { Navigate, useParams } from 'react-router-dom'
 import { Check } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { Seo } from '@/components/common/Seo'
+import { ResponsiveImage } from '@/components/common/ResponsiveImage'
 import { FadeIn } from '@/components/common/FadeIn'
 import { PageHeader } from '@/components/layout/PageHeader'
 import { ContactForm } from '@/components/forms/ContactForm'
@@ -68,11 +69,14 @@ export function ServiceDetail() {
 
         <FadeIn>
           <div className="overflow-hidden rounded-2xl border border-stone/50 bg-pearl shadow-card ring-1 ring-primary/[0.04]">
-            <img
+            <ResponsiveImage
               src={service.heroImage}
               alt=""
+              pictureClassName="block h-72 w-full sm:h-96"
               className="h-72 w-full object-cover sm:h-96"
               loading="lazy"
+              decoding="async"
+              sizes="(max-width: 1100px) 100vw, 1100px"
             />
           </div>
         </FadeIn>

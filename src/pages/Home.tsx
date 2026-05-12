@@ -3,6 +3,7 @@ import { motion, useReducedMotion } from 'framer-motion'
 import { ArrowRight, Award, MapPin, Phone, Shield } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { Seo } from '@/components/common/Seo'
+import { ResponsiveImage } from '@/components/common/ResponsiveImage'
 import { Button } from '@/components/common/Button'
 import { SectionHeading } from '@/components/common/SectionHeading'
 import { FadeIn } from '@/components/common/FadeIn'
@@ -40,10 +41,14 @@ export function Home() {
 
       <section className="relative isolate min-h-[88vh] overflow-hidden pt-24 sm:pt-28">
         <div className="pointer-events-none absolute inset-0 overflow-hidden">
-          <img
+          <ResponsiveImage
             src="/media/photo-1500375592092-40eb2168fd21.jpg"
             alt="Luxury motor yacht cruising the Aegean at golden hour"
+            pictureClassName="absolute inset-0 block h-full w-full"
             className="h-full w-full origin-center object-cover will-change-transform motion-safe:animate-hero-settle"
+            width={1920}
+            height={1080}
+            sizes="100vw"
             loading="eager"
             decoding="async"
             fetchPriority="high"

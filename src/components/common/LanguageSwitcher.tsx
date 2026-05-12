@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next'
 import { ChevronDown, Globe } from 'lucide-react'
-import { SUPPORTED_LANGUAGES, type LanguageCode } from '@/i18n'
+import { ensureLanguageLoaded, LANG_STORAGE_KEY, SUPPORTED_LANGUAGES, type LanguageCode } from '@/i18n'
 
 interface LanguageSwitcherProps {
   /** Color treatment for placement on dark vs light surfaces */
@@ -55,9 +55,16 @@ export function LanguageSwitcher({
       <select
         value={current}
         aria-label={selectAriaLabel}
-        onChange={(e) => {
+        onChange={async (e) => {
           const v = e.target.value as LanguageCode
-          if (v !== current) void i18n.changeLanguage(v)
+          if (v === current) return
+          try {
+            await ensureLanguageLoaded(v)
+            await i18n.changeLanguage(v)
+            localStorage.setItem(LANG_STORAGE_KEY, v)
+          } catch {
+            /* ignore */
+          }
         }}
         className={`h-9 w-full min-w-[4.75rem] max-w-[8rem] cursor-pointer appearance-none py-1.5 pl-8 pr-7 text-left text-xs font-semibold tabular-nums tracking-wide outline-none transition focus-visible:ring-2 focus-visible:ring-offset-0 sm:h-9 sm:min-h-0 ${selectRadius} ${shell}`}
       >

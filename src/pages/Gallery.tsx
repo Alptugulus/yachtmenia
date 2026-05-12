@@ -3,6 +3,7 @@ import { X } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
 import { Seo } from '@/components/common/Seo'
+import { ResponsiveImage } from '@/components/common/ResponsiveImage'
 import { SectionHeading } from '@/components/common/SectionHeading'
 import { FadeIn } from '@/components/common/FadeIn'
 import { PageHeader } from '@/components/layout/PageHeader'
@@ -56,11 +57,14 @@ export function Gallery() {
               } ${isFirstInCategory ? 'scroll-mt-28' : ''}`}
               style={{ animationDelay: `${idx * 40}ms` }}
             >
-              <img
+              <ResponsiveImage
                 src={item.image}
                 alt={item.title}
+                pictureClassName="block h-full w-full"
                 className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.03]"
                 loading="lazy"
+                decoding="async"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
               />
               <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-brand/70 via-transparent to-transparent opacity-0 transition group-hover:opacity-100" />
               <div className="pointer-events-none absolute bottom-3 left-3 right-3 text-left text-white opacity-0 transition group-hover:opacity-100">
@@ -97,7 +101,15 @@ export function Gallery() {
               >
                 <X className="h-5 w-5" />
               </button>
-              <img src={active.image} alt={active.title} className="max-h-[90vh] w-full object-contain" />
+              <ResponsiveImage
+                src={active.image}
+                alt={active.title}
+                pictureClassName="block max-h-[90vh] w-full"
+                className="max-h-[90vh] w-full object-contain"
+                loading="eager"
+                decoding="async"
+                sizes="100vw"
+              />
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-brand to-transparent p-6 text-white">
                 <p className="text-xs uppercase tracking-[0.2em] text-white/75">{active.category}</p>
                 <p className="font-display text-3xl text-white">{active.title}</p>

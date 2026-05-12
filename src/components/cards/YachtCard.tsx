@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import { motion, useReducedMotion } from 'framer-motion'
 import { Anchor, MapPin, Ruler } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
+import { ResponsiveImage } from '@/components/common/ResponsiveImage'
 import { intlLocaleForLanguage } from '@/i18n/intlLocale'
 import type { Yacht } from '@/types'
 
@@ -30,11 +31,14 @@ export function YachtCard({ yacht, index = 0 }: { yacht: Yacht; index?: number }
     >
       <Link to={`/yachts/${yacht.slug}`} className="block">
         <div className="relative aspect-[16/10] overflow-hidden">
-          <img
+          <ResponsiveImage
             src={yacht.heroImage}
             alt=""
+            pictureClassName="block h-full w-full"
             className="h-full w-full origin-center object-cover transition-transform duration-500 ease-out will-change-transform group-hover:scale-[1.03] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
             loading="lazy"
+            decoding="async"
+            sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-brand/85 via-brand/10 to-transparent" />
           <div className="absolute left-4 top-4 flex gap-2">
