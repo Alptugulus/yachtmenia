@@ -11,10 +11,11 @@ const root = path.join(__dirname, '..')
 const footerSrc = path.join(root, 'public', 'yachtmenia-logo-footer.png')
 const brandOut = path.join(root, 'src', 'assets', 'brand', 'navbar-lockup-light.png')
 const publicOut = path.join(root, 'public', 'yachtmenia-logo-navbar.png')
+const footerOut = path.join(root, 'src', 'assets', 'brand', 'footer-lockup.png')
 
 const NAVY = { r: 0, g: 0, b: 50 }
-const OUT_W = 600
-const OUT_H = 240
+const OUT_W = 900
+const OUT_H = 360
 
 async function footerToNavbarLockup(sharp, input) {
   const { data, info } = await sharp(input).ensureAlpha().raw().toBuffer({ resolveWithObject: true })
@@ -43,7 +44,13 @@ async function main() {
   const pipeline = await footerToNavbarLockup(sharp, footerSrc)
   await pipeline.clone().png({ compressionLevel: 6 }).toFile(brandOut)
   await pipeline.clone().png({ compressionLevel: 6 }).toFile(publicOut)
-  console.log(`[trim-logos] footer → navbar lockup ${OUT_W}×${OUT_H} (lacivert)`)
+
+  await sharp(footerSrc)
+    .resize({ width: OUT_W, height: OUT_H, kernel: sharp.kernel.lanczos3 })
+    .png({ compressionLevel: 6 })
+    .toFile(footerOut)
+
+  console.log(`[trim-logos] navbar ${OUT_W}×${OUT_H} (lacivert) + footer ${OUT_W}×${OUT_H} (beyaz)`)
 }
 
 main().catch((e) => {

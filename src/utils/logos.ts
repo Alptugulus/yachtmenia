@@ -2,6 +2,7 @@
  * Navbar = footer ile aynı export (yachtmenia-logo-footer), lacivert renk.
  * Footer = beyaz orijinal public dosyası.
  */
+import footerLockup from '@/assets/brand/footer-lockup.png'
 import navbarLockupLight from '@/assets/brand/navbar-lockup-light.png'
 import { publicAsset } from '@/utils/publicAsset'
 
@@ -13,7 +14,7 @@ export const BRAND_LOCKUP_ASPECT = 300 / 120
 export const BRAND_LOGO = {
   navbarOnLight: navbarLockupLight,
   navbarOnDark: navbarLockupLight,
-  footer: publicAsset('yachtmenia-logo-footer.png'),
+  footer: footerLockup,
 } as const
 
 export const BRAND_LOGO_PUBLIC_URL = publicAsset('yachtmenia-logo-footer.png')

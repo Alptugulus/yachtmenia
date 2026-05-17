@@ -615,7 +615,7 @@ export function Navbar() {
         closeDesktopDropdown()
       }}
     >
-      <div className="mx-auto flex h-[5.5rem] max-h-[5.5rem] min-h-[5.5rem] max-w-[1440px] items-center justify-between gap-2 px-4 sm:gap-3 sm:px-6 lg:gap-5 lg:px-8 xl:gap-6 xl:px-10">
+      <div className="mx-auto flex h-[5.75rem] max-h-[5.75rem] min-h-[5.75rem] max-w-[1440px] items-center justify-between gap-2 px-4 sm:gap-3 sm:px-6 lg:gap-5 lg:px-8 xl:gap-6 xl:px-10">
         <Link
           to="/"
           className="group relative z-[1] flex min-w-0 shrink items-center py-0.5 pr-1 sm:pr-2"

@@ -30,8 +30,10 @@ export function BrandLogo({ variant, priority = false }: BrandLogoProps) {
   const src = isFooter ? BRAND_LOGO.footer : BRAND_LOGO.navbarOnLight
 
   const heights = isFooter
-    ? 'h-[40px] sm:h-[44px] md:h-[48px]'
-    : 'h-[44px] sm:h-[48px] md:h-[52px] lg:h-[56px]'
+    ? 'h-[52px] sm:h-[56px] md:h-[60px] lg:h-[64px]'
+    : 'h-[52px] sm:h-[58px] md:h-[64px] lg:h-[72px]'
+
+  const maxW = isFooter ? 'max-w-[min(300px,92vw)]' : 'max-w-[min(340px,88vw)]'
 
   return (
     <img
@@ -43,7 +45,7 @@ export function BrandLogo({ variant, priority = false }: BrandLogoProps) {
       fetchPriority={priority ? 'high' : 'auto'}
       decoding="async"
       style={{ aspectRatio: BRAND_LOCKUP_ASPECT }}
-      className={`block w-auto max-w-[min(280px,78vw)] object-contain object-left ${heights}`}
+      className={`block w-auto object-contain object-left ${maxW} ${heights}`}
       onError={() => setFailed(true)}
     />
   )
