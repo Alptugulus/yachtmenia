@@ -33,10 +33,11 @@ export function BrandLogo({ variant, headerTone = 'on-light', priority = false }
 
   const src = onDark ? BRAND_LOGO.navbarOnDark : BRAND_LOGO.navbarOnLight
 
+  /** Tam piksel yükseklik — kesirli rem subpixel tırtıklığı önlenir */
   const lockupHeights =
     variant === 'navbar'
-      ? 'h-[3.15rem] min-h-[50px] sm:h-[3.65rem] md:h-[4rem] lg:h-[4.35rem]'
-      : 'h-[3.5rem] sm:h-[4.15rem]'
+      ? 'h-[56px] sm:h-[64px] md:h-[68px] lg:h-[72px]'
+      : 'h-[56px] sm:h-[64px]'
 
   const lockupMaxW =
     variant === 'navbar' ? 'max-w-[min(580px,96vw)]' : 'max-w-[min(460px,92vw)]'

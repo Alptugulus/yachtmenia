@@ -172,10 +172,8 @@ html {
     }
   }
 
-  /* Yüksek çözünürlüklü lockup küçültülürken çizgiler yumuşamasın */
+  /* Logo: GPU katmanı / crisp-edges ince çizgide kesik görünüm yapar */
   .brand-lockup {
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-    transform: translateZ(0);
+    image-rendering: auto;
   }
 }

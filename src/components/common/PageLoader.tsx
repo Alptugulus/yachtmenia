@@ -22,7 +22,7 @@ export function PageLoader() {
         width={918}
         height={340}
         decoding="sync"
-        className="brand-lockup block h-44 w-auto max-w-[min(440px,88vw)] object-contain sm:h-48 md:h-52"
+        className="brand-lockup block h-[176px] w-auto max-w-[min(440px,88vw)] object-contain sm:h-[192px] md:h-[208px]"
         aria-hidden
       />
       <div className="flex w-full max-w-[240px] flex-col items-center gap-3" aria-hidden>
