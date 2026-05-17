@@ -1,59 +1,55 @@
-import { useState } from 'react'
-import { COMPANY } from '@/utils/constants'
-import { BRAND_LOCKUP_ASPECT, BRAND_LOGO } from '@/utils/logos'
+import { BrandAnchorSvg } from '@/components/common/BrandAnchorSvg'
 
 interface BrandLogoProps {
-  variant: 'navbar' | 'footer'
+  variant: 'navbar' | 'footer' | 'loader'
   headerTone?: 'on-dark' | 'on-light'
+  /** @deprecated PNG kaldırıldı; API uyumluluğu */
   priority?: boolean
 }
 
-const LOCKUP_W = 918
-const LOCKUP_H = 340
-
-export function BrandLogo({ variant, headerTone = 'on-light', priority = false }: BrandLogoProps) {
-  const [failed, setFailed] = useState(false)
+export function BrandLogo({ variant, headerTone = 'on-light' }: BrandLogoProps) {
   const onDark = variant === 'footer' || headerTone === 'on-dark'
+  const ink = onDark ? 'text-white' : 'text-brand'
 
-  if (failed) {
-    return (
-      <span
-        className={`font-display font-semibold tracking-tight ${
-          variant === 'navbar'
-            ? onDark
-              ? 'text-2xl text-white sm:text-3xl'
-              : 'text-2xl text-brand sm:text-3xl'
-            : 'text-3xl text-white sm:text-4xl'
-        }`}
-      >
-        {COMPANY.name}
-      </span>
-    )
-  }
+  const shellHeights =
+    variant === 'loader'
+      ? 'h-[56px] sm:h-[64px] md:h-[68px]'
+      : variant === 'navbar'
+        ? 'h-[56px] sm:h-[64px] md:h-[68px] lg:h-[72px]'
+        : 'h-[56px] sm:h-[64px]'
 
-  const src = onDark ? BRAND_LOGO.navbarOnDark : BRAND_LOGO.navbarOnLight
+  const titleSize =
+    variant === 'loader'
+      ? 'text-[1.2rem] sm:text-[1.35rem] md:text-[1.45rem]'
+      : variant === 'navbar'
+        ? 'text-[1.15rem] sm:text-[1.3rem] md:text-[1.42rem] lg:text-[1.52rem]'
+        : 'text-[1.15rem] sm:text-[1.3rem]'
 
-  /** Tam piksel yükseklik — kesirli rem subpixel tırtıklığı önlenir */
-  const lockupHeights =
-    variant === 'navbar'
-      ? 'h-[56px] sm:h-[64px] md:h-[68px] lg:h-[72px]'
-      : 'h-[56px] sm:h-[64px]'
-
-  const lockupMaxW =
-    variant === 'navbar' ? 'max-w-[min(580px,96vw)]' : 'max-w-[min(460px,92vw)]'
+  const tagSize =
+    variant === 'loader'
+      ? 'text-[0.48rem] sm:text-[0.52rem]'
+      : 'text-[0.46rem] sm:text-[0.5rem] md:text-[0.52rem]'
 
   return (
-    <img
-      src={src}
-      alt="Yachtmenia Yachting"
-      width={LOCKUP_W}
-      height={LOCKUP_H}
-      loading={priority ? 'eager' : 'lazy'}
-      fetchPriority={priority ? 'high' : 'auto'}
-      decoding="sync"
-      style={{ aspectRatio: BRAND_LOCKUP_ASPECT }}
-      className={`brand-lockup block w-auto shrink-0 object-contain object-left ${lockupHeights} ${lockupMaxW}`}
-      onError={() => setFailed(true)}
-    />
+    <div
+      role="img"
+      aria-label="Yachtmenia Yachting"
+      className={`flex min-w-0 max-w-[min(580px,96vw)] items-stretch gap-2 sm:gap-2.5 ${shellHeights} ${ink}`}
+    >
+      <BrandAnchorSvg className="h-full w-auto shrink-0" />
+      <div className="flex min-w-0 flex-col justify-center leading-none">
+        <span
+          className={`font-display font-semibold tracking-[0.04em] ${titleSize}`}
+          style={{ fontFeatureSettings: '"liga" 1' }}
+        >
+          YACHTMENIA
+        </span>
+        <span
+          className={`mt-1 font-sans font-semibold uppercase tracking-[0.34em] opacity-90 ${tagSize}`}
+        >
+          YACHTING
+        </span>
+      </div>
+    </div>
   )
 }
