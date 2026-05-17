@@ -1,7 +1,7 @@
 import { COMPANY } from '@/utils/constants'
 
 /** Default share image (exists in `public/media`). */
-export const DEFAULT_OG_IMAGE_PATH = '/media/photo-1500375592092-40eb2168fd21.jpg'
+export const DEFAULT_OG_IMAGE_PATH = '/media/page-home-hero.jpg'
 
 export function absoluteUrl(origin: string, path: string): string {
   const p = path.startsWith('/') ? path : `/${path}`
@@ -25,12 +25,12 @@ export function buildRootJsonLd(origin: string) {
         foundingDate: String(COMPANY.founded),
         address: {
           '@type': 'PostalAddress',
-          streetAddress: 'D-MARINE Didim',
+          streetAddress: 'Çamlık Mah. 5027 Sok. NO:2/8 F',
           addressLocality: 'Didim',
           addressRegion: 'Aydın',
           addressCountry: 'TR',
         },
-        description: `${COMPANY.name} — yacht brokerage, refit, management and marine consultancy at Didim D-MARINE since ${COMPANY.founded}.`,
+        description: `${COMPANY.name} — yacht brokerage, refit, management and marine consultancy in Didim, Aydın since ${COMPANY.founded}.`,
         areaServed: { '@type': 'Country', name: 'Turkey' },
         logo: absoluteUrl(origin, '/media/logos/yachting-horizontal-light.png'),
         image: absoluteUrl(origin, DEFAULT_OG_IMAGE_PATH),

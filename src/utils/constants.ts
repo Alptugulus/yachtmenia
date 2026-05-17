@@ -11,14 +11,16 @@ export type NavSubItem = {
 export const COMPANY = {
   name: 'Yachtmenia Yachting',
   founded: 2006,
-  locationLine: 'Didim D-MARINE, Aydın, Turkey',
+  locationLine: 'Çamlık Mah. 5027 Sok. NO:2/8 F, Didim / Aydın',
   phoneDisplay: '+90 256 813 39 47',
   phoneE164: '902568133947',
+  whatsappDisplay: '+90 533 022 10 40',
+  whatsappE164: '905330221040',
   email: 'info@yachtmenia.com',
 } as const
 
 export const SOCIAL = {
-  whatsapp: `https://wa.me/${COMPANY.phoneE164}`,
+  whatsapp: `https://wa.me/${COMPANY.whatsappE164}`,
 } as const
 
 export const SERVICE_NAV = [

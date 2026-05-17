@@ -1,52 +1,47 @@
 import type { GalleryItem } from '@/types'
+import { PAGE_HERO_IMAGES } from '@/utils/heroMedia'
 
 export const galleryItems: GalleryItem[] = [
   {
     id: 'g1',
-    title: 'Golden Hour Departure',
-    category: 'Lifestyle',
-    image:
-      '/media/marine-yacht-sunset-hero.jpg',
+    title: 'Monte Carlo Marina',
+    category: 'Destinations',
+    image: PAGE_HERO_IMAGES.home,
     ratio: 'landscape',
   },
   {
     id: 'g2',
-    title: 'Clean Wake',
+    title: 'Yacht Row',
     category: 'Yachts',
-    image:
-      '/media/photo-1544551763-46a013bb70d5.jpg',
+    image: PAGE_HERO_IMAGES.yachts,
     ratio: 'portrait',
   },
   {
     id: 'g3',
-    title: 'Marina Geometry',
+    title: 'Harbor Aerial',
     category: 'Destinations',
-    image:
-      '/media/photo-1605281317010-fe5ffe798166.jpg',
+    image: PAGE_HERO_IMAGES.about,
     ratio: 'square',
   },
   {
     id: 'g4',
-    title: 'Saloon Light',
-    category: 'Interiors',
-    image:
-      '/media/photo-1526481280695-3c46917f7e9d.jpg',
+    title: 'Golden Marina',
+    category: 'Lifestyle',
+    image: PAGE_HERO_IMAGES.services,
     ratio: 'landscape',
   },
   {
     id: 'g5',
-    title: 'Bridge Controls',
-    category: 'Detail',
-    image:
-      '/media/photo-1500375592092-40eb2168fd21.jpg',
+    title: 'Mediterranean Mooring',
+    category: 'Destinations',
+    image: PAGE_HERO_IMAGES.gallery,
     ratio: 'portrait',
   },
   {
     id: 'g6',
-    title: 'Night Mooring',
-    category: 'Atmosphere',
-    image:
-      '/media/photo-1518834107812-67e0d7da4927.jpg',
+    title: 'Open Water',
+    category: 'Yachts',
+    image: '/media/page-blog-hero.jpg',
     ratio: 'landscape',
   },
 ]

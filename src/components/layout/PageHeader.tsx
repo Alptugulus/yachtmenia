@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react'
 import { Link } from 'react-router-dom'
 import { ChevronRight } from 'lucide-react'
-import { ResponsiveImage } from '@/components/common/ResponsiveImage'
+import { HeroBackdrop } from '@/components/common/HeroBackdrop'
 
 interface Crumb {
   label: string
@@ -18,26 +18,14 @@ interface PageHeaderProps {
 
 export function PageHeader({ title, subtitle, crumbs, backgroundImage, badge }: PageHeaderProps) {
   return (
-    <section className="relative isolate overflow-hidden pt-28 after:pointer-events-none after:absolute after:inset-x-0 after:bottom-0 after:z-10 after:h-px after:bg-gradient-to-r after:from-transparent after:via-white/25 after:to-transparent">
+    <section className="relative isolate min-h-[min(520px,52vh)] overflow-hidden pt-28 after:pointer-events-none after:absolute after:inset-x-0 after:bottom-0 after:z-20 after:h-px after:bg-gradient-to-r after:from-transparent after:via-white/25 after:to-transparent">
       {backgroundImage ? (
-        <>
-          <ResponsiveImage
-            src={backgroundImage}
-            alt=""
-            pictureClassName="absolute inset-0 block h-full w-full"
-            className="h-full w-full object-cover"
-            loading="eager"
-            decoding="async"
-            sizes="100vw"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-brand via-brand/85 to-brand/60" />
-          <div className="absolute inset-0 bg-gradient-to-t from-brand/95 via-brand/40 to-transparent" />
-        </>
+        <HeroBackdrop src={backgroundImage} alt="" variant="page" priority />
       ) : (
-        <div className="absolute inset-0 bg-gradient-to-br from-brand via-brand-muted to-brand" />
+        <div className="absolute inset-0 z-0 bg-gradient-to-br from-brand via-brand-muted to-brand" />
       )}
 
-      <div className="relative mx-auto max-w-[1440px] px-4 pb-16 pt-10 motion-safe:animate-page-in sm:px-6 lg:px-10 lg:pb-20 lg:pt-14">
+      <div className="relative z-10 mx-auto max-w-[1440px] px-4 pb-16 pt-10 motion-safe:animate-page-in sm:px-6 lg:px-10 lg:pb-20 lg:pt-14">
         {crumbs?.length ? (
           <nav className="mb-6 flex flex-wrap items-center gap-2 text-xs uppercase tracking-[0.18em] text-white/75">
             {crumbs.map((c, idx) => (
@@ -58,8 +46,12 @@ export function PageHeader({ title, subtitle, crumbs, backgroundImage, badge }: 
         {badge ? <div className="mb-4">{badge}</div> : null}
 
         <div className="max-w-3xl space-y-4">
-          <h1 className="font-display text-balance text-4xl leading-tight text-white sm:text-5xl">{title}</h1>
-          {subtitle ? <p className="max-w-2xl text-lg leading-relaxed text-white/85">{subtitle}</p> : null}
+          <h1 className="font-display text-balance text-4xl leading-tight text-white drop-shadow-sm sm:text-5xl">
+            {title}
+          </h1>
+          {subtitle ? (
+            <p className="max-w-2xl text-lg leading-relaxed text-white/90 drop-shadow-sm">{subtitle}</p>
+          ) : null}
         </div>
       </div>
     </section>

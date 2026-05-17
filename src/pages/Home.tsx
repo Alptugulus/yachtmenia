@@ -1,10 +1,12 @@
 import { Link } from 'react-router-dom'
 import { motion, useReducedMotion } from 'framer-motion'
-import { ArrowRight, Award, MapPin, Phone, Shield } from 'lucide-react'
+import { ArrowRight, Award, MapPin, MessageCircle, Phone, Shield } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { Seo } from '@/components/common/Seo'
-import { ResponsiveImage } from '@/components/common/ResponsiveImage'
+import { HeroBackdrop } from '@/components/common/HeroBackdrop'
+import { PAGE_HERO_IMAGES } from '@/utils/heroMedia'
 import { Button } from '@/components/common/Button'
+import { WhatsAppIcon } from '@/components/common/WhatsAppIcon'
 import { SectionHeading } from '@/components/common/SectionHeading'
 import { FadeIn } from '@/components/common/FadeIn'
 import { YachtCard } from '@/components/cards/YachtCard'
@@ -40,28 +42,14 @@ export function Home() {
       <Seo title={COMPANY.name} path="/" />
 
       <section className="relative isolate min-h-[88vh] overflow-hidden pt-24 sm:pt-28">
-        <div className="pointer-events-none absolute inset-0 overflow-hidden">
-          <ResponsiveImage
-            src="/media/photo-1500375592092-40eb2168fd21.jpg"
-            alt="Luxury motor yacht cruising the Aegean at golden hour"
-            pictureClassName="absolute inset-0 block h-full w-full"
-            className="h-full w-full origin-center object-cover will-change-transform motion-safe:animate-hero-settle"
-            width={1920}
-            height={1080}
-            sizes="100vw"
-            loading="eager"
-            decoding="async"
-            fetchPriority="high"
-          />
-        </div>
-        <div className="absolute inset-0 bg-gradient-to-r from-brand via-brand/80 to-brand/30" />
-        <div className="absolute inset-0 bg-gradient-to-t from-brand via-brand/30 to-transparent" />
-        <div
-          className="absolute inset-0 bg-[radial-gradient(ellipse_85%_55%_at_50%_0%,transparent_0%,rgb(0_0_50/0.12)_100%)]"
-          aria-hidden
+        <HeroBackdrop
+          src={PAGE_HERO_IMAGES.home}
+          alt="Luxury yachts moored at a sunlit Mediterranean marina"
+          variant="home"
+          priority
         />
 
-        <div className="relative mx-auto flex max-w-[1440px] flex-col gap-10 px-4 pb-20 pt-10 sm:px-6 lg:flex-row lg:items-end lg:justify-between lg:px-10 lg:pb-24 lg:pt-16">
+        <motion.div className="relative z-10 mx-auto flex max-w-[1440px] flex-col gap-10 px-4 pb-20 pt-10 sm:px-6 lg:flex-row lg:items-end lg:justify-between lg:px-10 lg:pb-24 lg:pt-16">
           <motion.div
             initial={reduce ? false : { opacity: 0, y: 24 }}
             animate={reduce ? undefined : { opacity: 1, y: 0 }}
@@ -112,6 +100,15 @@ export function Home() {
                 <Phone className="h-4 w-4 text-white" />
                 {COMPANY.phoneDisplay}
               </a>
+              <a
+                href={SOCIAL.whatsapp}
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center gap-3 transition hover:text-white"
+              >
+                <MessageCircle className="h-4 w-4 text-[#6ee7a0]" />
+                {COMPANY.whatsappDisplay}
+              </a>
               <div className="flex items-start gap-3">
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-white" />
                 <span>{COMPANY.locationLine}</span>
@@ -121,12 +118,15 @@ export function Home() {
               href={SOCIAL.whatsapp}
               target="_blank"
               rel="noreferrer"
-              className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-lg bg-[#25D366] px-4 py-3 text-sm font-semibold text-white transition hover:bg-[#1ebe57]"
+              className="mt-6 inline-flex w-full items-center justify-center gap-2.5 rounded-lg bg-brand px-4 py-3 text-sm font-semibold text-white shadow-[0_10px_28px_-10px_rgb(0_0_0/0.4),inset_0_1px_0_rgb(255_255_255/0.12)] ring-1 ring-white/20 transition hover:bg-brand-muted hover:ring-white/30"
             >
+              <span className="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-br from-[#3ee878] to-[#128C7E] ring-1 ring-white/25">
+                <WhatsAppIcon className="h-4 w-4 text-white" />
+              </span>
               {t('whatsapp.team')}
             </a>
           </motion.div>
-        </div>
+        </motion.div>
       </section>
 
       <section className="border-y border-stone/40 bg-mist px-4 py-10 sm:px-6 sm:py-14 lg:px-10">

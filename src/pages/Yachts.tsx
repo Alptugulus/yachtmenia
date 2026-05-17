@@ -6,6 +6,7 @@ import { YachtCard } from '@/components/cards/YachtCard'
 import { PageHeader } from '@/components/layout/PageHeader'
 import { getAllYachts } from '@/data'
 import { useTranslatedYachts } from '@/i18n/dataT'
+import { PAGE_HERO_IMAGES } from '@/utils/heroMedia'
 import { COMPANY } from '@/utils/constants'
 
 export function Yachts() {
@@ -24,7 +25,7 @@ export function Yachts() {
         title={t('yachtsPage.header.title')}
         subtitle={t('yachtsPage.header.subtitle')}
         crumbs={[{ label: t('breadcrumb.home'), to: '/' }, { label: t('seo.titles.yachts') }]}
-        backgroundImage="/media/photo-1569263979104-865ab7cd8d13.jpg"
+        backgroundImage={PAGE_HERO_IMAGES.yachts}
       />
 
       <section className="mx-auto max-w-[1440px] space-y-12 px-4 py-16 sm:px-6 lg:px-10">

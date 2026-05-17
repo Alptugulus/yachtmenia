@@ -7,6 +7,7 @@ import { PageHeader } from '@/components/layout/PageHeader'
 import { getAllPosts } from '@/data'
 import { useTranslatedPosts } from '@/i18n/dataT'
 import { COMPANY } from '@/utils/constants'
+import { PAGE_HERO_IMAGES } from '@/utils/heroMedia'
 
 export function Blog() {
   const { t } = useTranslation()
@@ -24,7 +25,7 @@ export function Blog() {
         title={t('blogPage.header.title')}
         subtitle={t('blogPage.header.subtitle')}
         crumbs={[{ label: t('breadcrumb.home'), to: '/' }, { label: t('seo.titles.blog') }]}
-        backgroundImage="/media/photo-1583212292454-1fe62296039b.jpg"
+        backgroundImage={PAGE_HERO_IMAGES.blog}
       />
 
       <section className="mx-auto max-w-[1440px] space-y-12 px-4 py-16 sm:px-6 lg:px-10">

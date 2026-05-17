@@ -1,4 +1,5 @@
 import type { ReferenceProject } from '@/types'
+import { PAGE_HERO_IMAGES } from '@/utils/heroMedia'
 
 export const references: ReferenceProject[] = [
   {
@@ -10,8 +11,7 @@ export const references: ReferenceProject[] = [
     location: 'Didim D-MARINE',
     excerpt:
       'Full soft goods program, lighting redesign and cinema-grade AV — delivered across an eight-week critical path.',
-    image:
-      '/media/photo-1526481280695-3c46917f7e9d.jpg',
+    image: PAGE_HERO_IMAGES.home,
     outcomes: ['Noise-isolated cinema', 'Low-profile HVAC routing', 'Class-ready documentation'],
   },
   {
@@ -23,8 +23,7 @@ export const references: ReferenceProject[] = [
     location: 'Aegean',
     excerpt:
       'Staged repower planning with load bank validation and vibration baseline mapping prior to engine swap.',
-    image:
-      '/media/marine-yacht-night-technical.jpg',
+    image: PAGE_HERO_IMAGES.yachts,
     outcomes: ['Predictive maintenance baseline', 'NVH reduction targets met'],
   },
   {
@@ -36,8 +35,7 @@ export const references: ReferenceProject[] = [
     location: 'Turkey · Greece',
     excerpt:
       'Unified maintenance calendars, digital reporting and vendor governance across three flagged vessels.',
-    image:
-      '/media/photo-1449844908441-8829872d5227.jpg',
+    image: PAGE_HERO_IMAGES.about,
     outcomes: ['Budget variance under 4%', 'Zero off-hire surprises in yard windows'],
   },
   {
@@ -49,8 +47,7 @@ export const references: ReferenceProject[] = [
     location: 'Didim D-MARINE',
     excerpt:
       'Full topsides repaint with metallic stripe narrative — micro-finish QC before launch.',
-    image:
-      '/media/photo-1455274118953-ce37c685d562.jpg',
+    image: PAGE_HERO_IMAGES.references,
     outcomes: ['Gloss retention plan', 'Dockage-ready protective film'],
   },
 ]

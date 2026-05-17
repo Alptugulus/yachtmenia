@@ -40,7 +40,7 @@ export function YachtCard({ yacht, index = 0 }: { yacht: Yacht; index?: number }
             decoding="async"
             sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-brand/85 via-brand/10 to-transparent" />
+          <motion.div className="absolute inset-0 bg-gradient-to-t from-brand/65 via-brand/10 to-transparent" />
           <div className="absolute left-4 top-4 flex gap-2">
             <span className="rounded-full bg-white/90 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-brand">
               {t(`yachtCard.status.${yacht.status}`, { defaultValue: t('yachtCard.status.available') })}

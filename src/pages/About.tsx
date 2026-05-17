@@ -4,6 +4,7 @@ import { ResponsiveImage } from '@/components/common/ResponsiveImage'
 import { FadeIn } from '@/components/common/FadeIn'
 import { PageHeader } from '@/components/layout/PageHeader'
 import { COMPANY } from '@/utils/constants'
+import { PAGE_HERO_IMAGES } from '@/utils/heroMedia'
 
 export function About() {
   const { t } = useTranslation()
@@ -24,7 +25,7 @@ export function About() {
         title={t('about.header.title')}
         subtitle={t('about.header.subtitle')}
         crumbs={[{ label: t('breadcrumb.home'), to: '/' }, { label: t('seo.titles.about') }]}
-        backgroundImage="/media/photo-1439405326854-014607f0d800.jpg"
+        backgroundImage={PAGE_HERO_IMAGES.about}
       />
 
       <div className="mx-auto max-w-[900px] space-y-8 px-4 py-16 sm:px-6 lg:px-10">
@@ -59,7 +60,7 @@ export function About() {
       </section>
 
       <ResponsiveImage
-        src="/media/photo-1569256326873-7d3c885518d9.jpg"
+        src="/media/page-yachts-hero.jpg"
         alt="Motor yacht exterior detail — craftsmanship and paint finish"
         pictureClassName="block h-[420px] w-full"
         className="h-[420px] w-full object-cover"

@@ -10,6 +10,7 @@ import { PageHeader } from '@/components/layout/PageHeader'
 import { getGallery } from '@/data'
 import { useTranslatedGallery } from '@/i18n/dataT'
 import { COMPANY } from '@/utils/constants'
+import { PAGE_HERO_IMAGES } from '@/utils/heroMedia'
 import { galleryCategorySlug } from '@/utils/galleryNav'
 
 export function Gallery() {
@@ -30,7 +31,7 @@ export function Gallery() {
         title={t('galleryPage.header.title')}
         subtitle={t('galleryPage.header.subtitle')}
         crumbs={[{ label: t('breadcrumb.home'), to: '/' }, { label: t('seo.titles.gallery') }]}
-        backgroundImage="/media/photo-1518834107812-67e0d7da4927.jpg"
+        backgroundImage={PAGE_HERO_IMAGES.gallery}
       />
 
       <section className="mx-auto max-w-[1440px] space-y-12 px-4 py-16 sm:px-6 lg:px-10">

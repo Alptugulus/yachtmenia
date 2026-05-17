@@ -91,6 +91,7 @@
   },
   "whatsapp": {
     "ariaLabel": "Auf WhatsApp chatten",
+    "fabLabel": "Concierge",
     "fabMessage": "Hallo Yachtmenia — ich möchte ein Yachtprojekt besprechen.",
     "team": "Team auf WhatsApp",
     "broker": "Brokerage-Desk auf WhatsApp",
@@ -302,7 +303,9 @@
       "body": "Termin­besuche willkommen — technische Rundgänge bitte mit Vorlauf abstimmen."
     },
     "direct": {
-      "overline": "Direkt"
+      "overline": "Direkt",
+      "landline": "Festnetz",
+      "whatsapp": "WhatsApp"
     },
     "form": {
       "title": "Nachricht senden",

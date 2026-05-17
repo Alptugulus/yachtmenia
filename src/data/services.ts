@@ -1,4 +1,5 @@
 import type { Service } from '@/types'
+import { PAGE_HERO_IMAGES } from '@/utils/heroMedia'
 
 export const services: Service[] = [
   {
@@ -16,8 +17,7 @@ export const services: Service[] = [
       'Title and documentation guidance',
       'Aegean & Mediterranean reach',
     ],
-    heroImage:
-      '/media/photo-1544551763-46a013bb70d5.jpg',
+    heroImage: PAGE_HERO_IMAGES.yachts,
     body: [
       'Our brokerage desk combines seasoned market insight with engineering-aware diligence so decisions are grounded in reality — not brochures alone.',
       'From first conversations through closing, we align timelines with yard schedules, class requirements and your operational priorities.',
@@ -39,8 +39,7 @@ export const services: Service[] = [
       'Paint & composites',
       'Electrical & AV/IT integration',
     ],
-    heroImage:
-      '/media/photo-1567899378497-9e94ef68db46.jpg',
+    heroImage: PAGE_HERO_IMAGES.gallery,
     body: [
       'Refit is where ambition meets engineering. We scope deliberately, phase intelligently and communicate clearly — especially when surprises appear.',
       'Our Didim D-MARINE presence keeps logistics tight and decisions fast, protected by rigorous QA checkpoints.',
@@ -62,8 +61,7 @@ export const services: Service[] = [
       'Vendor governance',
       'Digital reporting packs',
     ],
-    heroImage:
-      '/media/photo-1439405326854-014607f0d800.jpg',
+    heroImage: PAGE_HERO_IMAGES.about,
     body: [
       'Management is continuity: predictable maintenance rhythms, transparent spend and a bridge team aligned with your cruising calendar.',
       'We coordinate surveys, yard periods and flag-state obligations without noise — concise summaries, decisive recommendations.',
@@ -85,8 +83,7 @@ export const services: Service[] = [
       'Underwater services',
       'Paint & fairing touchpoints',
     ],
-    heroImage:
-      '/media/photo-1583212292454-1fe62296039b.jpg',
+    heroImage: PAGE_HERO_IMAGES.services,
     body: [
       'Maintenance is risk reduction expressed in torque specs, oil analysis and seasonal checklists — documented and repeatable.',
       'We integrate OEM schedules with real-world usage patterns so nothing is treated generically.',
@@ -108,8 +105,7 @@ export const services: Service[] = [
       'Refit CAPEX modeling',
       'New-build advisory',
     ],
-    heroImage:
-      '/media/photo-1500375592092-40eb2168fd21.jpg',
+    heroImage: PAGE_HERO_IMAGES.home,
     body: [
       'Our consultancy layer exists for moments where stakes are high and ambiguity is costly.',
       'We translate drawings and schedules into decisions owners can stand behind — technically and financially.',
@@ -131,8 +127,7 @@ export const services: Service[] = [
       'Stabilization upgrades',
       'Noise & vibration mitigation',
     ],
-    heroImage:
-      '/media/photo-1518834107812-67e0d7da4927.jpg',
+    heroImage: PAGE_HERO_IMAGES.contact,
     body: [
       'Machinery renovation is where technical credibility is proven in tolerances, cooling paths and load profiles.',
       'We engineer upgrades that respect structural margins and class expectations — not shortcuts dressed as savings.',

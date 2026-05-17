@@ -8,7 +8,6 @@ const FOOTER_LOGO_SRC = BRAND_LOGO.footer
 
 interface BrandLogoProps {
   variant: 'navbar' | 'footer'
-  /** Navbar: hero bar (dark translucent) vs scrolled / inner pages (light bar) */
   headerTone?: 'on-dark' | 'on-light'
 }
 
@@ -21,25 +20,15 @@ export function BrandLogo({ variant, headerTone = 'on-light' }: BrandLogoProps) 
         className={`font-display font-semibold tracking-tight ${
           variant === 'navbar'
             ? headerTone === 'on-dark'
-              ? 'text-lg text-white sm:text-xl'
-              : 'text-lg text-primary sm:text-xl'
-            : 'text-2xl text-white'
+              ? 'text-xl text-white sm:text-2xl'
+              : 'text-2xl text-primary sm:text-3xl'
+            : 'text-3xl text-white sm:text-4xl'
         }`}
       >
         {COMPANY.name}
       </span>
     )
   }
-
-  /* Koyu üst barda çerçeve (ring) kullanma — PNG küçük kalıyor ve köşeler çirkin görünüyor. */
-  const shell = 'inline-flex shrink-0 items-center'
-
-  const imgClass =
-    variant === 'navbar'
-      ? headerTone === 'on-dark'
-        ? 'block h-16 w-auto max-w-[min(360px,78vw)] object-contain object-left sm:h-[4.25rem] md:h-[4.5rem]'
-        : 'block h-[4.25rem] w-auto max-w-[min(360px,78vw)] object-contain object-left sm:h-[4.5rem] md:h-[4.75rem]'
-      : 'block h-24 w-auto max-w-[min(360px,92vw)] object-contain object-left sm:h-28 md:h-32'
 
   const src =
     variant === 'footer'
@@ -48,18 +37,31 @@ export function BrandLogo({ variant, headerTone = 'on-light' }: BrandLogoProps) 
         ? NAVBAR_LOGO_DARK_SRC
         : NAVBAR_LOGO_LIGHT_SRC
 
-  return (
-    <span className={shell}>
+  if (variant === 'navbar') {
+    return (
       <img
         src={src}
         alt="Yachtmenia Yachting"
-        width={400}
-        height={104}
-        loading={variant === 'navbar' ? 'eager' : 'lazy'}
+        width={480}
+        height={128}
+        loading="eager"
         decoding="async"
-        className={imgClass}
+        className="block h-14 w-auto max-w-[min(340px,78vw)] object-contain object-left sm:h-16 md:h-[4.25rem] lg:h-[4.75rem]"
         onError={() => setFailed(true)}
       />
-    </span>
+    )
+  }
+
+  return (
+    <img
+      src={src}
+      alt="Yachtmenia Yachting"
+      width={280}
+      height={360}
+      loading="lazy"
+      decoding="async"
+      className="block h-24 w-auto max-w-[min(220px,58vw)] object-contain object-left sm:h-28"
+      onError={() => setFailed(true)}
+    />
   )
 }

@@ -156,7 +156,7 @@ export function YachtDetail() {
                 href={SOCIAL.whatsapp}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex min-h-[48px] items-center justify-center rounded-lg bg-[#25D366] px-4 py-3 text-center text-sm font-semibold text-white shadow-card transition hover:bg-[#1ebe57]"
+                className="inline-flex min-h-[48px] items-center justify-center gap-2.5 rounded-lg bg-brand px-4 py-3 text-center text-sm font-semibold text-white shadow-[0_10px_28px_-10px_rgb(0_0_50/0.35),inset_0_1px_0_rgb(255_255_255/0.1)] ring-1 ring-brand/10 transition hover:bg-brand-muted"
               >
                 {t('whatsapp.broker')}
               </a>

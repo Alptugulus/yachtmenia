@@ -1,4 +1,5 @@
 import type { Yacht } from '@/types'
+import { PAGE_HERO_IMAGES } from '@/utils/heroMedia'
 
 export const yachts: Yacht[] = [
   {
@@ -18,12 +19,11 @@ export const yachts: Yacht[] = [
     summary: 'Immaculate 86 Yacht with extended Mediterranean cruising history.',
     description:
       'A refined flybridge layout with generous entertaining zones, recently serviced propulsion and upgraded navigation electronics. Ideal for Aegean island hopping with crew quarters arranged for extended seasons.',
-    heroImage:
-      '/media/photo-1569263979104-865ab7cd8d13.jpg',
+    heroImage: PAGE_HERO_IMAGES.yachts,
     gallery: [
-      '/media/photo-1540946485063-a40da27545f8.jpg',
-      '/media/marine-yacht-bow-water.jpg',
-      '/media/photo-1519669011783-4eaa95fa4f04.jpg',
+      PAGE_HERO_IMAGES.home,
+      '/media/page-gallery-hero.jpg',
+      '/media/page-services-hero.jpg',
     ],
     equipment: ['Stabilizers', 'Hydraulic platform', 'Williams tender garage', 'AIS & satellite comms'],
   },
@@ -43,12 +43,8 @@ export const yachts: Yacht[] = [
     summary: 'High-volume interior — charter oriented configuration.',
     description:
       'Designed for charter excellence with crew workflow optimized from galley to sky lounge. Recent AV upgrade and soft goods refresh.',
-    heroImage:
-      '/media/marine-megayacht-charter-hero.jpg',
-    gallery: [
-      '/media/marine-yacht-stern-sea.jpg',
-      '/media/photo-1589137148586-828d770bd49c.jpg',
-    ],
+    heroImage: PAGE_HERO_IMAGES.home,
+    gallery: [PAGE_HERO_IMAGES.about, PAGE_HERO_IMAGES.contact],
     equipment: ['Jacuzzi flybridge', 'Zero-speed stabilizers', 'Watermaker high-capacity'],
   },
   {
@@ -68,11 +64,8 @@ export const yachts: Yacht[] = [
     summary: 'Low-hours twin MAN — sharp handling and contemporary interior.',
     description:
       'Turn-key family cruiser with panoramic saloon, hydraulic swim platform and subtle interior palette suited to warm climates.',
-    heroImage:
-      '/media/photo-1605281317010-fe5ffe798166.jpg',
-    gallery: [
-      '/media/photo-1599583879944-4bd14e15f272.jpg',
-    ],
+    heroImage: PAGE_HERO_IMAGES.gallery,
+    gallery: [PAGE_HERO_IMAGES.services],
     equipment: ['Seakeeper', 'Joystick docking', 'Summer galley on fly'],
   },
   {
@@ -91,11 +84,8 @@ export const yachts: Yacht[] = [
     summary: 'Statement Italian lines with crew-forward operational layout.',
     description:
       'Walk-around king master, formal dining and beach club concept with hydraulic passerelle. Recent paint detailing.',
-    heroImage:
-      '/media/photo-1569256326873-7d3c885518d9.jpg',
-    gallery: [
-      '/media/marine-yacht-profile-elegant.jpg',
-    ],
+    heroImage: '/media/page-blog-hero.jpg',
+    gallery: [PAGE_HERO_IMAGES.references],
     equipment: ['Extended range tanks', 'Night vision camera suite'],
   },
 ]

@@ -91,6 +91,7 @@
   },
   "whatsapp": {
     "ariaLabel": "WhatsApp’tan yazın",
+    "fabLabel": "Concierge",
     "fabMessage": "Merhaba Yachtmenia — bir yat projesi hakkında görüşmek istiyorum.",
     "team": "Ekibe WhatsApp",
     "broker": "Broker masasına WhatsApp",
@@ -302,7 +303,9 @@
       "body": "Randevulu ziyaretlere açığız — teknik gezileri önceden koordine edin."
     },
     "direct": {
-      "overline": "Doğrudan"
+      "overline": "Doğrudan",
+      "landline": "Sabit hat",
+      "whatsapp": "WhatsApp"
     },
     "form": {
       "title": "Mesaj gönderin",

@@ -1,4 +1,5 @@
 import type { BlogPost } from '@/types'
+import { PAGE_HERO_IMAGES } from '@/utils/heroMedia'
 
 export const blogPosts: BlogPost[] = [
   {
@@ -16,8 +17,7 @@ export const blogPosts: BlogPost[] = [
     category: 'Market Insight',
     date: '2025-02-12',
     readMinutes: 7,
-    coverImage:
-      '/media/marine-yacht-sunset-hero.jpg',
+    coverImage: PAGE_HERO_IMAGES.services,
     author: 'Yachtmenia Editorial',
   },
   {
@@ -35,8 +35,7 @@ export const blogPosts: BlogPost[] = [
     category: 'Refit',
     date: '2025-01-05',
     readMinutes: 6,
-    coverImage:
-      '/media/photo-1526481280695-3c46917f7e9d.jpg',
+    coverImage: PAGE_HERO_IMAGES.home,
     author: 'Yachtmenia Editorial',
   },
   {
@@ -54,8 +53,7 @@ export const blogPosts: BlogPost[] = [
     category: 'Maintenance',
     date: '2024-11-18',
     readMinutes: 5,
-    coverImage:
-      '/media/photo-1583212292454-1fe62296039b.jpg',
+    coverImage: '/media/page-blog-hero.jpg',
     author: 'Yachtmenia Editorial',
   },
 ]

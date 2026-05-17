@@ -28,7 +28,7 @@ export function ReferenceCard({ project, index = 0 }: { project: ReferenceProjec
             decoding="async"
             sizes="(max-width: 1024px) 100vw, 50vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-brand via-brand/40 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-brand/70 via-brand/25 to-transparent" />
           <div className="absolute left-4 top-4 rounded-full bg-white/90 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-brand">
             {project.category}
           </div>

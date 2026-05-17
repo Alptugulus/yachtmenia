@@ -28,9 +28,20 @@ export const LOGOS = {
   },
 } as const
 
-/** Ana wordmark: yalnızca navbar + footer (`BrandLogo`). */
+/** Üst şerit (Navbar): yatay lockup — dikey PNG 1024 kare tuvalde minicik kalıyordu. */
+export const HEADER_HORIZONTAL_LOGO = {
+  onDark: LOGOS.yachting.horizontalDark,
+  onLight: LOGOS.yachting.horizontalLight,
+} as const
+
+export const HEADER_VERTICAL_LOGO = {
+  onDark: LOGOS.yachting.verticalDark,
+  onLight: LOGOS.yachting.verticalLight,
+} as const
+
+/** Footer + navbar: yatay lockup (daha compact). */
 export const BRAND_LOGO = {
-  navbarOnDark: LOGOS.yachting.horizontalDark,
-  navbarOnLight: LOGOS.yachting.horizontalLight,
-  footer: LOGOS.yachting.horizontalDark,
+  navbarOnDark: HEADER_HORIZONTAL_LOGO.onDark,
+  navbarOnLight: HEADER_HORIZONTAL_LOGO.onLight,
+  footer: HEADER_HORIZONTAL_LOGO.onDark,
 } as const

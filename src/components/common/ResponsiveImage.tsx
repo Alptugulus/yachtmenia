@@ -45,6 +45,13 @@ export function ResponsiveImage({
         width={width}
         height={height}
         sizes={sizes}
+        onError={(e) => {
+          const img = e.currentTarget
+          if (img.src !== fallback && !img.dataset.fallbackApplied) {
+            img.dataset.fallbackApplied = '1'
+            img.src = fallback
+          }
+        }}
       />
     </picture>
   )

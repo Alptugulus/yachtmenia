@@ -8,6 +8,7 @@ import { PageHeader } from '@/components/layout/PageHeader'
 import { getAllServices } from '@/data'
 import { useTranslatedServices } from '@/i18n/dataT'
 import { COMPANY } from '@/utils/constants'
+import { PAGE_HERO_IMAGES } from '@/utils/heroMedia'
 
 export function Services() {
   const { t } = useTranslation()
@@ -25,7 +26,7 @@ export function Services() {
         title={t('servicesPage.header.title')}
         subtitle={t('servicesPage.header.subtitle')}
         crumbs={[{ label: t('breadcrumb.home'), to: '/' }, { label: t('seo.titles.services') }]}
-        backgroundImage="/media/marine-yacht-sunset-hero.jpg"
+        backgroundImage={PAGE_HERO_IMAGES.services}
       />
 
       <section className="mx-auto max-w-[1440px] space-y-12 px-4 py-16 sm:px-6 lg:px-10">

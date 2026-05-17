@@ -476,7 +476,7 @@ function MegaMenuBody({
                 ) : sub.key === 'email' ? (
                   <span className={`mt-1 block truncate text-xs ${textMuted}`}>{COMPANY.email}</span>
                 ) : (
-                  <span className={`mt-1 block text-xs ${textMuted}`}>{t('nav.contactSub.whatsapp')}</span>
+                  <span className={`mt-1 block text-xs ${textMuted}`}>{COMPANY.whatsappDisplay}</span>
                 )}
               </>
             )
@@ -525,10 +525,7 @@ export function Navbar() {
   const [desktopOpenKey, setDesktopOpenKey] = useState<string | null>(null)
   const mobileMenuOpen = useUiStore((s) => s.mobileMenuOpen)
   const setMobileMenuOpen = useUiStore((s) => s.setMobileMenuOpen)
-  const isNotFoundLike = location.pathname === '/404'
-  const onDarkHeader = !scrolled && !mobileMenuOpen && !isNotFoundLike
-  const headerLogoTone: 'on-dark' | 'on-light' = onDarkHeader ? 'on-dark' : 'on-light'
-  const navOnDarkSurface = headerLogoTone === 'on-dark'
+  const headerLogoTone: 'on-dark' | 'on-light' = 'on-light'
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24)
@@ -571,9 +568,6 @@ export function Navbar() {
 
   const linkDesktop = (isActive: boolean) => {
     const base = 'text-sm font-medium tracking-wide transition'
-    if (navOnDarkSurface) {
-      return `${base} ${isActive ? 'text-white' : 'text-white/85 hover:text-white'}`
-    }
     return `${base} ${isActive ? 'font-semibold text-primary' : 'text-primary/65 hover:text-primary'}`
   }
 
@@ -608,29 +602,29 @@ export function Navbar() {
   const megaShell =
     'border border-stone/35 bg-white shadow-[0_32px_90px_-32px_rgb(15_23_42/0.22)] ring-1 ring-black/[0.05] backdrop-blur-xl'
 
-  const shell = onDarkHeader
-    ? 'border-b border-white/15 bg-brand/50 backdrop-blur-md'
-    : 'border-b border-stone/50 bg-white/90 shadow-card backdrop-blur-md'
+  const shell = scrolled
+    ? 'border-b border-stone/55 bg-pearl shadow-[0_4px_28px_-12px_rgb(0_0_50/0.14)]'
+    : 'border-b border-stone/40 bg-pearl'
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-[100] overflow-x-clip transition-colors duration-300 ${shell}`}
+      className={`fixed inset-x-0 top-0 z-[100] overflow-x-clip transition-[box-shadow,border-color] duration-300 ${shell}`}
       onMouseLeave={(e) => {
         const next = e.relatedTarget
         if (next instanceof Node && e.currentTarget.contains(next)) return
         closeDesktopDropdown()
       }}
     >
-      <div className="mx-auto flex max-w-[1440px] items-center justify-between gap-4 px-4 py-3 sm:px-6 sm:py-4 lg:gap-6 lg:px-8 lg:py-4 xl:gap-8 xl:px-10 xl:py-5">
+      <div className="mx-auto flex h-[5.25rem] max-h-[5.25rem] min-h-[5.25rem] max-w-[1440px] items-center justify-between gap-3 px-4 sm:gap-4 sm:px-6 lg:gap-6 lg:px-8 xl:gap-8 xl:px-10">
         <Link
           to="/"
-          className="group inline-flex shrink-0 items-center self-center"
+          className="group flex shrink-0 items-center py-1"
           aria-label={t('nav.homeAria')}
         >
           <BrandLogo variant="navbar" headerTone={headerLogoTone} />
         </Link>
 
-        <div className="relative hidden min-w-0 flex-1 lg:flex lg:justify-center">
+        <div className="relative hidden min-h-0 min-w-0 flex-1 self-stretch lg:flex lg:items-center lg:justify-center">
           <div className="mx-auto min-w-0 max-w-full overflow-x-auto overflow-y-visible overscroll-x-contain py-1 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
             <nav
               className="inline-flex max-w-none shrink-0 flex-nowrap items-center justify-center gap-x-2 px-0.5 sm:gap-x-3 xl:gap-x-5 2xl:gap-x-6"
@@ -658,9 +652,7 @@ export function Navbar() {
                           {t(`nav.${item.key}`)}
                         </NavLink>
                         <ChevronDown
-                          className={`pointer-events-none h-3.5 w-3.5 shrink-0 ${
-                            navOnDarkSurface ? 'text-white/55' : 'text-primary/45'
-                          }`}
+                          className="pointer-events-none h-3.5 w-3.5 shrink-0 text-primary/45"
                           aria-hidden
                         />
                       </div>
@@ -681,28 +673,20 @@ export function Navbar() {
           </div>
         </div>
 
-        <div className="hidden shrink-0 items-center gap-2 lg:flex xl:gap-3">
-          {navOnDarkSurface ? (
-            <div className="flex items-stretch overflow-hidden rounded-lg border border-white/[0.09] bg-black/20 shadow-[inset_0_1px_0_rgb(255_255_255/0.04)]">
-              <LanguageSwitcher tone={headerLogoTone} embedded className="min-w-0" />
-            </div>
-          ) : (
-            <LanguageSwitcher tone={headerLogoTone} />
-          )}
+        <div className="hidden shrink-0 items-center gap-2 self-center lg:flex xl:gap-3">
+          <LanguageSwitcher tone={headerLogoTone} />
           <a
             href={`tel:+${COMPANY.phoneE164}`}
             title={COMPANY.phoneDisplay}
             aria-label={COMPANY.phoneDisplay}
-            className={`inline-flex items-center gap-2 rounded-lg px-1.5 py-1 text-sm font-semibold transition xl:px-0 ${
-              navOnDarkSurface ? 'text-white hover:text-white/90' : 'text-primary hover:text-primary/80'
-            }`}
+            className="inline-flex items-center gap-2 rounded-lg px-1.5 py-1 text-sm font-semibold text-primary transition hover:text-primary/80 xl:px-0"
           >
             <Phone className="h-4 w-4 shrink-0" strokeWidth={2} />
             <span className="hidden xl:inline">{COMPANY.phoneDisplay}</span>
           </a>
           <Link
             to="/contact"
-            className="rounded-lg bg-white px-3 py-2 text-sm font-semibold text-brand shadow-card ring-1 ring-white/20 transition hover:bg-gold-hover xl:px-4"
+            className="rounded-lg bg-brand px-3 py-2 text-sm font-semibold text-white shadow-card transition hover:bg-brand-muted xl:px-4"
           >
             {t('nav.consultCta')}
           </Link>
@@ -710,11 +694,7 @@ export function Navbar() {
 
         <button
           type="button"
-          className={`inline-flex h-11 w-11 items-center justify-center rounded-lg border lg:hidden ${
-            navOnDarkSurface
-              ? 'border-white/30 text-white'
-              : 'border-stone/70 text-primary'
-          }`}
+          className="inline-flex h-11 w-11 shrink-0 items-center justify-center self-center rounded-lg border border-stone/70 text-primary lg:hidden"
           aria-expanded={mobileMenuOpen}
           aria-label={t('nav.ariaToggleMenu')}
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}

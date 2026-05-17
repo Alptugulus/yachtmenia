@@ -19,10 +19,10 @@ export function PageLoader() {
       <img
         src={BRAND_LOGO.navbarOnLight}
         alt="Yachtmenia Yachting"
-        width={400}
-        height={104}
+        width={240}
+        height={300}
         decoding="async"
-        className="block h-20 w-auto max-w-[min(320px,72vw)] object-contain motion-safe:animate-pulse sm:h-24"
+        className="block h-40 w-auto max-w-[min(320px,70vw)] object-contain motion-safe:animate-pulse sm:h-44 md:h-48"
         aria-hidden
       />
       <div className="flex w-full max-w-[240px] flex-col items-center gap-3" aria-hidden>

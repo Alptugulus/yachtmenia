@@ -12,7 +12,8 @@ const variants: Record<Variant, string> = {
     'text-white hover:bg-white/10 border border-white/15 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white',
   outline:
     'border border-stone/80 bg-pearl/90 text-charcoal shadow-[inset_0_1px_0_rgb(255_255_255/0.9)] hover:border-stone hover:bg-brand/[0.05] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand',
-  whatsapp: 'bg-[#25D366] text-white hover:bg-[#1ebe57] shadow-card focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white',
+  whatsapp:
+    'bg-brand text-white shadow-[0_10px_28px_-10px_rgb(0_0_50/0.45),inset_0_1px_0_rgb(255_255_255/0.1)] ring-1 ring-white/15 hover:bg-brand-muted hover:shadow-[0_14px_36px_-12px_rgb(0_0_50/0.5)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white [&_svg]:text-[#4ade80]',
 }
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {

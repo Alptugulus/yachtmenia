@@ -7,6 +7,7 @@ import { PageHeader } from '@/components/layout/PageHeader'
 import { getAllReferences } from '@/data'
 import { useTranslatedReferences } from '@/i18n/dataT'
 import { COMPANY } from '@/utils/constants'
+import { PAGE_HERO_IMAGES } from '@/utils/heroMedia'
 
 export function References() {
   const { t } = useTranslation()
@@ -24,7 +25,7 @@ export function References() {
         title={t('referencesPage.header.title')}
         subtitle={t('referencesPage.header.subtitle')}
         crumbs={[{ label: t('breadcrumb.home'), to: '/' }, { label: t('seo.titles.references') }]}
-        backgroundImage="/media/photo-1449844908441-8829872d5227.jpg"
+        backgroundImage={PAGE_HERO_IMAGES.references}
       />
 
       <section className="mx-auto max-w-[1440px] space-y-12 px-4 py-16 sm:px-6 lg:px-10">
