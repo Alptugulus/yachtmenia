@@ -32,7 +32,7 @@ export function buildRootJsonLd(origin: string) {
         },
         description: `${COMPANY.name} — yacht brokerage, refit, management and marine consultancy in Didim, Aydın since ${COMPANY.founded}.`,
         areaServed: { '@type': 'Country', name: 'Turkey' },
-        logo: absoluteUrl(origin, '/media/logos/yachting-horizontal-light-trim.png'),
+        logo: absoluteUrl(origin, '/media/logos/yachting-vertical-light-trim.png'),
         image: absoluteUrl(origin, DEFAULT_OG_IMAGE_PATH),
       },
       {

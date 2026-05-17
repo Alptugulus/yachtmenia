@@ -8,7 +8,14 @@ import { fileURLToPath } from 'node:url'
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const logosDir = path.join(__dirname, '..', 'public', 'media', 'logos')
 
-const HORIZONTAL = [
+/** Navbar lockup: çapa + yazı yatay (dosya adı `vertical`). */
+const NAV_LOCKUP = [
+  'yachting-vertical-light.png',
+  'yachting-vertical-dark.png',
+]
+
+/** İkon-üstü lockup (dosya adı `horizontal`). */
+const STACKED = [
   'yachting-horizontal-light.png',
   'yachting-horizontal-dark.png',
   'brokerage-horizontal-light.png',
@@ -16,6 +23,8 @@ const HORIZONTAL = [
   'refit-horizontal-light.png',
   'refit-horizontal-dark.png',
 ]
+
+const HORIZONTAL = [...NAV_LOCKUP, ...STACKED]
 
 async function main() {
   const sharp = (await import('sharp')).default

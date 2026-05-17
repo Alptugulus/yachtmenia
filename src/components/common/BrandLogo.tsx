@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { COMPANY } from '@/utils/constants'
-import { BRAND_LOGO, BRAND_LOGO_2X, brandLogoSrcSet } from '@/utils/logos'
+import { BRAND_LOCKUP_ASPECT, BRAND_LOGO, brandLogoSrcSet } from '@/utils/logos'
 
 interface BrandLogoProps {
   variant: 'navbar' | 'footer'
@@ -8,6 +8,9 @@ interface BrandLogoProps {
   /** LCP / above-the-fold */
   priority?: boolean
 }
+
+const LOCKUP_W = 918
+const LOCKUP_H = 340
 
 export function BrandLogo({ variant, headerTone = 'on-light', priority = false }: BrandLogoProps) {
   const [failed, setFailed] = useState(false)
@@ -34,40 +37,39 @@ export function BrandLogo({ variant, headerTone = 'on-light', priority = false }
 
   const enhanceOnLight =
     variant === 'navbar' && !onDark
-      ? 'contrast-[1.14] saturate-[1.06] brightness-[0.98] drop-shadow-[0_1px_0_rgb(0_0_50/0.14)]'
+      ? 'contrast-[1.12] saturate-[1.05] drop-shadow-[0_1px_0_rgb(0_0_50/0.12)]'
       : onDark
         ? 'drop-shadow-[0_2px_8px_rgb(0_0_0/0.35)]'
         : ''
 
-  if (variant === 'navbar') {
-    return (
-      <img
-        src={src}
-        srcSet={srcSet}
-        sizes="(max-width: 640px) 72vw, (max-width: 1024px) 380px, 440px"
-        alt="Yachtmenia Yachting"
-        width={918}
-        height={836}
-        loading={priority ? 'eager' : 'lazy'}
-        fetchPriority={priority ? 'high' : 'auto'}
-        decoding="async"
-        className={`block w-auto max-w-[min(440px,82vw)] object-contain object-left motion-safe:transition-[filter,transform] motion-safe:duration-200 motion-safe:group-hover:brightness-[1.02] h-[3.5rem] min-h-[56px] sm:h-[4rem] md:h-[4.35rem] lg:h-[4.65rem] ${enhanceOnLight}`}
-        onError={() => setFailed(true)}
-      />
-    )
-  }
+  /** Yatay lockup: yükseklik sabit, genişlik orana göre — yazı okunaklı kalır */
+  const lockupHeights =
+    variant === 'navbar'
+      ? 'h-[2.85rem] min-h-[46px] sm:h-[3.35rem] md:h-[3.65rem] lg:h-[4rem]'
+      : 'h-16 sm:h-[4.25rem]'
+
+  const lockupMaxW =
+    variant === 'navbar'
+      ? 'max-w-[min(520px,92vw)]'
+      : 'max-w-[min(400px,88vw)]'
 
   return (
     <img
-      src={BRAND_LOGO.footer}
-      srcSet={`${BRAND_LOGO.footer} 1x, ${BRAND_LOGO_2X.footer} 2x`}
-      sizes="(max-width: 640px) 65vw, 280px"
+      src={src}
+      srcSet={srcSet}
+      sizes={
+        variant === 'navbar'
+          ? '(max-width: 640px) 88vw, (max-width: 1024px) 480px, 520px'
+          : '(max-width: 640px) 80vw, 400px'
+      }
       alt="Yachtmenia Yachting"
-      width={918}
-      height={836}
-      loading="lazy"
+      width={LOCKUP_W}
+      height={LOCKUP_H}
+      loading={priority ? 'eager' : 'lazy'}
+      fetchPriority={priority ? 'high' : 'auto'}
       decoding="async"
-      className={`block h-28 w-auto max-w-[min(300px,72vw)] object-contain object-left sm:h-32 ${enhanceOnLight || 'drop-shadow-[0_2px_10px_rgb(0_0_0/0.3)]'}`}
+      style={{ aspectRatio: BRAND_LOCKUP_ASPECT }}
+      className={`block w-auto object-contain object-left ${lockupHeights} ${lockupMaxW} motion-safe:transition-[filter,transform] motion-safe:duration-200 motion-safe:group-hover:brightness-[1.02] ${enhanceOnLight}`}
       onError={() => setFailed(true)}
     />
   )
