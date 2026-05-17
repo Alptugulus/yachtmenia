@@ -1,18 +1,18 @@
 /**
- * Orijinal marka dosyaları — public/ ve yüksek çözünürlüklü lockup.
+ * Orijinal marka PNG’leri — işlenmemiş trim, public footer dosyası.
  */
-import lockupDark from '@/assets/brand/lockup-dark@2x.png'
-import lockupLight from '@/assets/brand/lockup-light@2x.png'
+import navbarLockupDark from '@/assets/brand/navbar-lockup-dark.png'
+import navbarLockupLight from '@/assets/brand/navbar-lockup-light.png'
 import { publicAsset } from '@/utils/publicAsset'
 
 const inLogos = (name: string) => publicAsset(`media/logos/${name}`)
 
+/** yachting-vertical-light trim sonrası (~918×340) */
 export const BRAND_LOCKUP_ASPECT = 918 / 340
 
-/** Navbar / loader — lacivert yatay lockup (yachting-vertical) */
 export const BRAND_LOGO = {
-  navbarOnLight: lockupLight,
-  navbarOnDark: lockupDark,
+  navbarOnLight: navbarLockupLight,
+  navbarOnDark: navbarLockupDark,
   footer: publicAsset('yachtmenia-logo-footer.png'),
 } as const
 
