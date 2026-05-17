@@ -1,18 +1,18 @@
 /**
- * Orijinal marka PNG’leri — işlenmemiş trim, public footer dosyası.
+ * Navbar = footer ile aynı export (yachtmenia-logo-footer), lacivert renk.
+ * Footer = beyaz orijinal public dosyası.
  */
-import navbarLockupDark from '@/assets/brand/navbar-lockup-dark.png'
 import navbarLockupLight from '@/assets/brand/navbar-lockup-light.png'
 import { publicAsset } from '@/utils/publicAsset'
 
 const inLogos = (name: string) => publicAsset(`media/logos/${name}`)
 
-/** yachting-vertical-light trim sonrası (~918×340) */
-export const BRAND_LOCKUP_ASPECT = 918 / 340
+/** yachtmenia-logo-footer oranı 300×120 */
+export const BRAND_LOCKUP_ASPECT = 300 / 120
 
 export const BRAND_LOGO = {
   navbarOnLight: navbarLockupLight,
-  navbarOnDark: navbarLockupDark,
+  navbarOnDark: navbarLockupLight,
   footer: publicAsset('yachtmenia-logo-footer.png'),
 } as const
 
