@@ -2,6 +2,7 @@ import type { ReactNode } from 'react'
 import { Link } from 'react-router-dom'
 import { ChevronRight } from 'lucide-react'
 import { HeroBackdrop } from '@/components/common/HeroBackdrop'
+import { HeroWave } from '@/components/common/HeroWave'
 
 interface Crumb {
   label: string
@@ -18,14 +19,14 @@ interface PageHeaderProps {
 
 export function PageHeader({ title, subtitle, crumbs, backgroundImage, badge }: PageHeaderProps) {
   return (
-    <section className="relative isolate min-h-[min(520px,52vh)] overflow-hidden pt-28 after:pointer-events-none after:absolute after:inset-x-0 after:bottom-0 after:z-20 after:h-px after:bg-gradient-to-r after:from-transparent after:via-white/25 after:to-transparent">
+    <section className="relative isolate min-h-[min(520px,52vh)] overflow-hidden pt-28">
       {backgroundImage ? (
-        <HeroBackdrop src={backgroundImage} alt="" variant="page" priority />
+        <HeroBackdrop src={backgroundImage} alt="" variant="page" priority parallax />
       ) : (
         <div className="absolute inset-0 z-0 bg-gradient-to-br from-brand via-brand-muted to-brand" />
       )}
 
-      <div className="relative z-10 mx-auto max-w-[1440px] px-4 pb-16 pt-10 motion-safe:animate-page-in sm:px-6 lg:px-10 lg:pb-20 lg:pt-14">
+      <div className="relative z-10 mx-auto max-w-[1440px] px-4 pb-24 pt-10 animate-page-in motion-reduce:animate-none sm:px-6 lg:px-10 lg:pb-28 lg:pt-14">
         {crumbs?.length ? (
           <nav className="mb-6 flex flex-wrap items-center gap-2 text-xs uppercase tracking-[0.18em] text-white/75">
             {crumbs.map((c, idx) => (
@@ -54,6 +55,8 @@ export function PageHeader({ title, subtitle, crumbs, backgroundImage, badge }: 
           ) : null}
         </div>
       </div>
+
+      <HeroWave tone="mist" />
     </section>
   )
 }

@@ -6,12 +6,14 @@ interface BrandLogoProps {
   variant: 'navbar' | 'footer' | 'loader'
   headerTone?: 'on-dark' | 'on-light'
   priority?: boolean
+  /** Smaller lockup when the navbar is in scrolled / compact mode. */
+  compact?: boolean
 }
 
 const LOCKUP_W = 300
 const LOCKUP_H = 120
 
-export function BrandLogo({ variant, priority = false }: BrandLogoProps) {
+export function BrandLogo({ variant, priority = false, compact = false }: BrandLogoProps) {
   const [failed, setFailed] = useState(false)
   const isFooter = variant === 'footer'
 
@@ -31,7 +33,9 @@ export function BrandLogo({ variant, priority = false }: BrandLogoProps) {
 
   const heights = isFooter
     ? 'h-[52px] sm:h-[56px] md:h-[60px] lg:h-[64px]'
-    : 'h-[52px] sm:h-[58px] md:h-[64px] lg:h-[72px]'
+    : compact
+      ? 'h-[40px] sm:h-[44px] md:h-[48px] lg:h-[52px]'
+      : 'h-[52px] sm:h-[58px] md:h-[64px] lg:h-[72px]'
 
   const maxW = isFooter ? 'max-w-[min(300px,92vw)]' : 'max-w-[min(340px,88vw)]'
 
@@ -45,7 +49,9 @@ export function BrandLogo({ variant, priority = false }: BrandLogoProps) {
       fetchPriority={priority ? 'high' : 'auto'}
       decoding="async"
       style={{ aspectRatio: BRAND_LOCKUP_ASPECT }}
-      className={`block w-auto object-contain object-left ${maxW} ${heights}`}
+      className={`block w-auto object-contain object-left transition-[height] duration-300 ease-out ${maxW} ${heights} ${
+        variant === 'loader' ? 'animate-logo-pulse motion-reduce:animate-none' : ''
+      }`}
       onError={() => setFailed(true)}
     />
   )

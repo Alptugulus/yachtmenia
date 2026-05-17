@@ -1,20 +1,29 @@
 import { Link } from 'react-router-dom'
 import { ArrowUpRight } from 'lucide-react'
-import { motion, useReducedMotion } from 'framer-motion'
+import { motion } from 'framer-motion'
+import { useMotionAllowed } from '@/hooks/useMotionAllowed'
 import { useTranslation } from 'react-i18next'
 import { ResponsiveImage } from '@/components/common/ResponsiveImage'
 import type { ReferenceProject } from '@/types'
+import {
+  CARD_REVEAL_DURATION,
+  CARD_REVEAL_VIEWPORT,
+  cardStaggerDelay,
+  revealInitial,
+  revealTransition,
+  revealWhileInView,
+} from '@/utils/revealMotion'
 
 export function ReferenceCard({ project, index = 0 }: { project: ReferenceProject; index?: number }) {
   const { t } = useTranslation()
-  const reduce = useReducedMotion()
+  const motionAllowed = useMotionAllowed()
   return (
     <motion.article
       id={`ref-${project.slug}`}
-      initial={reduce ? false : { opacity: 0, y: 18 }}
-      whileInView={reduce ? undefined : { opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-40px' }}
-      transition={{ duration: 0.45, delay: index * 0.06 }}
+      initial={revealInitial(motionAllowed, 'blur-up')}
+      whileInView={revealWhileInView(motionAllowed, 'blur-up')}
+      viewport={CARD_REVEAL_VIEWPORT}
+      transition={revealTransition(motionAllowed, { delay: cardStaggerDelay(index), duration: CARD_REVEAL_DURATION })}
       className="group relative overflow-hidden rounded-2xl border border-white/10 bg-brand-muted shadow-soft transition-[box-shadow,border-color] duration-300 ease-out hover:border-white/25 hover:shadow-[0_28px_70px_-20px_rgb(0_0_0/0.45)]"
     >
       <Link to="/references" className="block">

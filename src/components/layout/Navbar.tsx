@@ -1,6 +1,6 @@
 import { useEffect, useState, type ReactNode } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
-import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
+import { AnimatePresence, motion } from 'framer-motion'
 import type { LucideIcon } from 'lucide-react'
 import {
   BookOpen,
@@ -28,7 +28,11 @@ import { ResponsiveImage } from '@/components/common/ResponsiveImage'
 import { blogPosts, references, yachts } from '@/data'
 import type { NavSubItem } from '@/utils/constants'
 import { COMPANY, MAIN_NAV, SERVICE_NAV } from '@/utils/constants'
+import { useLenis } from '@/contexts/LenisContext'
+import { useMotionAllowed } from '@/hooks/useMotionAllowed'
 import { useUiStore } from '@/store/ui'
+
+const NAV_SCROLL_THRESHOLD = 48
 
 const SERVICE_ICONS: Record<string, LucideIcon> = {
   brokerage: Ship,
@@ -518,7 +522,8 @@ function MegaMenuBody({
 
 export function Navbar() {
   const { t } = useTranslation()
-  const reduce = useReducedMotion()
+  const motionAllowed = useMotionAllowed()
+  const lenis = useLenis()
   const location = useLocation()
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpenDropdownKey, setMobileOpenDropdownKey] = useState<string | null>(null)
@@ -528,11 +533,21 @@ export function Navbar() {
   const headerLogoTone: 'on-dark' | 'on-light' = 'on-light'
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24)
-    onScroll()
-    window.addEventListener('scroll', onScroll)
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
+    const update = () => {
+      const y = lenis?.scroll ?? window.scrollY
+      setScrolled(y > NAV_SCROLL_THRESHOLD)
+    }
+    update()
+    window.addEventListener('scroll', update, { passive: true })
+    if (lenis) {
+      lenis.on('scroll', update)
+      return () => {
+        window.removeEventListener('scroll', update)
+        lenis.off('scroll', update)
+      }
+    }
+    return () => window.removeEventListener('scroll', update)
+  }, [lenis])
 
   useEffect(() => {
     document.body.style.overflow = mobileMenuOpen ? 'hidden' : ''
@@ -603,25 +618,29 @@ export function Navbar() {
     'border border-stone/35 bg-white shadow-[0_32px_90px_-32px_rgb(15_23_42/0.22)] ring-1 ring-black/[0.05] backdrop-blur-xl'
 
   const shell = scrolled
-    ? 'border-b border-stone/55 bg-pearl shadow-[0_4px_28px_-12px_rgb(0_0_50/0.14)]'
-    : 'border-b border-stone/40 bg-pearl'
+    ? 'border-b border-stone/50 bg-pearl/90 shadow-[0_10px_40px_-14px_rgb(0_0_50/0.2)] backdrop-blur-xl backdrop-saturate-150 supports-[backdrop-filter]:bg-pearl/80'
+    : 'border-b border-stone/35 bg-pearl/95 backdrop-blur-sm'
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-[100] overflow-x-clip transition-[box-shadow,border-color] duration-300 ${shell}`}
+      className={`fixed inset-x-0 top-0 z-[100] overflow-x-clip transition-[box-shadow,border-color,background-color,backdrop-filter] duration-300 ease-out ${shell}`}
       onMouseLeave={(e) => {
         const next = e.relatedTarget
         if (next instanceof Node && e.currentTarget.contains(next)) return
         closeDesktopDropdown()
       }}
     >
-      <div className="mx-auto flex h-[5.75rem] max-h-[5.75rem] min-h-[5.75rem] max-w-[1440px] items-center justify-between gap-2 px-4 sm:gap-3 sm:px-6 lg:gap-5 lg:px-8 xl:gap-6 xl:px-10">
+      <div
+        className={`mx-auto flex max-w-[1440px] items-center justify-between gap-2 px-4 transition-[height,min-height,max-height] duration-300 ease-out sm:gap-3 sm:px-6 lg:gap-5 lg:px-8 xl:gap-6 xl:px-10 ${
+          scrolled ? 'h-[4.25rem] min-h-[4.25rem] max-h-[4.25rem]' : 'h-[5.75rem] min-h-[5.75rem] max-h-[5.75rem]'
+        }`}
+      >
         <Link
           to="/"
           className="group relative z-[1] flex min-w-0 shrink items-center py-0.5 pr-1 sm:pr-2"
           aria-label={t('nav.homeAria')}
         >
-          <BrandLogo variant="navbar" headerTone={headerLogoTone} priority />
+          <BrandLogo variant="navbar" headerTone={headerLogoTone} priority compact={scrolled} />
         </Link>
 
         <div className="relative hidden min-h-0 min-w-0 flex-1 self-stretch lg:flex lg:items-center lg:justify-center">
@@ -714,10 +733,10 @@ export function Navbar() {
               key={desktopOpenKey}
               role="region"
               aria-label={t(`nav.${desktopOpenKey}`)}
-              initial={reduce ? { opacity: 0 } : { opacity: 0, y: -10 }}
-              animate={reduce ? { opacity: 1 } : { opacity: 1, y: 0 }}
-              exit={reduce ? { opacity: 0 } : { opacity: 0, y: -6 }}
-              transition={{ duration: reduce ? 0.12 : 0.22, ease: [0.22, 1, 0.36, 1] }}
+              initial={motionAllowed ? { opacity: 0, y: -10 } : { opacity: 0 }}
+              animate={motionAllowed ? { opacity: 1, y: 0 } : { opacity: 1 }}
+              exit={motionAllowed ? { opacity: 0, y: -6 } : { opacity: 0 }}
+              transition={{ duration: motionAllowed ? 0.22 : 0.12, ease: [0.22, 1, 0.36, 1] }}
               className={`pointer-events-auto mx-auto max-h-[min(78vh,40rem)] w-full min-w-0 max-w-[1440px] overflow-y-auto overscroll-contain rounded-2xl p-5 sm:p-7 lg:p-8 ${megaShell}`}
             >
               <MegaMenuBody openKey={desktopOpenKey} t={t} onNavigate={closeDesktopDropdown} />
@@ -729,10 +748,10 @@ export function Navbar() {
       <AnimatePresence>
         {mobileMenuOpen ? (
           <motion.div
-            initial={reduce ? { opacity: 0 } : { opacity: 0, height: 0 }}
-            animate={reduce ? { opacity: 1 } : { opacity: 1, height: 'auto' }}
-            exit={reduce ? { opacity: 0 } : { opacity: 0, height: 0 }}
-            transition={{ duration: reduce ? 0.15 : 0.28, ease: [0.22, 1, 0.36, 1] }}
+            initial={motionAllowed ? { opacity: 0, height: 0 } : { opacity: 0 }}
+            animate={motionAllowed ? { opacity: 1, height: 'auto' } : { opacity: 1 }}
+            exit={motionAllowed ? { opacity: 0, height: 0 } : { opacity: 0 }}
+            transition={{ duration: motionAllowed ? 0.28 : 0.15, ease: [0.22, 1, 0.36, 1] }}
             className="border-t border-stone/60 bg-brand lg:hidden"
           >
             <div className="space-y-6 px-4 py-6 sm:px-6">

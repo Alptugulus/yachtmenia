@@ -54,6 +54,10 @@ html {
   --animate-page-in: page-header-in 0.55s var(--ease-out-soft) both;
   --animate-fade-up: fade-up 0.6s var(--ease-out-soft) both;
   --animate-loading-indeterminate: loading-indeterminate 1s var(--ease-out-soft) infinite;
+  --animate-wave-drift-slow: wave-drift 5.5s ease-in-out infinite alternate;
+  --animate-wave-drift-fast: wave-drift 4s ease-in-out infinite alternate;
+  --animate-wave-drift-reverse: wave-drift-reverse 4.5s ease-in-out infinite alternate;
+  --animate-logo-pulse: logo-pulse 2.2s ease-in-out infinite;
 }
 
 @keyframes shine {
@@ -83,7 +87,7 @@ html {
 @keyframes page-header-in {
   from {
     opacity: 0;
-    transform: translateY(12px);
+    transform: translateY(28px);
   }
   to {
     opacity: 1;
@@ -109,6 +113,37 @@ html {
   }
   100% {
     transform: translateX(380%);
+  }
+}
+
+/* Hero wave: horizontal + light vertical sway (clearly visible) */
+@keyframes wave-drift {
+  from {
+    transform: translate3d(-22%, 8px, 0);
+  }
+  to {
+    transform: translate3d(22%, -8px, 0);
+  }
+}
+
+@keyframes wave-drift-reverse {
+  from {
+    transform: translate3d(20%, -7px, 0);
+  }
+  to {
+    transform: translate3d(-20%, 7px, 0);
+  }
+}
+
+@keyframes logo-pulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.88;
+    transform: scale(0.97);
   }
 }
 
@@ -142,6 +177,14 @@ html {
     .animate-loading-indeterminate {
       animation: none !important;
       transform: translateX(32%) !important;
+    }
+
+    .animate-wave-drift-slow,
+    .animate-wave-drift-fast,
+    .animate-wave-drift-reverse,
+    .animate-page-in,
+    .animate-logo-pulse {
+      animation: none !important;
     }
   }
 }

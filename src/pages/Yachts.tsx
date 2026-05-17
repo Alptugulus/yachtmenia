@@ -29,7 +29,7 @@ export function Yachts() {
       />
 
       <section className="mx-auto max-w-[1440px] space-y-12 px-4 py-16 sm:px-6 lg:px-10">
-        <FadeIn>
+        <FadeIn variant="blur-up">
           <SectionHeading
             title={t('yachtsPage.section.title')}
             subtitle={t('yachtsPage.section.subtitle')}

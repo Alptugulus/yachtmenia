@@ -59,7 +59,7 @@ export function YachtDetail() {
       />
 
       <section className="mx-auto max-w-[1200px] space-y-10 px-4 py-12 sm:px-6 lg:px-10">
-        <FadeIn>
+        <FadeIn variant="blur-up">
           <Link
             to="/yachts"
             className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary/75"
@@ -166,7 +166,7 @@ export function YachtDetail() {
           </aside>
         </div>
 
-        <FadeIn>
+        <FadeIn variant="blur-up">
           <div className="max-w-3xl space-y-4 text-lg leading-relaxed text-slate">
             <h2 className="font-display text-3xl text-primary">{t('yachtDetail.overview')}</h2>
             <p>{yacht.description}</p>
@@ -174,7 +174,7 @@ export function YachtDetail() {
         </FadeIn>
 
         {yacht.equipment?.length ? (
-          <FadeIn>
+          <FadeIn variant="blur-up">
             <div className="rounded-2xl border border-stone/50 bg-mist/60 p-8 shadow-[inset_0_1px_0_rgb(255_255_255/0.5)]">
               <h3 className="font-display text-3xl text-primary">{t('yachtDetail.equipment')}</h3>
               <ul className="mt-6 grid gap-3 sm:grid-cols-2">
@@ -189,7 +189,7 @@ export function YachtDetail() {
           </FadeIn>
         ) : null}
 
-        <FadeIn>
+        <FadeIn variant="blur-up">
           <div className="flex flex-wrap items-center gap-4 rounded-2xl border border-stone/50 bg-pearl px-6 py-5 text-sm text-slate shadow-[inset_0_1px_0_rgb(255_255_255/0.85)] ring-1 ring-primary/[0.03]">
             <MapPin className="h-5 w-5 text-primary/75" />
             <span className="font-semibold text-primary">

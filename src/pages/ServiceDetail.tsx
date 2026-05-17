@@ -48,12 +48,12 @@ export function ServiceDetail() {
 
       <section className="mx-auto max-w-[1100px] space-y-10 px-4 py-16 sm:px-6 lg:px-10">
         {service.body.map((para, idx) => (
-          <FadeIn key={idx} delay={idx * 0.05}>
+          <FadeIn key={idx} variant="blur-up" delay={idx * 0.05}>
             <p className="text-lg leading-relaxed text-slate">{para}</p>
           </FadeIn>
         ))}
 
-        <FadeIn>
+        <FadeIn variant="blur-up">
           <div className="rounded-2xl border border-stone/50 bg-mist/60 p-8 shadow-[inset_0_1px_0_rgb(255_255_255/0.5)]">
             <h2 className="font-display text-3xl text-primary">{t('serviceDetail.deliveryFocus')}</h2>
             <ul className="mt-6 grid gap-3 sm:grid-cols-2">
@@ -67,7 +67,7 @@ export function ServiceDetail() {
           </div>
         </FadeIn>
 
-        <FadeIn>
+        <FadeIn variant="blur-up">
           <div className="overflow-hidden rounded-2xl border border-stone/50 bg-pearl shadow-card ring-1 ring-primary/[0.04]">
             <ResponsiveImage
               src={service.heroImage}

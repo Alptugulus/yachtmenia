@@ -48,7 +48,7 @@ export function About() {
         <div className="mx-auto max-w-[1440px] space-y-10 px-4 sm:px-6 lg:px-10">
           <div className="grid gap-10 sm:grid-cols-3">
           {(['governance', 'craft', 'continuity'] as const).map((key) => (
-            <FadeIn key={key}>
+            <FadeIn key={key} variant="blur-up">
               <div className="rounded-2xl border border-stone/50 bg-pearl p-6 shadow-card ring-1 ring-primary/[0.04]">
                 <h3 className="font-display text-2xl text-primary">{t(`about.pillars.${key}.title`)}</h3>
                 <p className="mt-3 text-slate">{t(`about.pillars.${key}.body`)}</p>

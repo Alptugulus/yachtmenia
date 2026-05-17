@@ -1,13 +1,17 @@
 import { Link } from 'react-router-dom'
-import { motion, useReducedMotion } from 'framer-motion'
+import { motion } from 'framer-motion'
+import { useMotionAllowed } from '@/hooks/useMotionAllowed'
 import { ArrowRight, Award, MapPin, MessageCircle, Phone, Shield } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { Seo } from '@/components/common/Seo'
 import { HeroBackdrop } from '@/components/common/HeroBackdrop'
+import { HeroWave } from '@/components/common/HeroWave'
+import { SectionWave } from '@/components/common/SectionWave'
 import { PAGE_HERO_IMAGES } from '@/utils/heroMedia'
 import { Button } from '@/components/common/Button'
 import { WhatsAppIcon } from '@/components/common/WhatsAppIcon'
 import { SectionHeading } from '@/components/common/SectionHeading'
+import { CountUp } from '@/components/common/CountUp'
 import { FadeIn } from '@/components/common/FadeIn'
 import { YachtCard } from '@/components/cards/YachtCard'
 import { ServiceCard } from '@/components/cards/ServiceCard'
@@ -28,13 +32,16 @@ export function Home() {
   const featured = useTranslatedYachts(getFeaturedYachts())
   const references = useTranslatedReferences(getAllReferences().slice(0, 2))
   const posts = useTranslatedPosts(getAllPosts().slice(0, 3))
-  const reduce = useReducedMotion()
+  const motionAllowed = useMotionAllowed()
 
-  const stats = [
-    { label: t('home.stats.founded'), value: String(COMPANY.founded) },
-    { label: t('home.stats.base'), value: 'D-MARINE' },
-    { label: t('home.stats.disciplines'), value: '6' },
-    { label: t('home.stats.response'), value: t('home.stats.responseValue') },
+  const stats: Array<
+    | { label: string; type: 'count'; value: number }
+    | { label: string; type: 'text'; value: string }
+  > = [
+    { label: t('home.stats.founded'), type: 'count', value: COMPANY.founded },
+    { label: t('home.stats.base'), type: 'text', value: 'D-MARINE' },
+    { label: t('home.stats.disciplines'), type: 'count', value: 6 },
+    { label: t('home.stats.response'), type: 'text', value: t('home.stats.responseValue') },
   ]
 
   return (
@@ -47,13 +54,14 @@ export function Home() {
           alt="Luxury yachts moored at a sunlit Mediterranean marina"
           variant="home"
           priority
+          parallax
         />
 
         <motion.div className="relative z-10 mx-auto flex max-w-[1440px] flex-col gap-10 px-4 pb-20 pt-10 sm:px-6 lg:flex-row lg:items-end lg:justify-between lg:px-10 lg:pb-24 lg:pt-16">
           <motion.div
-            initial={reduce ? false : { opacity: 0, y: 24 }}
-            animate={reduce ? undefined : { opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            initial={motionAllowed ? { opacity: 0, y: 48, filter: 'blur(12px)' } : false}
+            animate={motionAllowed ? { opacity: 1, y: 0, filter: 'blur(0px)' } : undefined}
+            transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
             className="max-w-3xl space-y-6 text-white"
           >
             <p className="text-xs font-semibold uppercase tracking-[0.25em] text-white">
@@ -86,9 +94,9 @@ export function Home() {
           </motion.div>
 
           <motion.div
-            initial={reduce ? false : { opacity: 0, y: 16 }}
-            animate={reduce ? undefined : { opacity: 1, y: 0 }}
-            transition={{ delay: reduce ? 0 : 0.15, duration: 0.55 }}
+            initial={motionAllowed ? { opacity: 0, y: 40, scale: 0.94 } : false}
+            animate={motionAllowed ? { opacity: 1, y: 0, scale: 1 } : undefined}
+            transition={{ delay: motionAllowed ? 0.2 : 0, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             className="w-full max-w-md rounded-3xl border border-white/25 bg-white/[0.14] p-7 text-white shadow-[0_24px_56px_-16px_rgb(0_0_0/0.45)] ring-1 ring-white/15 backdrop-blur-md transition-[box-shadow,border-color] duration-500 hover:border-white/35 hover:shadow-[0_32px_72px_-18px_rgb(0_0_0/0.5)]"
           >
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white">
@@ -127,6 +135,8 @@ export function Home() {
             </a>
           </motion.div>
         </motion.div>
+
+        <HeroWave tone="mist" />
       </section>
 
       <section className="border-y border-stone/40 bg-mist px-4 py-10 sm:px-6 sm:py-14 lg:px-10">
@@ -138,7 +148,7 @@ export function Home() {
           variants={{
             hidden: {},
             visible: {
-              transition: { staggerChildren: reduce ? 0 : 0.07 },
+              transition: { staggerChildren: motionAllowed ? 0.14 : 0 },
             },
           }}
         >
@@ -147,28 +157,35 @@ export function Home() {
               key={s.label}
               className="space-y-2 px-5 py-8 sm:px-8 sm:py-10"
               variants={{
-                hidden: reduce ? {} : { opacity: 0, y: 12 },
-                visible: reduce
-                  ? {}
-                  : {
+                hidden: motionAllowed ? { opacity: 0, y: 28, scale: 0.95 } : {},
+                visible: motionAllowed
+                  ? {
                       opacity: 1,
                       y: 0,
-                      transition: { duration: 0.42, ease: [0.22, 1, 0.36, 1] },
-                    },
+                      scale: 1,
+                      transition: { duration: 0.75, ease: [0.22, 1, 0.36, 1] },
+                    }
+                  : {},
               }}
             >
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate">{s.label}</p>
               <p className="font-display text-3xl tabular-nums tracking-tight text-primary sm:text-[2.125rem]">
-                {s.value}
+                {s.type === 'count' ? (
+                  <CountUp value={s.value} duration={1.4} />
+                ) : (
+                  s.value
+                )}
               </p>
             </motion.div>
           ))}
         </motion.div>
       </section>
 
+      <SectionWave topTone="mist" bottomTone="pearl" />
+
       <section id="home-services" className="scroll-mt-28 border-b border-stone/30 bg-pearl py-20 sm:py-24">
         <div className="mx-auto max-w-[1440px] space-y-12 px-4 sm:px-6 lg:px-10">
-        <FadeIn>
+        <FadeIn variant="blur-up">
           <SectionHeading
             overline={t('home.services.overline')}
             title={t('home.services.title')}
@@ -188,9 +205,11 @@ export function Home() {
         </div>
       </section>
 
+      <SectionWave topTone="pearl" bottomTone="mist" />
+
       <section id="home-featured" className="scroll-mt-28 bg-mist py-20 sm:py-24">
         <div className="mx-auto max-w-[1440px] space-y-12 px-4 sm:px-6 lg:px-10">
-          <FadeIn>
+          <FadeIn variant="blur-up">
             <SectionHeading
               overline={t('home.featured.overline')}
               title={t('home.featured.title')}
@@ -210,9 +229,11 @@ export function Home() {
         </div>
       </section>
 
+      <SectionWave topTone="mist" bottomTone="brand" />
+
       <section id="home-references" className="scroll-mt-28 bg-brand py-20 text-white sm:py-24">
         <div className="mx-auto max-w-[1440px] space-y-12 px-4 sm:px-6 lg:px-10">
-          <FadeIn>
+          <FadeIn variant="blur-up">
             <SectionHeading
               light
               align="center"
@@ -234,9 +255,11 @@ export function Home() {
         </div>
       </section>
 
+      <SectionWave topTone="brand" bottomTone="pearl" />
+
       <section id="home-blog" className="scroll-mt-28 border-t border-stone/35 bg-pearl py-20 sm:py-24">
         <div className="mx-auto max-w-[1440px] space-y-12 px-4 sm:px-6 lg:px-10">
-        <FadeIn>
+        <FadeIn variant="blur-up">
           <SectionHeading
             overline={t('home.blog.overline')}
             title={t('home.blog.title')}
@@ -261,7 +284,7 @@ export function Home() {
       </section>
 
       <section className="border-t border-stone/35 bg-gradient-to-b from-mist via-pearl to-mist py-20 sm:py-24">
-        <FadeIn className="mx-auto flex max-w-[1440px] flex-col items-start justify-between gap-10 px-4 sm:flex-row sm:items-center sm:px-6 lg:px-10">
+        <FadeIn variant="blur-up" className="mx-auto flex max-w-[1440px] flex-col items-start justify-between gap-10 px-4 sm:flex-row sm:items-center sm:px-6 lg:px-10">
           <div className="max-w-xl space-y-3">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary/75">
               {t('home.cta.overline')}

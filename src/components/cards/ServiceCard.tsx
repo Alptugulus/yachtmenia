@@ -1,20 +1,29 @@
 import { createElement } from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowUpRight } from 'lucide-react'
-import { motion, useReducedMotion } from 'framer-motion'
+import { motion } from 'framer-motion'
+import { useMotionAllowed } from '@/hooks/useMotionAllowed'
 import { useTranslation } from 'react-i18next'
 import type { Service } from '@/types'
 import { getServiceIcon } from '@/utils/serviceIcon'
+import {
+  CARD_REVEAL_DURATION,
+  CARD_REVEAL_VIEWPORT,
+  cardStaggerDelay,
+  revealInitial,
+  revealTransition,
+  revealWhileInView,
+} from '@/utils/revealMotion'
 
 export function ServiceCard({ service, index = 0 }: { service: Service; index?: number }) {
   const { t } = useTranslation()
-  const reduce = useReducedMotion()
+  const motionAllowed = useMotionAllowed()
   return (
     <motion.div
-      initial={reduce ? false : { opacity: 0, y: 16 }}
-      whileInView={reduce ? undefined : { opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-40px' }}
-      transition={{ duration: 0.4, delay: index * 0.05 }}
+      initial={revealInitial(motionAllowed, 'blur-up')}
+      whileInView={revealWhileInView(motionAllowed, 'blur-up')}
+      viewport={CARD_REVEAL_VIEWPORT}
+      transition={revealTransition(motionAllowed, { delay: cardStaggerDelay(index), duration: CARD_REVEAL_DURATION })}
       className="group flex h-full flex-col rounded-2xl border border-stone/50 bg-pearl p-6 shadow-card ring-1 ring-primary/[0.04] transition-[box-shadow,border-color] duration-300 ease-out hover:border-primary/35 hover:shadow-card-hover motion-reduce:hover:shadow-card"
     >
       <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-brand text-white shadow-[inset_0_1px_0_rgb(255_255_255/0.12)] ring-1 ring-white/10 transition-transform duration-300 ease-out group-hover:scale-[1.04] motion-reduce:group-hover:scale-100">

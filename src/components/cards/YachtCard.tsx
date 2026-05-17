@@ -1,10 +1,19 @@
 import { Link } from 'react-router-dom'
-import { motion, useReducedMotion } from 'framer-motion'
+import { motion } from 'framer-motion'
+import { useMotionAllowed } from '@/hooks/useMotionAllowed'
 import { Anchor, MapPin, Ruler } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { ResponsiveImage } from '@/components/common/ResponsiveImage'
 import { intlLocaleForLanguage } from '@/i18n/intlLocale'
 import type { Yacht } from '@/types'
+import {
+  CARD_REVEAL_DURATION,
+  CARD_REVEAL_VIEWPORT,
+  cardStaggerDelay,
+  revealInitial,
+  revealTransition,
+  revealWhileInView,
+} from '@/utils/revealMotion'
 
 function useFormatPrice() {
   const { i18n } = useTranslation()
@@ -19,14 +28,14 @@ function useFormatPrice() {
 
 export function YachtCard({ yacht, index = 0 }: { yacht: Yacht; index?: number }) {
   const { t } = useTranslation()
-  const reduce = useReducedMotion()
+  const motionAllowed = useMotionAllowed()
   const formatPrice = useFormatPrice()
   return (
     <motion.article
-      initial={reduce ? false : { opacity: 0, y: 20 }}
-      whileInView={reduce ? undefined : { opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-40px' }}
-      transition={{ duration: 0.4, delay: index * 0.06 }}
+      initial={revealInitial(motionAllowed, 'blur-up')}
+      whileInView={revealWhileInView(motionAllowed, 'blur-up')}
+      viewport={CARD_REVEAL_VIEWPORT}
+      transition={revealTransition(motionAllowed, { delay: cardStaggerDelay(index), duration: CARD_REVEAL_DURATION })}
       className="group overflow-hidden rounded-2xl border border-stone/50 bg-pearl shadow-card ring-1 ring-primary/[0.04] transition-[box-shadow,border-color] duration-300 ease-out hover:border-primary/30 hover:shadow-card-hover"
     >
       <Link to={`/yachts/${yacht.slug}`} className="block">

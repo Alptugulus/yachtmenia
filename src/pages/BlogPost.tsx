@@ -36,7 +36,7 @@ export function BlogPost() {
       />
 
       <article className="mx-auto max-w-[820px] px-4 py-14 sm:px-6 lg:px-10">
-        <FadeIn>
+        <FadeIn variant="blur-up">
           <div className="flex flex-wrap items-center gap-4 text-xs font-semibold uppercase tracking-wide text-slate">
             <span className="rounded-full bg-mist px-3 py-1 text-primary">{post.category}</span>
             <time dateTime={post.date}>
@@ -56,13 +56,13 @@ export function BlogPost() {
 
         <div className="mt-10 space-y-8 text-lg leading-relaxed text-slate">
           {post.content.map((para, idx) => (
-            <FadeIn key={idx} delay={idx * 0.04}>
+            <FadeIn key={idx} variant="blur-up" delay={idx * 0.04}>
               <p>{para}</p>
             </FadeIn>
           ))}
         </div>
 
-        <FadeIn>
+        <FadeIn variant="blur-up">
           <div className="mt-14 border-t border-stone/60 pt-8">
             <Link to="/blog" className="text-sm font-semibold text-primary hover:text-primary/75">
               {t('blogPost.back')}

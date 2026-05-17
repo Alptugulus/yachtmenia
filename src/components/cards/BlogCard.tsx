@@ -1,21 +1,30 @@
 import { Link } from 'react-router-dom'
 import { Clock } from 'lucide-react'
-import { motion, useReducedMotion } from 'framer-motion'
+import { motion } from 'framer-motion'
+import { useMotionAllowed } from '@/hooks/useMotionAllowed'
 import { useTranslation } from 'react-i18next'
 import { ResponsiveImage } from '@/components/common/ResponsiveImage'
 import { intlLocaleForLanguage } from '@/i18n/intlLocale'
 import type { BlogPost } from '@/types'
+import {
+  CARD_REVEAL_DURATION,
+  CARD_REVEAL_VIEWPORT,
+  cardStaggerDelay,
+  revealInitial,
+  revealTransition,
+  revealWhileInView,
+} from '@/utils/revealMotion'
 
 export function BlogCard({ post, index = 0 }: { post: BlogPost; index?: number }) {
   const { t, i18n } = useTranslation()
-  const reduce = useReducedMotion()
+  const motionAllowed = useMotionAllowed()
   const dateLocale = intlLocaleForLanguage(i18n.resolvedLanguage ?? i18n.language)
   return (
     <motion.article
-      initial={reduce ? false : { opacity: 0, y: 16 }}
-      whileInView={reduce ? undefined : { opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-40px' }}
-      transition={{ duration: 0.4, delay: index * 0.06 }}
+      initial={revealInitial(motionAllowed, 'blur-up')}
+      whileInView={revealWhileInView(motionAllowed, 'blur-up')}
+      viewport={CARD_REVEAL_VIEWPORT}
+      transition={revealTransition(motionAllowed, { delay: cardStaggerDelay(index), duration: CARD_REVEAL_DURATION })}
       className="group overflow-hidden rounded-2xl border border-stone/50 bg-pearl shadow-card ring-1 ring-primary/[0.04] transition-[box-shadow,border-color] duration-300 ease-out hover:border-primary/25 hover:shadow-card-hover"
     >
       <Link to={`/blog/${post.slug}`} className="block">
