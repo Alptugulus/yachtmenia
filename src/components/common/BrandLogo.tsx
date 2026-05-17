@@ -5,7 +5,6 @@ import { BRAND_LOCKUP_ASPECT, BRAND_LOGO, brandLogoSrcSet } from '@/utils/logos'
 interface BrandLogoProps {
   variant: 'navbar' | 'footer'
   headerTone?: 'on-dark' | 'on-light'
-  /** LCP / above-the-fold */
   priority?: boolean
 }
 
@@ -35,23 +34,13 @@ export function BrandLogo({ variant, headerTone = 'on-light', priority = false }
   const src = onDark ? BRAND_LOGO.navbarOnDark : BRAND_LOGO.navbarOnLight
   const srcSet = brandLogoSrcSet(onDark)
 
-  const enhanceOnLight =
-    variant === 'navbar' && !onDark
-      ? 'contrast-[1.12] saturate-[1.05] drop-shadow-[0_1px_0_rgb(0_0_50/0.12)]'
-      : onDark
-        ? 'drop-shadow-[0_2px_8px_rgb(0_0_0/0.35)]'
-        : ''
-
-  /** Yatay lockup: yükseklik sabit, genişlik orana göre — yazı okunaklı kalır */
   const lockupHeights =
     variant === 'navbar'
-      ? 'h-[2.85rem] min-h-[46px] sm:h-[3.35rem] md:h-[3.65rem] lg:h-[4rem]'
-      : 'h-16 sm:h-[4.25rem]'
+      ? 'h-[3rem] min-h-[48px] sm:h-[3.5rem] md:h-[3.85rem] lg:h-[4.15rem]'
+      : 'h-[3.25rem] sm:h-[4rem]'
 
   const lockupMaxW =
-    variant === 'navbar'
-      ? 'max-w-[min(520px,92vw)]'
-      : 'max-w-[min(400px,88vw)]'
+    variant === 'navbar' ? 'max-w-[min(560px,94vw)]' : 'max-w-[min(440px,90vw)]'
 
   return (
     <img
@@ -59,17 +48,19 @@ export function BrandLogo({ variant, headerTone = 'on-light', priority = false }
       srcSet={srcSet}
       sizes={
         variant === 'navbar'
-          ? '(max-width: 640px) 88vw, (max-width: 1024px) 480px, 520px'
-          : '(max-width: 640px) 80vw, 400px'
+          ? '(max-width: 640px) 92vw, (max-width: 1200px) 520px, 560px'
+          : '(max-width: 640px) 85vw, 440px'
       }
       alt="Yachtmenia Yachting"
       width={LOCKUP_W}
       height={LOCKUP_H}
       loading={priority ? 'eager' : 'lazy'}
       fetchPriority={priority ? 'high' : 'auto'}
-      decoding="async"
+      decoding="sync"
       style={{ aspectRatio: BRAND_LOCKUP_ASPECT }}
-      className={`block w-auto object-contain object-left ${lockupHeights} ${lockupMaxW} motion-safe:transition-[filter,transform] motion-safe:duration-200 motion-safe:group-hover:brightness-[1.02] ${enhanceOnLight}`}
+      className={`block w-auto shrink-0 object-contain object-left ${lockupHeights} ${lockupMaxW} ${
+        onDark ? '' : 'opacity-100'
+      }`}
       onError={() => setFailed(true)}
     />
   )

@@ -4,10 +4,10 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "npm run trim:logos && vite",
     "optimize:media": "node scripts/optimize-media.mjs",
     "trim:logos": "node scripts/trim-logos.mjs",
-    "prebuild": "npm run optimize:media",
+    "prebuild": "npm run trim:logos && npm run optimize:media",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview"
