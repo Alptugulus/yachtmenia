@@ -1,55 +1,51 @@
-import { BrandAnchorSvg } from '@/components/common/BrandAnchorSvg'
+import { useState } from 'react'
+import { COMPANY } from '@/utils/constants'
+import { BRAND_LOCKUP_ASPECT, BRAND_LOGO } from '@/utils/logos'
 
 interface BrandLogoProps {
   variant: 'navbar' | 'footer' | 'loader'
   headerTone?: 'on-dark' | 'on-light'
-  /** @deprecated PNG kaldırıldı; API uyumluluğu */
   priority?: boolean
 }
 
-export function BrandLogo({ variant, headerTone = 'on-light' }: BrandLogoProps) {
-  const onDark = variant === 'footer' || headerTone === 'on-dark'
-  const ink = onDark ? 'text-white' : 'text-brand'
+const FOOTER_ASPECT = 300 / 120
 
-  const shellHeights =
-    variant === 'loader'
+export function BrandLogo({ variant, priority = false }: BrandLogoProps) {
+  const [failed, setFailed] = useState(false)
+  const isFooter = variant === 'footer'
+
+  if (failed) {
+    return (
+      <span className="font-display text-2xl font-semibold tracking-tight text-brand sm:text-3xl">
+        {COMPANY.name}
+      </span>
+    )
+  }
+
+  const src = isFooter ? BRAND_LOGO.footer : BRAND_LOGO.navbarOnLight
+
+  const heights = isFooter
+    ? 'h-[48px] sm:h-[52px]'
+    : variant === 'loader'
       ? 'h-[56px] sm:h-[64px] md:h-[68px]'
-      : variant === 'navbar'
-        ? 'h-[56px] sm:h-[64px] md:h-[68px] lg:h-[72px]'
-        : 'h-[56px] sm:h-[64px]'
+      : 'h-[56px] sm:h-[64px] md:h-[68px] lg:h-[72px]'
 
-  const titleSize =
-    variant === 'loader'
-      ? 'text-[1.2rem] sm:text-[1.35rem] md:text-[1.45rem]'
-      : variant === 'navbar'
-        ? 'text-[1.15rem] sm:text-[1.3rem] md:text-[1.42rem] lg:text-[1.52rem]'
-        : 'text-[1.15rem] sm:text-[1.3rem]'
-
-  const tagSize =
-    variant === 'loader'
-      ? 'text-[0.48rem] sm:text-[0.52rem]'
-      : 'text-[0.46rem] sm:text-[0.5rem] md:text-[0.52rem]'
+  const aspect = isFooter ? FOOTER_ASPECT : BRAND_LOCKUP_ASPECT
+  const width = isFooter ? 300 : 918
+  const height = isFooter ? 120 : 340
 
   return (
-    <div
-      role="img"
-      aria-label="Yachtmenia Yachting"
-      className={`flex min-w-0 max-w-[min(580px,96vw)] items-stretch gap-2 sm:gap-2.5 ${shellHeights} ${ink}`}
-    >
-      <BrandAnchorSvg className="h-full w-auto shrink-0" />
-      <div className="flex min-w-0 flex-col justify-center leading-none">
-        <span
-          className={`font-display font-semibold tracking-[0.04em] ${titleSize}`}
-          style={{ fontFeatureSettings: '"liga" 1' }}
-        >
-          YACHTMENIA
-        </span>
-        <span
-          className={`mt-1 font-sans font-semibold uppercase tracking-[0.34em] opacity-90 ${tagSize}`}
-        >
-          YACHTING
-        </span>
-      </div>
-    </div>
+    <img
+      src={src}
+      alt="Yachtmenia Yachting"
+      width={width}
+      height={height}
+      loading={priority ? 'eager' : 'lazy'}
+      fetchPriority={priority ? 'high' : 'auto'}
+      decoding="async"
+      style={{ aspectRatio: aspect }}
+      className={`block w-auto max-w-[min(560px,94vw)] object-contain object-left ${heights}`}
+      onError={() => setFailed(true)}
+    />
   )
 }

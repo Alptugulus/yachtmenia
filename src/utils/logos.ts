@@ -1,5 +1,5 @@
 /**
- * Yatay lockup — @2x kaynak (lanczos küçültme, sharpen yok).
+ * Orijinal marka dosyaları — public/ ve yüksek çözünürlüklü lockup.
  */
 import lockupDark from '@/assets/brand/lockup-dark@2x.png'
 import lockupLight from '@/assets/brand/lockup-light@2x.png'
@@ -9,13 +9,14 @@ const inLogos = (name: string) => publicAsset(`media/logos/${name}`)
 
 export const BRAND_LOCKUP_ASPECT = 918 / 340
 
+/** Navbar / loader — lacivert yatay lockup (yachting-vertical) */
 export const BRAND_LOGO = {
   navbarOnLight: lockupLight,
   navbarOnDark: lockupDark,
-  footer: lockupDark,
+  footer: publicAsset('yachtmenia-logo-footer.png'),
 } as const
 
-export const BRAND_LOGO_PUBLIC_URL = inLogos('lockup-light.png')
+export const BRAND_LOGO_PUBLIC_URL = publicAsset('yachtmenia-logo-footer.png')
 
 export const LOGOS = {
   refit: {
