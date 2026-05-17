@@ -172,4 +172,10 @@ html {
     }
   }
 
+  /* Yüksek çözünürlüklü lockup küçültülürken çizgiler yumuşamasın */
+  .brand-lockup {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+  }
 }

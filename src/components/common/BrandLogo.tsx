@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { COMPANY } from '@/utils/constants'
-import { BRAND_LOCKUP_ASPECT, BRAND_LOGO, brandLogoSrcSet } from '@/utils/logos'
+import { BRAND_LOCKUP_ASPECT, BRAND_LOGO } from '@/utils/logos'
 
 interface BrandLogoProps {
   variant: 'navbar' | 'footer'
@@ -32,25 +32,18 @@ export function BrandLogo({ variant, headerTone = 'on-light', priority = false }
   }
 
   const src = onDark ? BRAND_LOGO.navbarOnDark : BRAND_LOGO.navbarOnLight
-  const srcSet = brandLogoSrcSet(onDark)
 
   const lockupHeights =
     variant === 'navbar'
-      ? 'h-[3rem] min-h-[48px] sm:h-[3.5rem] md:h-[3.85rem] lg:h-[4.15rem]'
-      : 'h-[3.25rem] sm:h-[4rem]'
+      ? 'h-[3.15rem] min-h-[50px] sm:h-[3.65rem] md:h-[4rem] lg:h-[4.35rem]'
+      : 'h-[3.5rem] sm:h-[4.15rem]'
 
   const lockupMaxW =
-    variant === 'navbar' ? 'max-w-[min(560px,94vw)]' : 'max-w-[min(440px,90vw)]'
+    variant === 'navbar' ? 'max-w-[min(580px,96vw)]' : 'max-w-[min(460px,92vw)]'
 
   return (
     <img
       src={src}
-      srcSet={srcSet}
-      sizes={
-        variant === 'navbar'
-          ? '(max-width: 640px) 92vw, (max-width: 1200px) 520px, 560px'
-          : '(max-width: 640px) 85vw, 440px'
-      }
       alt="Yachtmenia Yachting"
       width={LOCKUP_W}
       height={LOCKUP_H}
@@ -58,9 +51,7 @@ export function BrandLogo({ variant, headerTone = 'on-light', priority = false }
       fetchPriority={priority ? 'high' : 'auto'}
       decoding="sync"
       style={{ aspectRatio: BRAND_LOCKUP_ASPECT }}
-      className={`block w-auto shrink-0 object-contain object-left ${lockupHeights} ${lockupMaxW} ${
-        onDark ? '' : 'opacity-100'
-      }`}
+      className={`brand-lockup block w-auto shrink-0 object-contain object-left ${lockupHeights} ${lockupMaxW}`}
       onError={() => setFailed(true)}
     />
   )
