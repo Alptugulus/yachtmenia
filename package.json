@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "optimize:media": "node scripts/optimize-media.mjs",
+    "trim:logos": "node scripts/trim-logos.mjs",
     "prebuild": "npm run optimize:media",
     "build": "tsc -b && vite build",
     "lint": "eslint .",

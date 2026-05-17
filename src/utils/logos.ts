@@ -2,10 +2,14 @@ import { publicAsset } from '@/utils/publicAsset'
 
 const inLogos = (name: string) => publicAsset(`media/logos/${name}`)
 
+const trim = (base: string) => inLogos(`${base}-trim.png`)
+const trim2x = (base: string) => inLogos(`${base}-trim@2x.png`)
+
 /**
  * Marka PNG’leri: `public/media/logos/`
- * - **Dark** soneki → beyaz çizgi (W / W-L): koyu zemin, footer, koyu navbar.
- * - **Light** soneki → lacivert (C / C-L): açık zemin, açık navbar.
+ * - **Dark** → beyaz çizgi: koyu zemin, footer, koyu navbar.
+ * - **Light** → lacivert: açık zemin (pearl navbar).
+ * `-trim` dosyaları: boşluk kırpılmış, navbar’da daha büyük görünür.
  */
 export const LOGOS = {
   refit: {
@@ -28,10 +32,17 @@ export const LOGOS = {
   },
 } as const
 
-/** Üst şerit (Navbar): yatay lockup — dikey PNG 1024 kare tuvalde minicik kalıyordu. */
+const YACHTING_H = 'yachting-horizontal'
+
+/** Üst şerit: kırpılmış yatay lockup + retina */
 export const HEADER_HORIZONTAL_LOGO = {
-  onDark: LOGOS.yachting.horizontalDark,
-  onLight: LOGOS.yachting.horizontalLight,
+  onDark: trim(`${YACHTING_H}-dark`),
+  onLight: trim(`${YACHTING_H}-light`),
+} as const
+
+export const HEADER_HORIZONTAL_LOGO_2X = {
+  onDark: trim2x(`${YACHTING_H}-dark`),
+  onLight: trim2x(`${YACHTING_H}-light`),
 } as const
 
 export const HEADER_VERTICAL_LOGO = {
@@ -39,9 +50,20 @@ export const HEADER_VERTICAL_LOGO = {
   onLight: LOGOS.yachting.verticalLight,
 } as const
 
-/** Footer + navbar: yatay lockup (daha compact). */
 export const BRAND_LOGO = {
   navbarOnDark: HEADER_HORIZONTAL_LOGO.onDark,
   navbarOnLight: HEADER_HORIZONTAL_LOGO.onLight,
   footer: HEADER_HORIZONTAL_LOGO.onDark,
 } as const
+
+export const BRAND_LOGO_2X = {
+  navbarOnDark: HEADER_HORIZONTAL_LOGO_2X.onDark,
+  navbarOnLight: HEADER_HORIZONTAL_LOGO_2X.onLight,
+  footer: HEADER_HORIZONTAL_LOGO_2X.onDark,
+} as const
+
+export function brandLogoSrcSet(onDark: boolean): string {
+  const x1 = onDark ? BRAND_LOGO.navbarOnDark : BRAND_LOGO.navbarOnLight
+  const x2 = onDark ? BRAND_LOGO_2X.navbarOnDark : BRAND_LOGO_2X.navbarOnLight
+  return `${x1} 1x, ${x2} 2x`
+}

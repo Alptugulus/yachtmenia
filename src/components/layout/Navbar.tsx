@@ -615,13 +615,13 @@ export function Navbar() {
         closeDesktopDropdown()
       }}
     >
-      <div className="mx-auto flex h-[5.25rem] max-h-[5.25rem] min-h-[5.25rem] max-w-[1440px] items-center justify-between gap-3 px-4 sm:gap-4 sm:px-6 lg:gap-6 lg:px-8 xl:gap-8 xl:px-10">
+      <div className="mx-auto flex h-[5.5rem] max-h-[5.5rem] min-h-[5.5rem] max-w-[1440px] items-center justify-between gap-2 px-4 sm:gap-3 sm:px-6 lg:gap-5 lg:px-8 xl:gap-6 xl:px-10">
         <Link
           to="/"
-          className="group flex shrink-0 items-center py-1"
+          className="group relative z-[1] flex min-w-0 shrink items-center py-0.5 pr-1 sm:pr-2"
           aria-label={t('nav.homeAria')}
         >
-          <BrandLogo variant="navbar" headerTone={headerLogoTone} />
+          <BrandLogo variant="navbar" headerTone={headerLogoTone} priority />
         </Link>
 
         <div className="relative hidden min-h-0 min-w-0 flex-1 self-stretch lg:flex lg:items-center lg:justify-center">

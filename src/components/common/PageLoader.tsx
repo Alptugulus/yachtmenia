@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next'
-import { BRAND_LOGO } from '@/utils/logos'
+import { BRAND_LOGO, BRAND_LOGO_2X } from '@/utils/logos'
 
 /**
  * Shown while lazy route chunks load. CSS-only motion on a transform bar;
@@ -18,11 +18,13 @@ export function PageLoader() {
       <span className="sr-only">{t('common.loading')}</span>
       <img
         src={BRAND_LOGO.navbarOnLight}
+        srcSet={`${BRAND_LOGO.navbarOnLight} 1x, ${BRAND_LOGO_2X.navbarOnLight} 2x`}
+        sizes="(max-width: 640px) 80vw, 420px"
         alt="Yachtmenia Yachting"
-        width={240}
-        height={300}
+        width={918}
+        height={836}
         decoding="async"
-        className="block h-40 w-auto max-w-[min(320px,70vw)] object-contain motion-safe:animate-pulse sm:h-44 md:h-48"
+        className="block h-44 w-auto max-w-[min(420px,85vw)] object-contain contrast-[1.12] saturate-[1.05] sm:h-48 md:h-52"
         aria-hidden
       />
       <div className="flex w-full max-w-[240px] flex-col items-center gap-3" aria-hidden>
