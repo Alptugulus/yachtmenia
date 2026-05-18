@@ -123,9 +123,9 @@
   },
   "home": {
     "hero": {
-      "overline": "Didim · Aegean",
-      "title": "Precision brokerage, refit and management for discerning owners.",
-      "lead": "{{name}} delivers cinematic execution with corporate discipline — from acquisition and refit to machinery modernization and long-term management at {{location}}.",
+      "overline": "Didim D-MARINE · Aegean",
+      "title": "One exacting address for your yacht in the Aegean.",
+      "lead": "Brokerage, refit, machinery upgrades and long-term management — on the ground with corporate discipline since 2006.",
       "ctaYachts": "View featured yachts",
       "ctaContact": "Book a consultation",
       "trustDiligence": "Technical diligence first",
@@ -311,6 +311,14 @@
       "title": "Send a message",
       "subtitle": "We usually reply within one business day — add yacht details if they help us respond.",
       "responseExpectation": "We aim to respond within one business day. For urgent matters, call us or use WhatsApp — you'll reach the same team."
+    },
+    "map": {
+      "overline": "Location",
+      "badge": "Marina base",
+      "iframeTitle": "D-Marin Didim marina map",
+      "google": "Google Maps",
+      "apple": "Apple Maps",
+      "waze": "Waze"
     }
   },
   "form": {

@@ -1,3 +1,6 @@
+import { WaveMarquee } from '@/components/common/WaveMarquee'
+import { sineWavePath } from '@/utils/wavePath'
+
 type HeroWaveTone = 'pearl' | 'mist'
 
 const TONE_FILL: Record<HeroWaveTone, string> = {
@@ -5,39 +8,45 @@ const TONE_FILL: Record<HeroWaveTone, string> = {
   mist: 'var(--color-mist)',
 }
 
+const VIEW = '0 0 1440 120'
+
+/** Seamless sine tiles — three depths, different speeds (ocean parallax). */
+const FOAM = sineWavePath(1440, 120, 54, 14, 2)
+const CREST = sineWavePath(1440, 120, 60, 11, 2.65)
+const BODY = sineWavePath(1440, 120, 68, 18, 1.85)
+
 type HeroWaveProps = {
-  /** Fill matches the section directly below the hero */
   tone?: HeroWaveTone
   className?: string
 }
 
-/**
- * Static hero shoreline — no animation (avoids distorted / “needle” artifacts).
- */
 export function HeroWave({ tone = 'mist', className = '' }: HeroWaveProps) {
   const fill = TONE_FILL[tone]
 
   return (
     <div
-      className={`pointer-events-none absolute inset-x-0 bottom-0 z-20 h-[clamp(3.5rem,9vw,5.75rem)] ${className}`}
+      className={`pointer-events-none absolute inset-x-0 bottom-0 z-20 h-[clamp(3.5rem,9vw,5.75rem)] overflow-hidden ${className}`}
       aria-hidden
     >
-      <svg
-        className="absolute bottom-0 block h-full w-full"
-        viewBox="0 0 1440 120"
-        preserveAspectRatio="none"
-        xmlns="http://www.w3.org/2000/svg"
+      <WaveMarquee
+        viewBox={VIEW}
+        animateClass="animate-wave-flow-slow"
+        className="wave-layer absolute inset-0"
       >
-        <path
-          d="M0,52 C200,96 400,28 600,56 C800,84 1000,36 1200,64 1320,48 1440,58 L1440,120 L0,120 Z"
-          fill="#ffffff"
-          fillOpacity={0.32}
-        />
-        <path
-          d="M0,68 C260,46 520,82 780,58 C1040,34 1300,70 1440,54 L1440,120 L0,120 Z"
-          fill={fill}
-        />
-      </svg>
+        <path d={FOAM} fill="#ffffff" fillOpacity={0.28} />
+      </WaveMarquee>
+
+      <WaveMarquee
+        viewBox={VIEW}
+        animateClass="animate-wave-flow-reverse"
+        className="wave-layer wave-layer--bob wave-layer--offset absolute inset-0"
+      >
+        <path d={CREST} fill="#ffffff" fillOpacity={0.42} />
+      </WaveMarquee>
+
+      <WaveMarquee viewBox={VIEW} className="wave-layer absolute inset-0">
+        <path d={BODY} fill={fill} />
+      </WaveMarquee>
     </div>
   )
 }

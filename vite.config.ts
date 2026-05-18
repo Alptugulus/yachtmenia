@@ -25,12 +25,61 @@ function spaFallback404Html(): Plugin {
   }
 }
 
+/** Dev: public/ medya ve logo değişince tam sayfa yenile; tarayıcı önbelleğini kapat. */
+function devFreshAssets(): Plugin {
+  const publicDir = path.resolve(__dirname, 'public')
+  return {
+    name: 'dev-fresh-assets',
+    apply: 'serve',
+    configureServer(server) {
+      const reloadIfPublic = (file: string) => {
+        if (file.startsWith(publicDir)) {
+          server.ws.send({ type: 'full-reload', path: '*' })
+        }
+      }
+      server.watcher.on('change', reloadIfPublic)
+      server.watcher.on('add', reloadIfPublic)
+
+      server.middlewares.use((req, res, next) => {
+        const url = req.url?.split('?')[0] ?? ''
+        if (
+          url.startsWith('/media/') ||
+          url.includes('logo') ||
+          /\.(?:avif|webp|jpe?g|png|svg)$/i.test(url)
+        ) {
+          res.setHeader('Cache-Control', 'no-store, must-revalidate')
+          res.setHeader('Pragma', 'no-cache')
+        }
+        next()
+      })
+    },
+  }
+}
+
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react(), tailwindcss(), spaFallback404Html()],
+  plugins: [react(), tailwindcss(), devFreshAssets(), spaFallback404Html()],
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
+    },
+  },
+  server: {
+    port: 5173,
+    strictPort: true,
+    host: 'localhost',
+    hmr: {
+      host: 'localhost',
+      port: 5173,
+      clientPort: 5173,
+    },
+    headers: {
+      'Cache-Control': 'no-store',
+    },
+    watch: {
+      // macOS + IDE kaydetme: native fs events bazen düşer; polling ile HMR güvenilir kalır
+      usePolling: true,
+      interval: 100,
     },
   },
   build: {

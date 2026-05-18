@@ -62,32 +62,32 @@ export function Home() {
             initial={motionAllowed ? { opacity: 0, y: 48, filter: 'blur(12px)' } : false}
             animate={motionAllowed ? { opacity: 1, y: 0, filter: 'blur(0px)' } : undefined}
             transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
-            className="max-w-3xl space-y-6 text-white"
+            className="max-w-3xl space-y-7 text-white"
           >
-            <p className="text-xs font-semibold uppercase tracking-[0.25em] text-white">
+            <p className="text-sm font-semibold uppercase tracking-[0.22em] text-white/95 sm:text-base">
               {t('home.hero.overline')}
             </p>
-            <h1 className="font-display text-balance text-[clamp(2.5rem,6vw,4.75rem)] leading-[1.05]">
+            <h1 className="font-display text-balance text-[clamp(2.75rem,7.5vw,5.5rem)] leading-[1.02] tracking-tight drop-shadow-[0_4px_32px_rgb(0_0_0/0.45)]">
               {t('home.hero.title')}
             </h1>
-            <p className="max-w-2xl text-lg text-white/90">
-              {t('home.hero.lead', { name: COMPANY.name, location: COMPANY.locationLine })}
+            <p className="max-w-2xl text-xl font-medium leading-relaxed text-white sm:text-2xl sm:leading-snug drop-shadow-[0_2px_20px_rgb(0_0_0/0.4)]">
+              {t('home.hero.lead')}
             </p>
             <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
-              <Button to="/yachts" variant="primary">
+              <Button to="/yachts" variant="primary" className="px-6 py-3 text-base sm:text-lg">
                 {t('home.hero.ctaYachts')}
               </Button>
-              <Button to="/contact" variant="ghost" className="border-white/30 bg-white/5">
+              <Button to="/contact" variant="ghost" className="border-white/35 bg-white/10 px-6 py-3 text-base text-white sm:text-lg">
                 {t('home.hero.ctaContact')}
               </Button>
             </div>
-            <div className="mt-1 flex flex-wrap gap-6 border-t border-white/15 pt-6 text-sm text-white/80">
-              <span className="inline-flex items-center gap-2">
-                <Shield className="h-4 w-4 text-white" />
+            <div className="mt-1 flex flex-wrap gap-6 border-t border-white/20 pt-6 text-base text-white/90 sm:text-lg">
+              <span className="inline-flex items-center gap-2.5">
+                <Shield className="h-5 w-5 text-white" />
                 {t('home.hero.trustDiligence')}
               </span>
-              <span className="inline-flex items-center gap-2">
-                <Award className="h-4 w-4 text-white" />
+              <span className="inline-flex items-center gap-2.5">
+                <Award className="h-5 w-5 text-white" />
                 {t('home.hero.trustSince', { year: COMPANY.founded })}
               </span>
             </div>
@@ -97,15 +97,15 @@ export function Home() {
             initial={motionAllowed ? { opacity: 0, y: 40, scale: 0.94 } : false}
             animate={motionAllowed ? { opacity: 1, y: 0, scale: 1 } : undefined}
             transition={{ delay: motionAllowed ? 0.2 : 0, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            className="w-full max-w-md rounded-3xl border border-white/25 bg-white/[0.14] p-7 text-white shadow-[0_24px_56px_-16px_rgb(0_0_0/0.45)] ring-1 ring-white/15 backdrop-blur-md transition-[box-shadow,border-color] duration-500 hover:border-white/35 hover:shadow-[0_32px_72px_-18px_rgb(0_0_0/0.5)]"
+            className="w-full max-w-md rounded-3xl border border-white/30 bg-white/[0.18] p-8 text-white shadow-[0_24px_56px_-16px_rgb(0_0_0/0.45)] ring-1 ring-white/20 backdrop-blur-md transition-[box-shadow,border-color] duration-500 hover:border-white/35 hover:shadow-[0_32px_72px_-18px_rgb(0_0_0/0.5)]"
           >
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white">
+            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-white">
               {t('home.hero.concierge.overline')}
             </p>
-            <p className="mt-3 font-display text-2xl">{t('home.hero.concierge.title')}</p>
-            <div className="mt-4 space-y-3 text-sm text-white/90">
+            <p className="mt-3 font-display text-2xl leading-tight sm:text-3xl">{t('home.hero.concierge.title')}</p>
+            <div className="mt-5 space-y-3.5 text-base text-white sm:text-lg">
               <a href={`tel:+${COMPANY.phoneE164}`} className="flex items-center gap-3 transition hover:text-white">
-                <Phone className="h-4 w-4 text-white" />
+                <Phone className="h-5 w-5 text-white" />
                 {COMPANY.phoneDisplay}
               </a>
               <a
@@ -114,19 +114,19 @@ export function Home() {
                 rel="noreferrer"
                 className="flex items-center gap-3 transition hover:text-white"
               >
-                <MessageCircle className="h-4 w-4 text-[#6ee7a0]" />
+                <MessageCircle className="h-5 w-5 text-[#6ee7a0]" />
                 {COMPANY.whatsappDisplay}
               </a>
-              <div className="flex items-start gap-3">
-                <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-white" />
-                <span>{COMPANY.locationLine}</span>
-              </div>
+              <Link to="/contact" className="flex items-start gap-3 transition hover:text-white">
+                <MapPin className="mt-1 h-5 w-5 shrink-0 text-white" />
+                <span>{COMPANY.locationShort}</span>
+              </Link>
             </div>
             <a
               href={SOCIAL.whatsapp}
               target="_blank"
               rel="noreferrer"
-              className="mt-6 inline-flex w-full items-center justify-center gap-2.5 rounded-lg bg-brand px-4 py-3 text-sm font-semibold text-white shadow-[0_10px_28px_-10px_rgb(0_0_0/0.4),inset_0_1px_0_rgb(255_255_255/0.12)] ring-1 ring-white/20 transition hover:bg-brand-muted hover:ring-white/30"
+              className="mt-6 inline-flex w-full items-center justify-center gap-2.5 rounded-lg bg-brand px-4 py-3 text-base font-semibold text-white shadow-[0_10px_28px_-10px_rgb(0_0_0/0.4),inset_0_1px_0_rgb(255_255_255/0.12)] ring-1 ring-white/20 transition hover:bg-brand-muted hover:ring-white/30"
             >
               <span className="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-br from-[#3ee878] to-[#128C7E] ring-1 ring-white/25">
                 <WhatsAppIcon className="h-4 w-4 text-white" />

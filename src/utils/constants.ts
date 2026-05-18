@@ -12,6 +12,14 @@ export const COMPANY = {
   name: 'Yachtmenia Yachting',
   founded: 2006,
   locationLine: 'Çamlık Mah. 5027 Sok. NO:2/8 F, Didim / Aydın',
+  /** Hero / kartlarda — tam adres değil */
+  locationShort: 'D-MARINE · Didim',
+  /** D-Marin Didim marina (rıhtım) — denizde değil, marina tesisinde */
+  marina: {
+    lat: 37.33683,
+    lng: 27.26147,
+    zoom: 16,
+  },
   phoneDisplay: '+90 256 813 39 47',
   phoneE164: '902568133947',
   whatsappDisplay: '+90 533 022 10 40',

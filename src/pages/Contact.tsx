@@ -1,8 +1,10 @@
 import { Mail, MapPin, MessageCircle, Phone } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { Seo } from '@/components/common/Seo'
+import { MarinaMap } from '@/components/contact/MarinaMap'
 import { ContactForm } from '@/components/forms/ContactForm'
 import { PageHeader } from '@/components/layout/PageHeader'
+import { SectionWave } from '@/components/common/SectionWave'
 import { COMPANY, SOCIAL } from '@/utils/constants'
 import { PAGE_HERO_IMAGES } from '@/utils/heroMedia'
 
@@ -96,6 +98,11 @@ export function Contact() {
             <ContactForm />
           </div>
         </div>
+      </section>
+
+      <SectionWave topTone="pearl" bottomTone="mist" />
+      <section className="bg-mist pb-16 pt-4 sm:pb-20">
+        <MarinaMap />
       </section>
     </>
   )

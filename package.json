@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "npm run trim:logos && vite",
+    "dev": "npm run trim:logos && CHOKIDAR_USEPOLLING=true vite",
     "optimize:media": "node scripts/optimize-media.mjs",
     "trim:logos": "node scripts/trim-logos.mjs",
     "prebuild": "npm run trim:logos && npm run optimize:media",
@@ -15,17 +15,20 @@
   "dependencies": {
     "framer-motion": "^12.38.0",
     "i18next": "^26.0.10",
+    "leaflet": "^1.9.4",
     "lucide-react": "^1.14.0",
     "react": "^19.2.5",
     "react-dom": "^19.2.5",
     "react-helmet-async": "^3.0.0",
     "react-i18next": "^17.0.7",
+    "react-leaflet": "^5.0.0",
     "react-router-dom": "^7.15.0",
     "zustand": "^5.0.13"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
     "@tailwindcss/vite": "^4.3.0",
+    "@types/leaflet": "^1.9.21",
     "@types/node": "^24.12.3",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",

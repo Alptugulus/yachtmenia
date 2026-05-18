@@ -123,9 +123,9 @@
   },
   "home": {
     "hero": {
-      "overline": "Didim · Ägäis",
-      "title": "Präzises Brokerage, Refit und Management für anspruchsvolle Eigner.",
-      "lead": "{{name}} liefert filmreife Umsetzung mit unternehmerischer Disziplin — von Akquise und Refit bis hin zu Maschinenraum-Modernisierung und langfristigem Management in {{location}}.",
+      "overline": "Didim D-MARINE · Ägäis",
+      "title": "Eine anspruchsvolle Adresse für Ihre Yacht an der Ägäis.",
+      "lead": "Brokerage, Refit, Maschinenmodernisierung und Langzeit-Management — seit 2006 mit unternehmerischer Disziplin vor Ort.",
       "ctaYachts": "Empfohlene Yachten ansehen",
       "ctaContact": "Beratung vereinbaren",
       "trustDiligence": "Technische Sorgfalt zuerst",
@@ -311,6 +311,14 @@
       "title": "Nachricht senden",
       "subtitle": "In der Regel antworten wir innerhalb eines Werktages — Yachtdaten helfen uns, gezielt zu antworten.",
       "responseExpectation": "Wir bemühen uns um eine Antwort innerhalb eines Werktages. Bei Dringlichkeit erreichen Sie dasselbe Team telefonisch oder per WhatsApp."
+    },
+    "map": {
+      "overline": "Standort",
+      "badge": "Marina-Basis",
+      "iframeTitle": "Karte D-Marin Didim Marina",
+      "google": "Google Maps",
+      "apple": "Apple Maps",
+      "waze": "Waze"
     }
   },
   "form": {

@@ -123,9 +123,9 @@
   },
   "home": {
     "hero": {
-      "overline": "Didim · Ege",
-      "title": "Seçkin yat sahipleri için titiz aracılık, refit ve yönetim.",
-      "lead": "{{name}}, satın alma ve refitten makine modernizasyonuna ve {{location}} merkezli uzun vadeli yönetime kadar tüm süreçlerde kurumsal disiplin ve sahada üst düzey uygulama sunar.",
+      "overline": "Didim D-MARINE · Ege",
+      "title": "Yatınız için Ege’de tek, titiz adres.",
+      "lead": "Aracılık, refit, makine modernizasyonu ve uzun vadeli yönetim — 2006’dan beri sahada, kurumsal disiplinle.",
       "ctaYachts": "Öne çıkan yatları görüntüle",
       "ctaContact": "Danışmanlık randevusu al",
       "trustDiligence": "Önce teknik özen",
@@ -311,6 +311,14 @@
       "title": "Mesaj gönderin",
       "subtitle": "Çoğu mesaja bir iş günü içinde dönüş yapıyoruz; yanıtımızı netleştirmek için yat bilgisi ekleyebilirsiniz.",
       "responseExpectation": "Hedefimiz bir iş günü içinde yanıt vermektir. Acil durumlarda aynı ekibe telefon veya WhatsApp üzerinden ulaşabilirsiniz."
+    },
+    "map": {
+      "overline": "Konum",
+      "badge": "Marina üssü",
+      "iframeTitle": "D-Marin Didim marina haritası",
+      "google": "Google Maps",
+      "apple": "Apple Maps",
+      "waze": "Waze"
     }
   },
   "form": {

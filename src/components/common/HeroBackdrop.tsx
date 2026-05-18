@@ -56,7 +56,7 @@ export function HeroBackdrop({
       <div
         className={
           isHome
-            ? 'absolute inset-0 bg-gradient-to-r from-brand/50 via-brand/22 to-transparent'
+            ? 'absolute inset-0 bg-gradient-to-r from-brand/62 via-brand/30 to-brand/5'
             : 'absolute inset-0 bg-gradient-to-r from-brand/48 via-brand/18 to-transparent'
         }
       />

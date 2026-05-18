@@ -1,3 +1,6 @@
+import { WaveMarquee } from '@/components/common/WaveMarquee'
+import { sineWavePath } from '@/utils/wavePath'
+
 type SectionWaveTone = 'pearl' | 'mist' | 'brand'
 
 const TONE_FILL: Record<SectionWaveTone, string> = {
@@ -6,15 +9,15 @@ const TONE_FILL: Record<SectionWaveTone, string> = {
   brand: 'var(--color-brand)',
 }
 
+const VIEW = '0 0 1440 48'
+const EDGE = sineWavePath(1440, 48, 22, 10, 2.25)
+
 type SectionWaveProps = {
   topTone: SectionWaveTone
   bottomTone: SectionWaveTone
   className?: string
 }
 
-/**
- * Static section divider — single SVG wave edge, no animation.
- */
 export function SectionWave({ topTone, bottomTone, className = '' }: SectionWaveProps) {
   const topFill = TONE_FILL[topTone]
   const bottomFill = TONE_FILL[bottomTone]
@@ -25,17 +28,13 @@ export function SectionWave({ topTone, bottomTone, className = '' }: SectionWave
       style={{ backgroundColor: topFill }}
       aria-hidden
     >
-      <svg
-        className="absolute bottom-0 left-0 block h-[55%] w-full"
-        viewBox="0 0 1440 48"
-        preserveAspectRatio="none"
-        xmlns="http://www.w3.org/2000/svg"
+      <WaveMarquee
+        viewBox={VIEW}
+        animateClass="animate-wave-flow-slow"
+        className="absolute bottom-0 left-0 h-[58%] w-full"
       >
-        <path
-          d="M0,22 C240,6 480,32 720,14 C960,36 1200,10 1440,24 L1440,48 L0,48 Z"
-          fill={bottomFill}
-        />
-      </svg>
+        <path d={EDGE} fill={bottomFill} />
+      </WaveMarquee>
     </div>
   )
 }
