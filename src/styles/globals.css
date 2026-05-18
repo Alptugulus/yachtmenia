@@ -54,9 +54,9 @@ html {
   --animate-page-in: page-header-in 0.55s var(--ease-out-soft) both;
   --animate-fade-up: fade-up 0.6s var(--ease-out-soft) both;
   --animate-loading-indeterminate: loading-indeterminate 1s var(--ease-out-soft) infinite;
-  --animate-wave-drift-slow: wave-drift 5.5s ease-in-out infinite alternate;
-  --animate-wave-drift-fast: wave-drift 4s ease-in-out infinite alternate;
-  --animate-wave-drift-reverse: wave-drift-reverse 4.5s ease-in-out infinite alternate;
+  /* Seamless horizontal flow (linear = continuous current, not ping-pong) */
+  --animate-wave-flow: wave-flow 56s linear infinite;
+  --animate-wave-flow-slow: wave-flow 72s linear infinite;
   --animate-logo-pulse: logo-pulse 2.2s ease-in-out infinite;
 }
 
@@ -116,22 +116,13 @@ html {
   }
 }
 
-/* Hero wave: horizontal + light vertical sway (clearly visible) */
-@keyframes wave-drift {
+/* Seamless tile scroll — one wave period loops without reversing */
+@keyframes wave-flow {
   from {
-    transform: translate3d(-22%, 8px, 0);
+    transform: translate3d(0, 0, 0);
   }
   to {
-    transform: translate3d(22%, -8px, 0);
-  }
-}
-
-@keyframes wave-drift-reverse {
-  from {
-    transform: translate3d(20%, -7px, 0);
-  }
-  to {
-    transform: translate3d(-20%, 7px, 0);
+    transform: translate3d(-50%, 0, 0);
   }
 }
 
@@ -179,9 +170,8 @@ html {
       transform: translateX(32%) !important;
     }
 
-    .animate-wave-drift-slow,
-    .animate-wave-drift-fast,
-    .animate-wave-drift-reverse,
+    .animate-wave-flow,
+    .animate-wave-flow-slow,
     .animate-page-in,
     .animate-logo-pulse {
       animation: none !important;
