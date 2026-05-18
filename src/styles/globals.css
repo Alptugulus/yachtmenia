@@ -4,6 +4,11 @@ html {
   overflow-x: clip;
 }
 
+html,
+body {
+  max-width: 100%;
+}
+
 /* Semantic palette (lacivert “brand” sabit — ayrı token) */
 :root {
   --ym-mist: #eef1f7;
@@ -147,7 +152,7 @@ html {
   }
 
   body {
-    @apply bg-mist font-sans text-charcoal antialiased;
+    @apply overflow-x-clip bg-mist font-sans text-charcoal antialiased;
   }
 
   ::selection {

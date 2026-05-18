@@ -28,7 +28,6 @@ import { ResponsiveImage } from '@/components/common/ResponsiveImage'
 import { blogPosts, references, yachts } from '@/data'
 import type { NavSubItem } from '@/utils/constants'
 import { COMPANY, MAIN_NAV, SERVICE_NAV } from '@/utils/constants'
-import { useLenis } from '@/contexts/LenisContext'
 import { useMotionAllowed } from '@/hooks/useMotionAllowed'
 import { useUiStore } from '@/store/ui'
 
@@ -523,7 +522,6 @@ function MegaMenuBody({
 export function Navbar() {
   const { t } = useTranslation()
   const motionAllowed = useMotionAllowed()
-  const lenis = useLenis()
   const location = useLocation()
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpenDropdownKey, setMobileOpenDropdownKey] = useState<string | null>(null)
@@ -533,21 +531,11 @@ export function Navbar() {
   const headerLogoTone: 'on-dark' | 'on-light' = 'on-light'
 
   useEffect(() => {
-    const update = () => {
-      const y = lenis?.scroll ?? window.scrollY
-      setScrolled(y > NAV_SCROLL_THRESHOLD)
-    }
+    const update = () => setScrolled(window.scrollY > NAV_SCROLL_THRESHOLD)
     update()
     window.addEventListener('scroll', update, { passive: true })
-    if (lenis) {
-      lenis.on('scroll', update)
-      return () => {
-        window.removeEventListener('scroll', update)
-        lenis.off('scroll', update)
-      }
-    }
     return () => window.removeEventListener('scroll', update)
-  }, [lenis])
+  }, [])
 
   useEffect(() => {
     document.body.style.overflow = mobileMenuOpen ? 'hidden' : ''
@@ -623,7 +611,7 @@ export function Navbar() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-[100] overflow-x-clip transition-[box-shadow,border-color,background-color,backdrop-filter] duration-300 ease-out ${shell}`}
+      className={`fixed inset-x-0 top-0 z-[100] overflow-x-clip transition-[box-shadow,border-color,background-color,backdrop-filter] duration-200 ease-out ${shell}`}
       onMouseLeave={(e) => {
         const next = e.relatedTarget
         if (next instanceof Node && e.currentTarget.contains(next)) return
@@ -631,7 +619,7 @@ export function Navbar() {
       }}
     >
       <div
-        className={`mx-auto flex max-w-[1440px] items-center justify-between gap-2 px-4 transition-[height,min-height,max-height] duration-300 ease-out sm:gap-3 sm:px-6 lg:gap-5 lg:px-8 xl:gap-6 xl:px-10 ${
+        className={`mx-auto flex max-w-[1440px] items-center justify-between gap-2 px-4 transition-[height,min-height,max-height] duration-200 ease-out sm:gap-3 sm:px-6 lg:gap-5 lg:px-8 xl:gap-6 xl:px-10 ${
           scrolled ? 'h-[4.25rem] min-h-[4.25rem] max-h-[4.25rem]' : 'h-[5.75rem] min-h-[5.75rem] max-h-[5.75rem]'
         }`}
       >
@@ -644,7 +632,7 @@ export function Navbar() {
         </Link>
 
         <div className="relative hidden min-h-0 min-w-0 flex-1 self-stretch lg:flex lg:items-center lg:justify-center">
-          <div className="mx-auto min-w-0 max-w-full overflow-x-auto overflow-y-visible overscroll-x-contain py-1 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+          <div className="mx-auto min-w-0 max-w-full overflow-hidden py-1">
             <nav
               className="inline-flex max-w-none shrink-0 flex-nowrap items-center justify-center gap-x-2 px-0.5 sm:gap-x-3 xl:gap-x-5 2xl:gap-x-6"
               aria-label={t('footer.explore')}
