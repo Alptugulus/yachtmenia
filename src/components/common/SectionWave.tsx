@@ -6,9 +6,6 @@ const TONE_FILL: Record<SectionWaveTone, string> = {
   brand: 'var(--color-brand)',
 }
 
-const WAVE_PATH =
-  'M0,28 C240,10 480,36 720,20 C960,40 1200,14 1440,26 L1440,48 L0,48 Z'
-
 type SectionWaveProps = {
   topTone: SectionWaveTone
   bottomTone: SectionWaveTone
@@ -16,38 +13,28 @@ type SectionWaveProps = {
 }
 
 /**
- * Static wave divider between sections — no animation (reads as real layout, not FX).
+ * Static section divider — single SVG wave edge, no animation.
  */
 export function SectionWave({ topTone, bottomTone, className = '' }: SectionWaveProps) {
   const topFill = TONE_FILL[topTone]
   const bottomFill = TONE_FILL[bottomTone]
-  const showFoam = topTone === 'brand' || bottomTone === 'brand'
 
   return (
     <div
-      className={`relative -mt-px h-[clamp(2.5rem,5.5vw,3.5rem)] w-full overflow-hidden ${className}`}
+      className={`relative -mt-px h-10 w-full overflow-hidden sm:h-12 ${className}`}
+      style={{ backgroundColor: topFill }}
       aria-hidden
     >
-      <div className="absolute inset-0" style={{ backgroundColor: topFill }} />
-
-      {showFoam ? (
-        <svg
-          className="absolute bottom-0 left-0 h-full w-full"
-          viewBox="0 0 1440 48"
-          preserveAspectRatio="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path d={WAVE_PATH} fill="#ffffff" fillOpacity={0.1} />
-        </svg>
-      ) : null}
-
       <svg
-        className="absolute bottom-0 left-0 h-full w-full"
+        className="absolute bottom-0 left-0 block h-[55%] w-full"
         viewBox="0 0 1440 48"
         preserveAspectRatio="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <path d={WAVE_PATH} fill={bottomFill} />
+        <path
+          d="M0,22 C240,6 480,32 720,14 C960,36 1200,10 1440,24 L1440,48 L0,48 Z"
+          fill={bottomFill}
+        />
       </svg>
     </div>
   )
