@@ -290,19 +290,19 @@ body {
 /* Contact — marina map (Leaflet + CARTO dark) */
 .marina-map {
   isolation: isolate;
-  background: #000032;
+  background: #12183f;
 }
 
 .marina-map .leaflet-container,
 .marina-map__canvas {
   height: 100% !important;
   width: 100% !important;
-  background: #000032;
+  background: #12183f;
   font-family: var(--font-sans);
 }
 
 .marina-map .leaflet-tile-pane {
-  filter: saturate(0.88) contrast(1.05) brightness(0.92);
+  filter: saturate(0.95) contrast(0.96) brightness(1.22);
 }
 
 .marina-map .leaflet-marker-pane {

@@ -305,7 +305,8 @@
     "direct": {
       "overline": "Direkt",
       "landline": "Festnetz",
-      "whatsapp": "WhatsApp"
+      "whatsapp": "WhatsApp",
+      "email": "E-Mail"
     },
     "form": {
       "title": "Nachricht senden",

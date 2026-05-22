@@ -305,7 +305,8 @@
     "direct": {
       "overline": "Doğrudan",
       "landline": "Sabit hat",
-      "whatsapp": "WhatsApp"
+      "whatsapp": "WhatsApp",
+      "email": "E-posta"
     },
     "form": {
       "title": "Mesaj gönderin",

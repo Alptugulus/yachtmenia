@@ -305,7 +305,8 @@
     "direct": {
       "overline": "Direct",
       "landline": "Landline",
-      "whatsapp": "WhatsApp"
+      "whatsapp": "WhatsApp",
+      "email": "Email"
     },
     "form": {
       "title": "Send a message",

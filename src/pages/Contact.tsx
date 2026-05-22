@@ -77,13 +77,18 @@ export function Contact() {
                   {COMPANY.whatsappDisplay}
                 </a>
               </div>
-              <a
-                href={`mailto:${COMPANY.email}`}
-                className="flex items-center gap-3 text-lg font-semibold hover:text-primary/80"
-              >
-                <Mail className="h-5 w-5 text-primary" />
-                {COMPANY.email}
-              </a>
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-slate">
+                  {t('contact.direct.email')}
+                </p>
+                <a
+                  href={`mailto:${COMPANY.email}`}
+                  className="mt-1 flex items-center gap-3 text-lg font-semibold hover:text-primary/80"
+                >
+                  <Mail className="h-5 w-5 text-primary" />
+                  {COMPANY.email}
+                </a>
+              </div>
             </div>
           </div>
         </div>
